@@ -1,0 +1,735 @@
+=============================
+COLPCI-5698-QA-DEV-TEST-NOTES
+=============================
+
+
+
+pts/97:larunkumar@preprod51002:~/larunkumar_streams>export RUNWORKUNITSINPROCESS='Y'
+pts/97:larunkumar@preprod51002:~/larunkumar_streams>
+pts/5:dabhinab@preprod518642:~/dabhinab_streams>DONOTLOADINTERFACEJOBS=1 perl prod/scripts/crontab/get_one_time_jobs.pl 20260119
+Reading the onetimejobs files for 20260119.
+0 4 19 01 * perl $ATHENA_HOME/scripts/crontab/athenacronclient.pl --jobid collector::ONETIMEJOBS::20260119::COLPCI_5698_STUCKBATCH_1
+0 8 19 01 * perl $ATHENA_HOME/scripts/crontab/athenacronclient.pl --jobid collector::ONETIMEJOBS::20260119::COLPCI_5698_STUCKBATCH_2
+0 12 19 01 * perl $ATHENA_HOME/scripts/crontab/athenacronclient.pl --jobid collector::ONETIMEJOBS::20260119::COLPCI_5698_STUCKBATCH_3
+0 16 19 01 * perl $ATHENA_HOME/scripts/crontab/athenacronclient.pl --jobid collector::ONETIMEJOBS::20260119::COLPCI_5698_STUCKBATCH_4
+0 4 19 01 * perl $ATHENA_HOME/scripts/crontab/athenacronclient.pl --jobid collector::ONETIMEJOBS::20260119::COLPCI_5698_STUCKBATCH_5
+0 8 19 01 * perl $ATHENA_HOME/scripts/crontab/athenacronclient.pl --jobid collector::ONETIMEJOBS::20260119::COLPCI_5698_STUCKBATCH_6
+0 12 19 01 * perl $ATHENA_HOME/scripts/crontab/athenacronclient.pl --jobid collector::ONETIMEJOBS::20260119::COLPCI_5698_STUCKBATCH_7
+0 16 19 01 * perl $ATHENA_HOME/scripts/crontab/athenacronclient.pl --jobid collector::ONETIMEJOBS::20260119::COLPCI_5698_STUCKBATCH_8
+0 20 19 01 * perl $ATHENA_HOME/scripts/crontab/athenacronclient.pl --jobid collector::ONETIMEJOBS::20260119::COLPCI_5698_STUCKBATCH_9
+0 4 20 01 * perl $ATHENA_HOME/scripts/crontab/athenacronclient.pl --jobid collector::ONETIMEJOBS::20260120::COLPCI_5698_STUCKBATCH_10
+0 8 20 01 * perl $ATHENA_HOME/scripts/crontab/athenacronclient.pl --jobid collector::ONETIMEJOBS::20260120::COLPCI_5698_STUCKBATCH_11
+0 12 20 01 * perl $ATHENA_HOME/scripts/crontab/athenacronclient.pl --jobid collector::ONETIMEJOBS::20260120::COLPCI_5698_STUCKBATCH_12
+0 16 20 01 * perl $ATHENA_HOME/scripts/crontab/athenacronclient.pl --jobid collector::ONETIMEJOBS::20260120::COLPCI_5698_STUCKBATCH_13
+0 20 20 01 * perl $ATHENA_HOME/scripts/crontab/athenacronclient.pl --jobid collector::ONETIMEJOBS::20260120::COLPCI_5698_STUCKBATCH_14
+0 4 21 01 * perl $ATHENA_HOME/scripts/crontab/athenacronclient.pl --jobid collector::ONETIMEJOBS::20260121::COLPCI_5698_STUCKBATCH_15
+0 8 21 01 * perl $ATHENA_HOME/scripts/crontab/athenacronclient.pl --jobid collector::ONETIMEJOBS::20260121::COLPCI_5698_STUCKBATCH_16
+0 12 21 01 * perl $ATHENA_HOME/scripts/crontab/athenacronclient.pl --jobid collector::ONETIMEJOBS::20260121::COLPCI_5698_STUCKBATCH_17
+0 16 21 01 * perl $ATHENA_HOME/scripts/crontab/athenacronclient.pl --jobid collector::ONETIMEJOBS::20260121::COLPCI_5698_STUCKBATCH_18
+0 9 19 01 * perl $ATHENA_HOME/scripts/crontab/athenacronclient.pl --jobid servicedelivery::ONETIMEJOBS::20260119::update_orgtaxonomycoderequiredyn_enrollmentcategory
+pts/5:dabhinab@preprod518642:~/dabhinab_streams>
+
+
+
+
+
+
+
+==================================================================
+Run the Scripts and compare the output with the commands generated
+==================================================================
+
+perl $ATHENA_HOME/scripts/crontab/athenacronclient.pl --jobid collector::ONETIMEJOBS::20260119::COLPCI_5698_STUCKBATCH_1 --onlyinstance DTEST56
+perl $ATHENA_HOME/scripts/crontab/athenacronclient.pl --jobid collector::ONETIMEJOBS::20260119::COLPCI_5698_STUCKBATCH_2 --onlyinstance DTEST56
+perl $ATHENA_HOME/scripts/crontab/athenacronclient.pl --jobid collector::ONETIMEJOBS::20260119::COLPCI_5698_STUCKBATCH_3 --onlyinstance DTEST56
+perl $ATHENA_HOME/scripts/crontab/athenacronclient.pl --jobid collector::ONETIMEJOBS::20260119::COLPCI_5698_STUCKBATCH_4 --onlyinstance DTEST56
+
+perl $ATHENA_HOME/scripts/crontab/athenacronclient.pl --jobid collector::ONETIMEJOBS::20260119::COLPCI_5698_STUCKBATCH_5 --onlyinstance DTEST47
+perl $ATHENA_HOME/scripts/crontab/athenacronclient.pl --jobid collector::ONETIMEJOBS::20260119::COLPCI_5698_STUCKBATCH_6 --onlyinstance DTEST47
+perl $ATHENA_HOME/scripts/crontab/athenacronclient.pl --jobid collector::ONETIMEJOBS::20260119::COLPCI_5698_STUCKBATCH_7 --onlyinstance DTEST47
+perl $ATHENA_HOME/scripts/crontab/athenacronclient.pl --jobid collector::ONETIMEJOBS::20260119::COLPCI_5698_STUCKBATCH_8 --onlyinstance DTEST47
+perl $ATHENA_HOME/scripts/crontab/athenacronclient.pl --jobid collector::ONETIMEJOBS::20260119::COLPCI_5698_STUCKBATCH_9 --onlyinstance DTEST47
+
+perl $ATHENA_HOME/scripts/crontab/athenacronclient.pl --jobid collector::ONETIMEJOBS::20260120::COLPCI_5698_STUCKBATCH_10 --onlyinstance DTEST47
+perl $ATHENA_HOME/scripts/crontab/athenacronclient.pl --jobid collector::ONETIMEJOBS::20260120::COLPCI_5698_STUCKBATCH_11 --onlyinstance DTEST47
+perl $ATHENA_HOME/scripts/crontab/athenacronclient.pl --jobid collector::ONETIMEJOBS::20260120::COLPCI_5698_STUCKBATCH_12 --onlyinstance DTEST47
+perl $ATHENA_HOME/scripts/crontab/athenacronclient.pl --jobid collector::ONETIMEJOBS::20260120::COLPCI_5698_STUCKBATCH_13 --onlyinstance DTEST47
+perl $ATHENA_HOME/scripts/crontab/athenacronclient.pl --jobid collector::ONETIMEJOBS::20260120::COLPCI_5698_STUCKBATCH_14 --onlyinstance DTEST47
+perl $ATHENA_HOME/scripts/crontab/athenacronclient.pl --jobid collector::ONETIMEJOBS::20260121::COLPCI_5698_STUCKBATCH_15 --onlyinstance DTEST47
+perl $ATHENA_HOME/scripts/crontab/athenacronclient.pl --jobid collector::ONETIMEJOBS::20260121::COLPCI_5698_STUCKBATCH_16 --onlyinstance DTEST47
+perl $ATHENA_HOME/scripts/crontab/athenacronclient.pl --jobid collector::ONETIMEJOBS::20260121::COLPCI_5698_STUCKBATCH_17 --onlyinstance DTEST47
+perl $ATHENA_HOME/scripts/crontab/athenacronclient.pl --jobid collector::ONETIMEJOBS::20260121::COLPCI_5698_STUCKBATCH_18 --onlyinstance DTEST47
+
+===================================================================================================================================================
+
+
+
+[COMMAND]
+==========
+
+pts/5:dabhinab@preprod518642:~/dabhinab_streams>
+pts/5:dabhinab@preprod518642:~/dabhinab_streams>perl $ATHENA_HOME/scripts/crontab/athenacronclient.pl --jobid collector::ONETIMEJOBS::20260119::COLPCI_5698_STUCKBATCH_1 --onlyinstance DTEST56
+Since you gave any flag besides --jobid, you are now in developer mode.
+
+Running a distributed job through worker
+pts/5:dabhinab@preprod518642:~/dabhinab_streams>
+=========================================================================================================================================
+
+[OUTPUT]
+========
+
+[01/16/2026 02:45:29 preprod518642.athenahealth.com UNKNOWN@DTEST56 4121775] INFO - INVOKEDTIME : [01/16/2026 02:45:28] - Running a distributed job through worker for JOBID: [collector::ONETIMEJOBS::20260119::COLPCI_5698_STUCKBATCH_1] - UNIQUEJOBID: [aWnsmQrIUF0APuSvAAAAAg]
+[01/16/2026 02:45:29 preprod518642.athenahealth.com UNKNOWN@DTEST56 4121775] INFO - INVOKEDTIME : [01/16/2026 02:45:28] - Running a distributed job through worker for JOBID: [collector::ONETIMEJOBS::20260119::COLPCI_5698_STUCKBATCH_1] - INSTANCE: [DTEST56] - UNIQUEJOBID: [aWnsmQrIUF0APuSvAAAAAg]
+[01/16/2026 02:45:31 preprod518642.athenahealth.com UNKNOWN@DTEST56 4121816] BEGIN Launcher::RunDistributedJob collector::ONETIMEJOBS::20260119::COLPCI_5698_STUCKBATCH_1 DAEMONSTATUS: Disabled
+[01/16/2026 02:45:32 preprod518642.athenahealth.com ATHENA2983@DTEST56 4121823] BEGIN perl /home/dabhinab/dabhinab_streams/techops/collector/oneoffscripts/COLPCI_3904_ApplyClaim.pl DTEST56 ATHENA2983 --erabatch 9298086 --fromclaimid 67930399 --toclaimid 67995128 --allowpartialpost --chunksize 500 --timestampedprint --printlog
+[01/16/2026 02:45:42 preprod518642.athenahealth.com ATHENA2983@DTEST56 4121816] OUTPUT [01/16/2026 02:45:42] Connecting to database context 2983
+[01/16/2026 02:45:42] [BATCH 9298086] Starting processing
+[01/16/2026 02:45:42] [BATCH 9298086] Clearing Assignedto lock
+[01/16/2026 02:45:42] [BATCH 9298086] Started applying ERA batch
+[01/16/2026 02:45:42] [BATCH 9298086] Found matching PaymentBatch 47344548
+[01/16/2026 02:45:42] [BATCH 9298086][CLAIM from 67930399 to 67995128] Starting processing
+[01/16/2026 02:45:42] [BATCH 9298086] Total claim IDs to process: 1500
+[01/16/2026 02:45:42] [BATCH 9298086] [SET 1] Processing batch of 500 claims
+[01/16/2026 02:45:42] [BATCH 9298086] [SET 2] Processing batch of 500 claims
+[01/16/2026 02:45:42] [BATCH 9298086] [SET 3] Processing batch of 500 claims
+[01/16/2026 02:45:42] [BATCH 9298086][CLAIM from 67930399 to 67995128] Completed processing
+[01/16/2026 02:45:42] [BATCH 9298086] Apply claim completed
+[01/16/2026 02:45:42 preprod518642.athenahealth.com UNKNOWN@DTEST56 4121816] END Elapsed: 11 seconds
+[01/16/2026 02:45:42 preprod518642.athenahealth.com ATHENA2983@DTEST56 4121816] END Elapsed: 9 seconds
+
+
+
+2. 
+
+
+[COMMAND]
+==========
+
+pts/5:dabhinab@preprod518642:~/dabhinab_streams>
+pts/5:dabhinab@preprod518642:~/dabhinab_streams>perl $ATHENA_HOME/scripts/crontab/athenacronclient.pl --jobid collector::ONETIMEJOBS::20260119::COLPCI_5698_STUCKBATCH_2 --onlyinstance DTEST56
+Since you gave any flag besides --jobid, you are now in developer mode.
+
+Running a distributed job through worker
+pts/5:dabhinab@preprod518642:~/dabhinab_streams>
+
+--------------------------------------------------------------------------------------------------------------------------------------
+
+[OUTPUT]
+========
+
+[01/16/2026 02:44:26 preprod518642.athenahealth.com UNKNOWN@DTEST56 4120649] END Elapsed: 11 seconds
+[01/16/2026 02:44:26 preprod518642.athenahealth.com ATHENA2983@DTEST56 4120649] END Elapsed: 9 seconds
+[01/16/2026 02:46:26 preprod518642.athenahealth.com UNKNOWN@DTEST56 4122059] INFO - INVOKEDTIME : [01/16/2026 02:46:25] - Running a distributed job through worker for JOBID: [collector::ONETIMEJOBS::20260119::COLPCI_5698_STUCKBATCH_2] - UNIQUEJOBID: [aWns0grIUF0APuXLAAAAAg]
+[01/16/2026 02:46:28 preprod518642.athenahealth.com UNKNOWN@DTEST56 4122088] BEGIN Launcher::RunDistributedJob collector::ONETIMEJOBS::20260119::COLPCI_5698_STUCKBATCH_2 DAEMONSTATUS: Disabled
+[01/16/2026 02:46:29 preprod518642.athenahealth.com ATHENA2983@DTEST56 4122098] BEGIN perl /home/dabhinab/dabhinab_streams/techops/collector/oneoffscripts/COLPCI_3904_ApplyClaim.pl DTEST56 ATHENA2983 --erabatch 9298086 --fromclaimid 67995190 --toclaimid 68095620 --allowpartialpost --chunksize 500 --timestampedprint --printlog
+[01/16/2026 02:46:26 preprod518642.athenahealth.com UNKNOWN@DTEST56 4122059] INFO - INVOKEDTIME : [01/16/2026 02:46:25] - Running a distributed job through worker for JOBID: [collector::ONETIMEJOBS::20260119::COLPCI_5698_STUCKBATCH_2] - INSTANCE: [DTEST56] - UNIQUEJOBID: [aWns0grIUF0APuXLAAAAAg]
+[01/16/2026 02:46:39 preprod518642.athenahealth.com UNKNOWN@DTEST56 4122088] END Elapsed: 11 seconds
+[01/16/2026 02:46:39 preprod518642.athenahealth.com ATHENA2983@DTEST56 4122088] END Elapsed: 8 seconds
+[01/16/2026 02:46:39 preprod518642.athenahealth.com ATHENA2983@DTEST56 4122088] OUTPUT [01/16/2026 02:46:38] Connecting to database context 2983
+[01/16/2026 02:46:38] [BATCH 9298086] Starting processing
+[01/16/2026 02:46:38] [BATCH 9298086] Clearing Assignedto lock
+[01/16/2026 02:46:38] [BATCH 9298086] Started applying ERA batch
+[01/16/2026 02:46:38] [BATCH 9298086] Found matching PaymentBatch 47344548
+[01/16/2026 02:46:38] [BATCH 9298086][CLAIM from 67995190 to 68095620] Starting processing
+[01/16/2026 02:46:38] [BATCH 9298086] Total claim IDs to process: 1500
+[01/16/2026 02:46:38] [BATCH 9298086] [SET 1] Processing batch of 500 claims
+[01/16/2026 02:46:38] [BATCH 9298086] [SET 2] Processing batch of 500 claims
+[01/16/2026 02:46:38] [BATCH 9298086] [SET 3] Processing batch of 500 claims
+[01/16/2026 02:46:38] [BATCH 9298086][CLAIM from 67995190 to 68095620] Completed processing
+[01/16/2026 02:46:38] [BATCH 9298086] Apply claim completed
+===========================================
+
+3.
+
+[COMMAND]
+==========
+ 
+pts/5:dabhinab@preprod518642:~/dabhinab_streams>
+pts/5:dabhinab@preprod518642:~/dabhinab_streams>perl $ATHENA_HOME/scripts/crontab/athenacronclient.pl --jobid collector::ONETIMEJOBS::20260119::COLPCI_5698_STUCKBATCH_3 --onlyinstance DTEST56
+Since you gave any flag besides --jobid, you are now in developer mode.
+
+Running a distributed job through worker
+pts/5:dabhinab@preprod518642:~/dabhinab_streams>Intercepting email (secolpci@athenahealth.com,larunkumar@athenahealth.com -> dabhinab@athenahealth.com)
+pts/5:dabhinab@preprod518642:~/dabhinab_streams>
+============================================================================
+
+[OUTPUT]
+========
+
+[01/16/2026 02:47:20 preprod518642.athenahealth.com ATHENA2983@DTEST56 4122338] BEGIN perl /home/dabhinab/dabhinab_streams/techops/collector/oneoffscripts/COLPCI_3904_ApplyClaim.pl DTEST56 ATHENA2983 --erabatch 9298086 --fromclaimid 68095638 --toclaimid 68194564 --allowpartialpost --chunksize 500 --timestampedprint --printlog
+[01/16/2026 02:47:17 preprod518642.athenahealth.com UNKNOWN@DTEST56 4122296] INFO - INVOKEDTIME : [01/16/2026 02:47:16] - Running a distributed job through worker for JOBID: [collector::ONETIMEJOBS::20260119::COLPCI_5698_STUCKBATCH_3] - UNIQUEJOBID: [aWntBQrIUF0APua4AAAAAg]
+[01/16/2026 02:47:17 preprod518642.athenahealth.com UNKNOWN@DTEST56 4122296] INFO - INVOKEDTIME : [01/16/2026 02:47:16] - Running a distributed job through worker for JOBID: [collector::ONETIMEJOBS::20260119::COLPCI_5698_STUCKBATCH_3] - INSTANCE: [DTEST56] - UNIQUEJOBID: [aWntBQrIUF0APua4AAAAAg]
+[01/16/2026 02:47:19 preprod518642.athenahealth.com UNKNOWN@DTEST56 4122326] BEGIN Launcher::RunDistributedJob collector::ONETIMEJOBS::20260119::COLPCI_5698_STUCKBATCH_3 DAEMONSTATUS: Disabled
+[01/16/2026 02:47:30 preprod518642.athenahealth.com ATHENA2983@DTEST56 4122326] OUTPUT [01/16/2026 02:47:29] Connecting to database context 2983
+[01/16/2026 02:47:29] [BATCH 9298086] Starting processing
+[01/16/2026 02:47:29] [BATCH 9298086] Clearing Assignedto lock
+[01/16/2026 02:47:29] [BATCH 9298086] Started applying ERA batch
+[01/16/2026 02:47:29] [BATCH 9298086] Found matching PaymentBatch 47344548
+[01/16/2026 02:47:29] [BATCH 9298086][CLAIM from 68095638 to 68194564] Starting processing
+[01/16/2026 02:47:29] [BATCH 9298086] Total claim IDs to process: 1500
+[01/16/2026 02:47:29] [BATCH 9298086] [SET 1] Processing batch of 500 claims
+[01/16/2026 02:47:29] [BATCH 9298086] [SET 2] Processing batch of 500 claims
+[01/16/2026 02:47:29] [BATCH 9298086] [SET 3] Processing batch of 500 claims
+[01/16/2026 02:47:29] [BATCH 9298086][CLAIM from 68095638 to 68194564] Completed processing
+[01/16/2026 02:47:29] [BATCH 9298086] Apply claim completed
+[01/16/2026 02:47:30 preprod518642.athenahealth.com ATHENA2983@DTEST56 4122326] END Elapsed: 9 seconds
+[01/16/2026 02:47:30 preprod518642.athenahealth.com UNKNOWN@DTEST56 4122326] END Elapsed: 11 seconds
+
+==========================================================================================================================
+
+
+4.
+
+[COMMAND]
+==========
+
+pts/5:dabhinab@preprod518642:~/dabhinab_streams>
+pts/5:dabhinab@preprod518642:~/dabhinab_streams>perl $ATHENA_HOME/scripts/crontab/athenacronclient.pl --jobid collector::ONETIMEJOBS::20260119::COLPCI_5698_STUCKBATCH_4  --onlyinstance DTEST56
+Since you gave any flag besides --jobid, you are now in developer mode.
+
+Running a distributed job through worker
+pts/5:dabhinab@preprod518642:~/dabhinab_streams>
+----------------------------------------------------------------------------------------
+
+[OUTPUT]
+========
+
+[01/16/2026 02:47:50 preprod518642.athenahealth.com UNKNOWN@DTEST56 4122449] INFO - INVOKEDTIME : [01/16/2026 02:47:49] - Running a distributed job through worker for JOBID: [collector::ONETIMEJOBS::20260119::COLPCI_5698_STUCKBATCH_4] - UNIQUEJOBID: [aWntJgrIUF0APudRAAAAAg]
+[01/16/2026 02:47:50 preprod518642.athenahealth.com UNKNOWN@DTEST56 4122449] INFO - INVOKEDTIME : [01/16/2026 02:47:49] - Running a distributed job through worker for JOBID: [collector::ONETIMEJOBS::20260119::COLPCI_5698_STUCKBATCH_4] - INSTANCE: [DTEST56] - UNIQUEJOBID: [aWntJgrIUF0APudRAAAAAg]
+[01/16/2026 02:47:52 preprod518642.athenahealth.com UNKNOWN@DTEST56 4122483] BEGIN Launcher::RunDistributedJob collector::ONETIMEJOBS::20260119::COLPCI_5698_STUCKBATCH_4 DAEMONSTATUS: Disabled
+[01/16/2026 02:47:52 preprod518642.athenahealth.com ATHENA2983@DTEST56 4122491] BEGIN perl /home/dabhinab/dabhinab_streams/techops/collector/oneoffscripts/COLPCI_3904_ApplyClaim.pl DTEST56 ATHENA2983 --erabatch 9298086 --fromclaimid 68194610 --toclaimid 72732617 --allowpartialpost --chunksize 500 --timestampedprint --printlog
+[01/16/2026 02:48:02 preprod518642.athenahealth.com ATHENA2983@DTEST56 4122483] END Elapsed: 9 seconds
+[01/16/2026 02:48:02 preprod518642.athenahealth.com ATHENA2983@DTEST56 4122483] OUTPUT [01/16/2026 02:48:01] Connecting to database context 2983
+[01/16/2026 02:48:01] [BATCH 9298086] Starting processing
+[01/16/2026 02:48:01] [BATCH 9298086] Clearing Assignedto lock
+[01/16/2026 02:48:01] [BATCH 9298086] Started applying ERA batch
+[01/16/2026 02:48:01] [BATCH 9298086] Found matching PaymentBatch 47344548
+[01/16/2026 02:48:01] [BATCH 9298086][CLAIM from 68194610 to 72732617] Starting processing
+[01/16/2026 02:48:01] [BATCH 9298086] Total claim IDs to process: 677
+[01/16/2026 02:48:01] [BATCH 9298086] [SET 1] Processing batch of 500 claims
+[01/16/2026 02:48:02] [BATCH 9298086] [SET 2] Processing batch of 177 claims
+[01/16/2026 02:48:02] [BATCH 9298086][CLAIM from 68194610 to 72732617] Completed processing
+[01/16/2026 02:48:02] [BATCH 9298086] Apply claim completed
+[01/16/2026 02:48:02 preprod518642.athenahealth.com UNKNOWN@DTEST56 4122483] END Elapsed: 10 seconds
+
+==========================================================================================================================
+
+5.
+
+[COMMAND]
+==========
+
+pts/5:dabhinab@preprod518642:~/dabhinab_streams>
+pts/5:dabhinab@preprod518642:~/dabhinab_streams>perl $ATHENA_HOME/scripts/crontab/athenacronclient.pl --jobid collector::ONETIMEJOBS::20260119::COLPCI_5698_STUCKBATCH_5 --onlyinstance DTEST47
+Since you gave any flag besides --jobid, you are now in developer mode.
+
+Running a distributed job through worker
+pts/5:dabhinab@preprod518642:~/dabhinab_streams>Intercepting email (secolpci@athenahealth.com,larunkumar@athenahealth.com -> dabhinab@athenahealth.com)
+
+pts/5:dabhinab@preprod518642:~/dabhinab_streams>
+------------------------------------------------------------------------------------------------------------------------------
+
+[OUTPUT]
+========
+
+[01/16/2026 02:48:31 preprod518642.athenahealth.com UNKNOWN@DTEST47 4122637] INFO - INVOKEDTIME : [01/16/2026 02:48:30] - Running a distributed job through worker for JOBID: [collector::ONETIMEJOBS::20260119::COLPCI_5698_STUCKBATCH_5] - UNIQUEJOBID: [aWntTwrIUF0APugNAAAAAg]
+[01/16/2026 02:48:31 preprod518642.athenahealth.com UNKNOWN@DTEST47 4122637] INFO - INVOKEDTIME : [01/16/2026 02:48:30] - Running a distributed job through worker for JOBID: [collector::ONETIMEJOBS::20260119::COLPCI_5698_STUCKBATCH_5] - INSTANCE: [DTEST47] - UNIQUEJOBID: [aWntTwrIUF0APugNAAAAAg]
+[01/16/2026 02:48:34 preprod518642.athenahealth.com ATHENA11679@DTEST47 4122685] BEGIN perl /home/dabhinab/dabhinab_streams/techops/collector/oneoffscripts/COLPCI_3904_ApplyClaim.pl DTEST47 ATHENA11679 --erabatch 1472293 --fromclaimid 3638733 --toclaimid 4646794 --allowpartialpost --chunksize 500 --timestampedprint --printlog
+[01/16/2026 02:48:33 preprod518642.athenahealth.com UNKNOWN@DTEST47 4122677] BEGIN Launcher::RunDistributedJob collector::ONETIMEJOBS::20260119::COLPCI_5698_STUCKBATCH_5 DAEMONSTATUS: Disabled
+[01/16/2026 02:48:49 preprod518642.athenahealth.com ATHENA11679@DTEST47 4122677] OUTPUT [01/16/2026 02:48:43] Connecting to database context 11679
+[01/16/2026 02:48:43] [BATCH 1472293] Starting processing
+[01/16/2026 02:48:43] [BATCH 1472293] Clearing Assignedto lock
+[01/16/2026 02:48:43] [BATCH 1472293] Started applying ERA batch
+[01/16/2026 02:48:43] [BATCH 1472293] Found matching PaymentBatch 7750560
+[01/16/2026 02:48:43] [BATCH 1472293][CLAIM from 3638733 to 4646794] Starting processing
+[01/16/2026 02:48:48] [BATCH 1472293] Total claim IDs to process: 1500
+[01/16/2026 02:48:48] [BATCH 1472293] [SET 1] Processing batch of 500 claims
+[01/16/2026 02:48:48] [BATCH 1472293] [SET 2] Processing batch of 500 claims
+[01/16/2026 02:48:48] [BATCH 1472293] [SET 3] Processing batch of 500 claims
+[01/16/2026 02:48:48] [BATCH 1472293][CLAIM from 3638733 to 4646794] Completed processing
+[01/16/2026 02:48:48] [BATCH 1472293] Apply claim completed
+[01/16/2026 02:48:49 preprod518642.athenahealth.com ATHENA11679@DTEST47 4122677] END Elapsed: 14 seconds
+[01/16/2026 02:48:49 preprod518642.athenahealth.com UNKNOWN@DTEST47 4122677] END Elapsed: 16 seconds
+
+================================================================================================================
+
+6.
+
+[COMMAND]
+==========
+
+pts/5:dabhinab@preprod518642:~/dabhinab_streams>perl $ATHENA_HOME/scripts/crontab/athenacronclient.pl --jobid collector::ONETIMEJOBS::20260119::COLPCI_5698_STUCKBATCH_6 --onlyinstance DTEST47
+Since you gave any flag besides --jobid, you are now in developer mode.
+
+Running a distributed job through worker
+pts/5:dabhinab@preprod518642:~/dabhinab_streams>
+pts/5:dabhinab@preprod518642:~/dabhinab_streams>Intercepting email (secolpci@athenahealth.com,larunkumar@athenahealth.com -> dabhinab@athenahealth.com)
+
+pts/5:dabhinab@preprod518642:~/dabhinab_streams>
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+[OUTPUT]
+========
+
+[01/14/2026 04:36:29 preprod51002.athenahealth.com UNKNOWN@DTEST47 2703666] INFO - INVOKEDTIME : [01/14/2026 04:36:28] - Running a distributed job through worker for JOBID: [collector::ONETIMEJOBS::20260119::COLPCI_5698_STUCKBATCH_6] - INSTANCE: [DTEST47] - UNIQUEJOBID: [aWdjnQrIAgYAKUEyAAAAAg]
+[01/14/2026 04:36:29 preprod51002.athenahealth.com UNKNOWN@DTEST47 2703666] INFO - INVOKEDTIME : [01/14/2026 04:36:28] - Running a distributed job through worker for JOBID: [collector::ONETIMEJOBS::20260119::COLPCI_5698_STUCKBATCH_6] - UNIQUEJOBID: [aWdjnQrIAgYAKUEyAAAAAg]
+[01/14/2026 04:36:33 preprod51002.athenahealth.com UNKNOWN@DTEST47 2703876] BEGIN Launcher::RunDistributedJob collector::ONETIMEJOBS::20260119::COLPCI_5698_STUCKBATCH_6 DAEMONSTATUS: Disabled
+[01/14/2026 04:36:34 preprod51002.athenahealth.com ATHENA11679@DTEST47 2703940] BEGIN perl /home/larunkumar/larunkumar_streams/techops/collector/oneoffscripts/COLPCI_3904_ApplyClaim.pl DTEST47 ATHENA11679 --erabatch 1472293 --fromclaimid 4646802 --toclaimid 4700567 --allowpartialpost --chunksize 500 --timestampedprint --printlog
+[01/14/2026 04:36:47 preprod51002.athenahealth.com ATHENA11679@DTEST47 2703876] END Elapsed: 12 seconds
+[01/14/2026 04:36:47 preprod51002.athenahealth.com ATHENA11679@DTEST47 2703876] OUTPUT [01/14/2026 04:36:46] Connecting to database context 11679
+[01/14/2026 04:36:46] [BATCH 1472293] Starting processing
+[01/14/2026 04:36:46] [BATCH 1472293] Clearing Assignedto lock
+[01/14/2026 04:36:46] [BATCH 1472293] Started applying ERA batch
+[01/14/2026 04:36:47] [BATCH 1472293] Found matching PaymentBatch 7750560
+[01/14/2026 04:36:47] [BATCH 1472293][CLAIM from 4646802 to 4700567] Starting processing
+[01/14/2026 04:36:47] [BATCH 1472293] Total claim IDs to process: 1500
+[01/14/2026 04:36:47] [BATCH 1472293] [SET 1] Processing batch of 500 claims
+[01/14/2026 04:36:47] [BATCH 1472293] [SET 2] Processing batch of 500 claims
+[01/14/2026 04:36:47] [BATCH 1472293] [SET 3] Processing batch of 500 claims
+[01/14/2026 04:36:47] [BATCH 1472293][CLAIM from 4646802 to 4700567] Completed processing
+[01/14/2026 04:36:47] [BATCH 1472293] Apply claim completed
+================================================================================================================
+
+7.
+
+[COMMAND]
+==========
+
+pts/5:dabhinab@preprod518642:~/dabhinab_streams>
+pts/5:dabhinab@preprod518642:~/dabhinab_streams> perl $ATHENA_HOME/scripts/crontab/athenacronclient.pl --jobid collector::ONETIMEJOBS::20260119::COLPCI_5698_STUCKBATCH_7 --onlyinstance DTEST47
+Since you gave any flag besides --jobid, you are now in developer mode.
+
+Running a distributed job through worker
+pts/5:dabhinab@preprod518642:~/dabhinab_streams>Intercepting email (secolpci@athenahealth.com,larunkumar@athenahealth.com -> dabhinab@athenahealth.com)
+
+pts/5:dabhinab@preprod518642:~/dabhinab_streams>
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+[OUTPUT]
+========
+
+[01/14/2026 04:38:15 preprod51002.athenahealth.com UNKNOWN@DTEST47 2706824] INFO - INVOKEDTIME : [01/14/2026 04:38:14] - Running a distributed job through worker for JOBID: [collector::ONETIMEJOBS::20260119::COLPCI_5698_STUCKBATCH_7] - UNIQUEJOBID: [aWdkBwrIAgYAKU2IAAAAAg]
+[01/14/2026 04:38:15 preprod51002.athenahealth.com UNKNOWN@DTEST47 2706824] INFO - INVOKEDTIME : [01/14/2026 04:38:14] - Running a distributed job through worker for JOBID: [collector::ONETIMEJOBS::20260119::COLPCI_5698_STUCKBATCH_7] - INSTANCE: [DTEST47] - UNIQUEJOBID: [aWdkBwrIAgYAKU2IAAAAAg]
+[01/14/2026 04:38:18 preprod51002.athenahealth.com UNKNOWN@DTEST47 2707088] BEGIN Launcher::RunDistributedJob collector::ONETIMEJOBS::20260119::COLPCI_5698_STUCKBATCH_7 DAEMONSTATUS: Disabled
+[01/14/2026 04:38:20 preprod51002.athenahealth.com ATHENA11679@DTEST47 2707179] BEGIN perl /home/larunkumar/larunkumar_streams/techops/collector/oneoffscripts/COLPCI_3904_ApplyClaim.pl DTEST47 ATHENA11679 --erabatch 1472293 --fromclaimid 4700573 --toclaimid 4754201 --allowpartialpost --chunksize 500 --timestampedprint --printlog
+[01/14/2026 04:38:32 preprod51002.athenahealth.com ATHENA11679@DTEST47 2707088] END Elapsed: 12 seconds
+[01/14/2026 04:38:32 preprod51002.athenahealth.com ATHENA11679@DTEST47 2707088] OUTPUT [01/14/2026 04:38:32] Connecting to database context 11679
+[01/14/2026 04:38:32] [BATCH 1472293] Starting processing
+[01/14/2026 04:38:32] [BATCH 1472293] Clearing Assignedto lock
+[01/14/2026 04:38:32] [BATCH 1472293] Started applying ERA batch
+[01/14/2026 04:38:32] [BATCH 1472293] Found matching PaymentBatch 7750560
+[01/14/2026 04:38:32] [BATCH 1472293][CLAIM from 4700573 to 4754201] Starting processing
+[01/14/2026 04:38:32] [BATCH 1472293] Total claim IDs to process: 1500
+[01/14/2026 04:38:32] [BATCH 1472293] [SET 1] Processing batch of 500 claims
+[01/14/2026 04:38:32] [BATCH 1472293] [SET 2] Processing batch of 500 claims
+[01/14/2026 04:38:32] [BATCH 1472293] [SET 3] Processing batch of 500 claims
+[01/14/2026 04:38:32] [BATCH 1472293][CLAIM from 4700573 to 4754201] Completed processing
+[01/14/2026 04:38:32] [BATCH 1472293] Apply claim completed
+[01/14/2026 04:38:32 preprod51002.athenahealth.com UNKNOWN@DTEST47 2707088] END Elapsed: 15 seconds
+====================================================================
+
+8.
+
+[COMMAND]
+==========
+pts/5:dabhinab@preprod518642:~/dabhinab_streams> perl $ATHENA_HOME/scripts/crontab/athenacronclient.pl --jobid collector::ONETIMEJOBS::20260119::COLPCI_5698_STUCKBATCH_8 --onlyinstance DTEST47
+Since you gave any flag besides --jobid, you are now in developer mode.
+
+Running a distributed job through worker
+pts/5:dabhinab@preprod518642:~/dabhinab_streams>
+pts/5:dabhinab@preprod518642:~/dabhinab_streams>Intercepting email (secolpci@athenahealth.com,larunkumar@athenahealth.com -> dabhinab@athenahealth.com)
+
+pts/5:dabhinab@preprod518642:~/dabhinab_streams>
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+[OUTPUT]
+========
+
+[01/14/2026 04:39:29 preprod51002.athenahealth.com UNKNOWN@DTEST47 2708507] INFO - INVOKEDTIME : [01/14/2026 04:39:28] - Running a distributed job through worker for JOBID: [collector::ONETIMEJOBS::20260119::COLPCI_5698_STUCKBATCH_8] - UNIQUEJOBID: [aWdkUQrIAgYAKVQbAAAAAg]
+[01/14/2026 04:39:29 preprod51002.athenahealth.com UNKNOWN@DTEST47 2708507] INFO - INVOKEDTIME : [01/14/2026 04:39:28] - Running a distributed job through worker for JOBID: [collector::ONETIMEJOBS::20260119::COLPCI_5698_STUCKBATCH_8] - INSTANCE: [DTEST47] - UNIQUEJOBID: [aWdkUQrIAgYAKVQbAAAAAg]
+[01/14/2026 04:39:33 preprod51002.athenahealth.com UNKNOWN@DTEST47 2708678] BEGIN Launcher::RunDistributedJob collector::ONETIMEJOBS::20260119::COLPCI_5698_STUCKBATCH_8 DAEMONSTATUS: Disabled
+[01/14/2026 04:39:34 preprod51002.athenahealth.com ATHENA11679@DTEST47 2708744] BEGIN perl /home/larunkumar/larunkumar_streams/techops/collector/oneoffscripts/COLPCI_3904_ApplyClaim.pl DTEST47 ATHENA11679 --erabatch 1472293 --fromclaimid 4754227 --toclaimid 4809585 --allowpartialpost --chunksize 500 --timestampedprint --printlog
+[01/14/2026 04:39:46 preprod51002.athenahealth.com ATHENA11679@DTEST47 2708678] OUTPUT [01/14/2026 04:39:46] Connecting to database context 11679
+[01/14/2026 04:39:46] [BATCH 1472293] Starting processing
+[01/14/2026 04:39:46] [BATCH 1472293] Clearing Assignedto lock
+[01/14/2026 04:39:46] [BATCH 1472293] Started applying ERA batch
+[01/14/2026 04:39:46] [BATCH 1472293] Found matching PaymentBatch 7750560
+[01/14/2026 04:39:46] [BATCH 1472293][CLAIM from 4754227 to 4809585] Starting processing
+[01/14/2026 04:39:46] [BATCH 1472293] Total claim IDs to process: 1500
+[01/14/2026 04:39:46] [BATCH 1472293] [SET 1] Processing batch of 500 claims
+[01/14/2026 04:39:46] [BATCH 1472293] [SET 2] Processing batch of 500 claims
+[01/14/2026 04:39:46] [BATCH 1472293] [SET 3] Processing batch of 500 claims
+[01/14/2026 04:39:46] [BATCH 1472293][CLAIM from 4754227 to 4809585] Completed processing
+[01/14/2026 04:39:46] [BATCH 1472293] Apply claim completed
+[01/14/2026 04:39:47 preprod51002.athenahealth.com UNKNOWN@DTEST47 2708678] END Elapsed: 14 seconds
+[01/14/2026 04:39:46 preprod51002.athenahealth.com ATHENA11679@DTEST47 2708678] END Elapsed: 12 seconds
+====================================================================
+
+9.
+
+[COMMAND]
+==========
+pts/5:dabhinab@preprod518642:~/dabhinab_streams>
+pts/5:dabhinab@preprod518642:~/dabhinab_streams> perl $ATHENA_HOME/scripts/crontab/athenacronclient.pl --jobid collector::ONETIMEJOBS::20260119::COLPCI_5698_STUCKBATCH_9 --onlyinstance DTEST47
+Since you gave any flag besides --jobid, you are now in developer mode.
+
+Running a distributed job through worker
+pts/5:dabhinab@preprod518642:~/dabhinab_streams>
+pts/5:dabhinab@preprod518642:~/dabhinab_streams>Intercepting email (secolpci@athenahealth.com,larunkumar@athenahealth.com -> dabhinab@athenahealth.com)
+
+pts/5:dabhinab@preprod518642:~/dabhinab_streams>
+--------------------------------------------------------------------------------------------------------
+
+[OUTPUT]
+========
+
+[01/16/2026 03:09:38 preprod518642.athenahealth.com UNKNOWN@DTEST47 4132547] BEGIN Launcher::RunDistributedJob collector::ONETIMEJOBS::20260119::COLPCI_5698_STUCKBATCH_9 DAEMONSTATUS: Disabled
+[01/16/2026 03:09:36 preprod518642.athenahealth.com UNKNOWN@DTEST47 4132517] INFO - INVOKEDTIME : [01/16/2026 03:09:35] - Running a distributed job through worker for JOBID: [collector::ONETIMEJOBS::20260119::COLPCI_5698_STUCKBATCH_9] - UNIQUEJOBID: [aWnyQArIUF0APw6lAAAAAg]
+[01/16/2026 03:09:39 preprod518642.athenahealth.com ATHENA11679@DTEST47 4132565] BEGIN perl /home/dabhinab/dabhinab_streams/techops/collector/oneoffscripts/COLPCI_3904_ApplyClaim.pl DTEST47 ATHENA11679 --erabatch 1472293 --fromclaimid 4809590 --toclaimid 4861087 --allowpartialpost --chunksize 500 --timestampedprint --printlog
+[01/16/2026 03:09:36 preprod518642.athenahealth.com UNKNOWN@DTEST47 4132517] INFO - INVOKEDTIME : [01/16/2026 03:09:35] - Running a distributed job through worker for JOBID: [collector::ONETIMEJOBS::20260119::COLPCI_5698_STUCKBATCH_9] - INSTANCE: [DTEST47] - UNIQUEJOBID: [aWnyQArIUF0APw6lAAAAAg]
+[01/16/2026 03:09:48 preprod518642.athenahealth.com UNKNOWN@DTEST47 4132547] END Elapsed: 10 seconds
+[01/16/2026 03:09:48 preprod518642.athenahealth.com ATHENA11679@DTEST47 4132547] END Elapsed: 8 seconds
+[01/16/2026 03:09:48 preprod518642.athenahealth.com ATHENA11679@DTEST47 4132547] OUTPUT [01/16/2026 03:09:47] Connecting to database context 11679
+[01/16/2026 03:09:47] [BATCH 1472293] Starting processing
+[01/16/2026 03:09:47] [BATCH 1472293] Clearing Assignedto lock
+[01/16/2026 03:09:47] [BATCH 1472293] Started applying ERA batch
+[01/16/2026 03:09:47] [BATCH 1472293] Found matching PaymentBatch 7750560
+[01/16/2026 03:09:47] [BATCH 1472293][CLAIM from 4809590 to 4861087] Starting processing
+[01/16/2026 03:09:47] [BATCH 1472293] Total claim IDs to process: 1500
+[01/16/2026 03:09:47] [BATCH 1472293] [SET 1] Processing batch of 500 claims
+[01/16/2026 03:09:47] [BATCH 1472293] [SET 2] Processing batch of 500 claims
+[01/16/2026 03:09:47] [BATCH 1472293] [SET 3] Processing batch of 500 claims
+[01/16/2026 03:09:47] [BATCH 1472293][CLAIM from 4809590 to 4861087] Completed processing
+[01/16/2026 03:09:47] [BATCH 1472293] Apply claim completed
+========================================================================================================================
+
+10.
+
+[COMMAND]
+==========
+pts/5:dabhinab@preprod518642:~/dabhinab_streams>
+pts/5:dabhinab@preprod518642:~/dabhinab_streams>perl $ATHENA_HOME/scripts/crontab/athenacronclient.pl --jobid collector::ONETIMEJOBS::20260120::COLPCI_5698_STUCKBATCH_10 --onlyinstance DTEST47
+Since you gave any flag besides --jobid, you are now in developer mode.
+
+Running a distributed job through worker
+pts/5:dabhinab@preprod518642:~/dabhinab_streams>
+pts/5:dabhinab@preprod518642:~/dabhinab_streams>Intercepting email (secolpci@athenahealth.com,larunkumar@athenahealth.com -> dabhinab@athenahealth.com)
+
+pts/5:dabhinab@preprod518642:~/dabhinab_streams>
+-----------------------------------------------------------------------------------------------------------------------------------------
+
+[OUTPUT]
+========
+
+[01/14/2026 04:45:43 preprod51002.athenahealth.com UNKNOWN@DTEST47 2748375] INFO - INVOKEDTIME : [01/14/2026 04:45:42] - Running a distributed job through worker for JOBID: [collector::ONETIMEJOBS::20260120::COLPCI_5698_STUCKBATCH_10] - INSTANCE: [DTEST47] - UNIQUEJOBID: [aWdlxwrIAgYAKe/XAAAAAg]
+[01/14/2026 04:45:43 preprod51002.athenahealth.com UNKNOWN@DTEST47 2748375] INFO - INVOKEDTIME : [01/14/2026 04:45:42] - Running a distributed job through worker for JOBID: [collector::ONETIMEJOBS::20260120::COLPCI_5698_STUCKBATCH_10] - UNIQUEJOBID: [aWdlxwrIAgYAKe/XAAAAAg]
+[01/14/2026 04:45:46 preprod51002.athenahealth.com UNKNOWN@DTEST47 2748502] BEGIN Launcher::RunDistributedJob collector::ONETIMEJOBS::20260120::COLPCI_5698_STUCKBATCH_10 DAEMONSTATUS: Disabled
+[01/14/2026 04:45:48 preprod51002.athenahealth.com ATHENA11679@DTEST47 2748531] BEGIN perl /home/larunkumar/larunkumar_streams/techops/collector/oneoffscripts/COLPCI_3904_ApplyClaim.pl DTEST47 ATHENA11679 --erabatch 1472293 --fromclaimid 4861091 --toclaimid 4911402 --allowpartialpost --chunksize 500 --timestampedprint --printlog
+[01/14/2026 04:46:00 preprod51002.athenahealth.com UNKNOWN@DTEST47 2748502] END Elapsed: 15 seconds
+[01/14/2026 04:46:00 preprod51002.athenahealth.com ATHENA11679@DTEST47 2748502] OUTPUT [01/14/2026 04:46:00] Connecting to database context 11679
+[01/14/2026 04:46:00] [BATCH 1472293] Starting processing
+[01/14/2026 04:46:00] [BATCH 1472293] Clearing Assignedto lock
+[01/14/2026 04:46:00] [BATCH 1472293] Started applying ERA batch
+[01/14/2026 04:46:00] [BATCH 1472293] Found matching PaymentBatch 7750560
+[01/14/2026 04:46:00] [BATCH 1472293][CLAIM from 4861091 to 4911402] Starting processing
+[01/14/2026 04:46:00] [BATCH 1472293] Total claim IDs to process: 1500
+[01/14/2026 04:46:00] [BATCH 1472293] [SET 1] Processing batch of 500 claims
+[01/14/2026 04:46:00] [BATCH 1472293] [SET 2] Processing batch of 500 claims
+[01/14/2026 04:46:00] [BATCH 1472293] [SET 3] Processing batch of 500 claims
+[01/14/2026 04:46:00] [BATCH 1472293][CLAIM from 4861091 to 4911402] Completed processing
+[01/14/2026 04:46:00] [BATCH 1472293] Apply claim completed
+
+===========================================================================================================================
+11.
+
+[COMMAND]
+==========
+
+pts/5:dabhinab@preprod518642:~/dabhinab_streams>perl $ATHENA_HOME/scripts/crontab/athenacronclient.pl --jobid collector::ONETIMEJOBS::20260120::COLPCI_5698_STUCKBATCH_11  --onlyinstance DTEST47
+Since you gave any flag besides --jobid, you are now in developer mode.
+
+Running a distributed job through worker
+pts/5:dabhinab@preprod518642:~/dabhinab_streams>Intercepting email (secolpci@athenahealth.com,larunkumar@athenahealth.com -> dabhinab@athenahealth.com)
+
+pts/5:dabhinab@preprod518642:~/dabhinab_streams>
+-----------------------------------------------------------------------------------------------------------------------------------------
+
+[OUTPUT]
+========
+
+[01/16/2026 03:14:13 preprod518642.athenahealth.com UNKNOWN@DTEST47 4135419] INFO - INVOKEDTIME : [01/16/2026 03:14:12] - Running a distributed job through worker for JOBID: [collector::ONETIMEJOBS::20260120::COLPCI_5698_STUCKBATCH_11] - UNIQUEJOBID: [aWnzVQrIUF0APxn7AAAAAg]
+[01/16/2026 03:14:16 preprod518642.athenahealth.com ATHENA11679@DTEST47 4135459] BEGIN perl /home/dabhinab/dabhinab_streams/techops/collector/oneoffscripts/COLPCI_3904_ApplyClaim.pl DTEST47 ATHENA11679 --erabatch 1472293 --fromclaimid 4911413 --toclaimid 4968469 --allowpartialpost --chunksize 500 --timestampedprint --printlog
+[01/16/2026 03:14:15 preprod518642.athenahealth.com UNKNOWN@DTEST47 4135458] BEGIN Launcher::RunDistributedJob collector::ONETIMEJOBS::20260120::COLPCI_5698_STUCKBATCH_11 DAEMONSTATUS: Disabled
+[01/16/2026 03:14:13 preprod518642.athenahealth.com UNKNOWN@DTEST47 4135419] INFO - INVOKEDTIME : [01/16/2026 03:14:12] - Running a distributed job through worker for JOBID: [collector::ONETIMEJOBS::20260120::COLPCI_5698_STUCKBATCH_11] - INSTANCE: [DTEST47] - UNIQUEJOBID: [aWnzVQrIUF0APxn7AAAAAg]
+[01/16/2026 03:14:26 preprod518642.athenahealth.com UNKNOWN@DTEST47 4135458] END Elapsed: 11 seconds
+[01/16/2026 03:14:26 preprod518642.athenahealth.com ATHENA11679@DTEST47 4135458] END Elapsed: 9 seconds
+[01/16/2026 03:14:26 preprod518642.athenahealth.com ATHENA11679@DTEST47 4135458] OUTPUT [01/16/2026 03:14:25] Connecting to database context 11679
+[01/16/2026 03:14:25] [BATCH 1472293] Starting processing
+[01/16/2026 03:14:25] [BATCH 1472293] Clearing Assignedto lock
+[01/16/2026 03:14:25] [BATCH 1472293] Started applying ERA batch
+[01/16/2026 03:14:25] [BATCH 1472293] Found matching PaymentBatch 7750560
+[01/16/2026 03:14:25] [BATCH 1472293][CLAIM from 4911413 to 4968469] Starting processing
+[01/16/2026 03:14:26] [BATCH 1472293] Total claim IDs to process: 1500
+[01/16/2026 03:14:26] [BATCH 1472293] [SET 1] Processing batch of 500 claims
+[01/16/2026 03:14:26] [BATCH 1472293] [SET 2] Processing batch of 500 claims
+[01/16/2026 03:14:26] [BATCH 1472293] [SET 3] Processing batch of 500 claims
+[01/16/2026 03:14:26] [BATCH 1472293][CLAIM from 4911413 to 4968469] Completed processing
+[01/16/2026 03:14:26] [BATCH 1472293] Apply claim completed
+
+
+
+12.
+
+[COMMAND]
+==========
+pts/5:dabhinab@preprod518642:~/dabhinab_streams>perl $ATHENA_HOME/scripts/crontab/athenacronclient.pl --jobid collector::ONETIMEJOBS::20260120::COLPCI_5698_STUCKBATCH_12 --onlyinstance DTEST47
+Since you gave any flag besides --jobid, you are now in developer mode.
+
+Running a distributed job through worker
+pts/5:dabhinab@preprod518642:~/dabhinab_streams>Intercepting email (secolpci@athenahealth.com,larunkumar@athenahealth.com -> dabhinab@athenahealth.com)
+
+pts/5:dabhinab@preprod518642:~/dabhinab_streams>
+
+-----------------------------------------------------------------------------------------------------------------------------------------
+
+[OUTPUT]
+========
+
+[01/16/2026 03:17:31 preprod518642.athenahealth.com UNKNOWN@DTEST47 4137115] INFO - INVOKEDTIME : [01/16/2026 03:17:30] - Running a distributed job through worker for JOBID: [collector::ONETIMEJOBS::20260120::COLPCI_5698_STUCKBATCH_12] - UNIQUEJOBID: [aWn0GwrIUF0APyCbAAAAAg]
+[01/16/2026 03:17:31 preprod518642.athenahealth.com UNKNOWN@DTEST47 4137115] INFO - INVOKEDTIME : [01/16/2026 03:17:30] - Running a distributed job through worker for JOBID: [collector::ONETIMEJOBS::20260120::COLPCI_5698_STUCKBATCH_12] - INSTANCE: [DTEST47] - UNIQUEJOBID: [aWn0GwrIUF0APyCbAAAAAg]
+[01/16/2026 03:17:33 preprod518642.athenahealth.com UNKNOWN@DTEST47 4137148] BEGIN Launcher::RunDistributedJob collector::ONETIMEJOBS::20260120::COLPCI_5698_STUCKBATCH_12 DAEMONSTATUS: Disabled
+[01/16/2026 03:17:33 preprod518642.athenahealth.com ATHENA11679@DTEST47 4137155] BEGIN perl /home/dabhinab/dabhinab_streams/techops/collector/oneoffscripts/COLPCI_3904_ApplyClaim.pl DTEST47 ATHENA11679 --erabatch 1472293 --fromclaimid 4968526 --toclaimid 5022861 --allowpartialpost --chunksize 500 --timestampedprint --printlog
+[01/16/2026 03:17:44 preprod518642.athenahealth.com ATHENA11679@DTEST47 4137148] OUTPUT [01/16/2026 03:17:43] Connecting to database context 11679
+[01/16/2026 03:17:43] [BATCH 1472293] Starting processing
+[01/16/2026 03:17:43] [BATCH 1472293] Clearing Assignedto lock
+[01/16/2026 03:17:43] [BATCH 1472293] Started applying ERA batch
+[01/16/2026 03:17:43] [BATCH 1472293] Found matching PaymentBatch 7750560
+[01/16/2026 03:17:43] [BATCH 1472293][CLAIM from 4968526 to 5022861] Starting processing
+[01/16/2026 03:17:43] [BATCH 1472293] Total claim IDs to process: 1500
+[01/16/2026 03:17:43] [BATCH 1472293] [SET 1] Processing batch of 500 claims
+[01/16/2026 03:17:43] [BATCH 1472293] [SET 2] Processing batch of 500 claims
+[01/16/2026 03:17:43] [BATCH 1472293] [SET 3] Processing batch of 500 claims
+[01/16/2026 03:17:43] [BATCH 1472293][CLAIM from 4968526 to 5022861] Completed processing
+[01/16/2026 03:17:43] [BATCH 1472293] Apply claim completed
+[01/16/2026 03:17:45 preprod518642.athenahealth.com UNKNOWN@DTEST47 4137148] END Elapsed: 12 seconds
+[01/16/2026 03:17:44 preprod518642.athenahealth.com ATHENA11679@DTEST47 4137148] END Elapsed: 9 seconds
+
+
+==============================================================================================================================================================================================
+
+13.
+
+[COMMAND]
+==========
+pts/5:dabhinab@preprod518642:~/dabhinab_streams>
+pts/5:dabhinab@preprod518642:~/dabhinab_streams>perl $ATHENA_HOME/scripts/crontab/athenacronclient.pl --jobid collector::ONETIMEJOBS::20260120::COLPCI_5698_STUCKBATCH_13 --onlyinstance DTEST47
+Since you gave any flag besides --jobid, you are now in developer mode.
+
+Running a distributed job through worker
+pts/5:dabhinab@preprod518642:~/dabhinab_streams>Intercepting email (secolpci@athenahealth.com,larunkumar@athenahealth.com -> dabhinab@athenahealth.com)
+
+pts/5:dabhinab@preprod518642:~/dabhinab_streams>
+pts/5:dabhinab@preprod518642:~/dabhinab_streams>
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+[OUTPUT]
+========
+[01/16/2026 03:23:15 preprod518642.athenahealth.com UNKNOWN@DTEST47 4139666] INFO - INVOKEDTIME : [01/16/2026 03:23:14] - Running a distributed job through worker for JOBID: [collector::ONETIMEJOBS::20260120::COLPCI_5698_STUCKBATCH_13] - INSTANCE: [DTEST47] - UNIQUEJOBID: [aWn1cwrIUF0APyqSAAAAAg]
+[01/16/2026 03:23:15 preprod518642.athenahealth.com UNKNOWN@DTEST47 4139666] INFO - INVOKEDTIME : [01/16/2026 03:23:14] - Running a distributed job through worker for JOBID: [collector::ONETIMEJOBS::20260120::COLPCI_5698_STUCKBATCH_13] - UNIQUEJOBID: [aWn1cwrIUF0APyqSAAAAAg]
+[01/16/2026 03:23:17 preprod518642.athenahealth.com UNKNOWN@DTEST47 4139697] BEGIN Launcher::RunDistributedJob collector::ONETIMEJOBS::20260120::COLPCI_5698_STUCKBATCH_13 DAEMONSTATUS: Disabled
+[01/16/2026 03:23:18 preprod518642.athenahealth.com ATHENA11679@DTEST47 4139698] BEGIN perl /home/dabhinab/dabhinab_streams/techops/collector/oneoffscripts/COLPCI_3904_ApplyClaim.pl DTEST47 ATHENA11679 --erabatch 1472293 --fromclaimid 5022862 --toclaimid 5084796 --allowpartialpost --chunksize 500 --timestampedprint --printlog
+[01/16/2026 03:23:29 preprod518642.athenahealth.com ATHENA11679@DTEST47 4139697] OUTPUT [01/16/2026 03:23:28] Connecting to database context 11679
+[01/16/2026 03:23:28] [BATCH 1472293] Starting processing
+[01/16/2026 03:23:28] [BATCH 1472293] Clearing Assignedto lock
+[01/16/2026 03:23:28] [BATCH 1472293] Started applying ERA batch
+[01/16/2026 03:23:28] [BATCH 1472293] Found matching PaymentBatch 7750560
+[01/16/2026 03:23:28] [BATCH 1472293][CLAIM from 5022862 to 5084796] Starting processing
+[01/16/2026 03:23:28] [BATCH 1472293] Total claim IDs to process: 1500
+[01/16/2026 03:23:28] [BATCH 1472293] [SET 1] Processing batch of 500 claims
+[01/16/2026 03:23:28] [BATCH 1472293] [SET 2] Processing batch of 500 claims
+[01/16/2026 03:23:28] [BATCH 1472293] [SET 3] Processing batch of 500 claims
+[01/16/2026 03:23:28] [BATCH 1472293][CLAIM from 5022862 to 5084796] Completed processing
+[01/16/2026 03:23:28] [BATCH 1472293] Apply claim completed
+[01/16/2026 03:23:29 preprod518642.athenahealth.com ATHENA11679@DTEST47 4139697] END Elapsed: 9 seconds
+[01/16/2026 03:23:29 preprod518642.athenahealth.com UNKNOWN@DTEST47 4139697] END Elapsed: 12 seconds
+==================================================================================================================================================================================================================
+
+14.
+
+[COMMAND]
+==========
+pts/5:dabhinab@preprod518642:~/dabhinab_streams>
+pts/5:dabhinab@preprod518642:~/dabhinab_streams>perl $ATHENA_HOME/scripts/crontab/athenacronclient.pl --jobid collector::ONETIMEJOBS::20260120::COLPCI_5698_STUCKBATCH_14 --onlyinstance DTEST47
+Since you gave any flag besides --jobid, you are now in developer mode.
+
+Running a distributed job through worker
+pts/5:dabhinab@preprod518642:~/dabhinab_streams>Intercepting email (secolpci@athenahealth.com,larunkumar@athenahealth.com -> dabhinab@athenahealth.com)
+
+pts/5:dabhinab@preprod518642:~/dabhinab_streams>
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+[OUTPUT]
+========
+[01/16/2026 03:26:33 preprod518642.athenahealth.com UNKNOWN@DTEST47 4141489] INFO - INVOKEDTIME : [01/16/2026 03:26:32] - Running a distributed job through worker for JOBID: [collector::ONETIMEJOBS::20260120::COLPCI_5698_STUCKBATCH_14] - UNIQUEJOBID: [aWn2OQrIUF0APzGxAAAAAg]
+[01/16/2026 03:26:35 preprod518642.athenahealth.com UNKNOWN@DTEST47 4141529] BEGIN Launcher::RunDistributedJob collector::ONETIMEJOBS::20260120::COLPCI_5698_STUCKBATCH_14 DAEMONSTATUS: Disabled
+[01/16/2026 03:26:33 preprod518642.athenahealth.com UNKNOWN@DTEST47 4141489] INFO - INVOKEDTIME : [01/16/2026 03:26:32] - Running a distributed job through worker for JOBID: [collector::ONETIMEJOBS::20260120::COLPCI_5698_STUCKBATCH_14] - INSTANCE: [DTEST47] - UNIQUEJOBID: [aWn2OQrIUF0APzGxAAAAAg]
+[01/16/2026 03:26:35 preprod518642.athenahealth.com ATHENA11679@DTEST47 4141536] BEGIN perl /home/dabhinab/dabhinab_streams/techops/collector/oneoffscripts/COLPCI_3904_ApplyClaim.pl DTEST47 ATHENA11679 --erabatch 1472293 --fromclaimid 5084800 --toclaimid 5143166 --allowpartialpost --chunksize 500 --timestampedprint --printlog
+[01/16/2026 03:26:46 preprod518642.athenahealth.com UNKNOWN@DTEST47 4141529] END Elapsed: 11 seconds
+[01/16/2026 03:26:45 preprod518642.athenahealth.com ATHENA11679@DTEST47 4141529] END Elapsed: 9 seconds
+[01/16/2026 03:26:45 preprod518642.athenahealth.com ATHENA11679@DTEST47 4141529] OUTPUT [01/16/2026 03:26:45] Connecting to database context 11679
+[01/16/2026 03:26:45] [BATCH 1472293] Starting processing
+[01/16/2026 03:26:45] [BATCH 1472293] Clearing Assignedto lock
+[01/16/2026 03:26:45] [BATCH 1472293] Started applying ERA batch
+[01/16/2026 03:26:45] [BATCH 1472293] Found matching PaymentBatch 7750560
+[01/16/2026 03:26:45] [BATCH 1472293][CLAIM from 5084800 to 5143166] Starting processing
+[01/16/2026 03:26:45] [BATCH 1472293] Total claim IDs to process: 1500
+[01/16/2026 03:26:45] [BATCH 1472293] [SET 1] Processing batch of 500 claims
+[01/16/2026 03:26:45] [BATCH 1472293] [SET 2] Processing batch of 500 claims
+[01/16/2026 03:26:45] [BATCH 1472293] [SET 3] Processing batch of 500 claims
+[01/16/2026 03:26:45] [BATCH 1472293][CLAIM from 5084800 to 5143166] Completed processing
+[01/16/2026 03:26:45] [BATCH 1472293] Apply claim completed
+========================================================================================================================================================================================================
+
+15.
+[COMMAND]
+==========
+pts/5:dabhinab@preprod518642:~/dabhinab_streams>
+pts/5:dabhinab@preprod518642:~/dabhinab_streams>perl $ATHENA_HOME/scripts/crontab/athenacronclient.pl --jobid collector::ONETIMEJOBS::20260121::COLPCI_5698_STUCKBATCH_15 --onlyinstance DTEST47
+Since you gave any flag besides --jobid, you are now in developer mode.
+
+Running a distributed job through worker
+pts/5:dabhinab@preprod518642:~/dabhinab_streams>
+pts/5:dabhinab@preprod518642:~/dabhinab_streams>
+pts/5:dabhinab@preprod518642:~/dabhinab_streams>
+pts/5:dabhinab@preprod518642:~/dabhinab_streams>Intercepting email (secolpci@athenahealth.com,larunkumar@athenahealth.com -> dabhinab@athenahealth.com)
+
+pts/5:dabhinab@preprod518642:~/dabhinab_streams>
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+[OUTPUT]
+========
+[01/16/2026 03:30:46 preprod518642.athenahealth.com UNKNOWN@DTEST47 4143496] BEGIN Launcher::RunDistributedJob collector::ONETIMEJOBS::20260121::COLPCI_5698_STUCKBATCH_15 DAEMONSTATUS: Disabled
+[01/16/2026 03:30:44 preprod518642.athenahealth.com UNKNOWN@DTEST47 4143463] INFO - INVOKEDTIME : [01/16/2026 03:30:43] - Running a distributed job through worker for JOBID: [collector::ONETIMEJOBS::20260121::COLPCI_5698_STUCKBATCH_15] - UNIQUEJOBID: [aWn3NArIUF0APzlnAAAAAg]
+[01/16/2026 03:30:44 preprod518642.athenahealth.com UNKNOWN@DTEST47 4143463] INFO - INVOKEDTIME : [01/16/2026 03:30:43] - Running a distributed job through worker for JOBID: [collector::ONETIMEJOBS::20260121::COLPCI_5698_STUCKBATCH_15] - INSTANCE: [DTEST47] - UNIQUEJOBID: [aWn3NArIUF0APzlnAAAAAg]
+[01/16/2026 03:30:47 preprod518642.athenahealth.com ATHENA11679@DTEST47 4143503] BEGIN perl /home/dabhinab/dabhinab_streams/techops/collector/oneoffscripts/COLPCI_3904_ApplyClaim.pl DTEST47 ATHENA11679 --erabatch 1472293 --fromclaimid 5143234 --toclaimid 5198058 --allowpartialpost --chunksize 500 --timestampedprint --printlog
+[01/16/2026 03:30:57 preprod518642.athenahealth.com ATHENA11679@DTEST47 4143496] OUTPUT [01/16/2026 03:30:56] Connecting to database context 11679
+[01/16/2026 03:30:56] [BATCH 1472293] Starting processing
+[01/16/2026 03:30:56] [BATCH 1472293] Clearing Assignedto lock
+[01/16/2026 03:30:56] [BATCH 1472293] Started applying ERA batch
+[01/16/2026 03:30:56] [BATCH 1472293] Found matching PaymentBatch 7750560
+[01/16/2026 03:30:56] [BATCH 1472293][CLAIM from 5143234 to 5198058] Starting processing
+[01/16/2026 03:30:56] [BATCH 1472293] Total claim IDs to process: 1500
+[01/16/2026 03:30:56] [BATCH 1472293] [SET 1] Processing batch of 500 claims
+[01/16/2026 03:30:56] [BATCH 1472293] [SET 2] Processing batch of 500 claims
+[01/16/2026 03:30:56] [BATCH 1472293] [SET 3] Processing batch of 500 claims
+[01/16/2026 03:30:56] [BATCH 1472293][CLAIM from 5143234 to 5198058] Completed processing
+[01/16/2026 03:30:56] [BATCH 1472293] Apply claim completed
+[01/16/2026 03:30:57 preprod518642.athenahealth.com UNKNOWN@DTEST47 4143496] END Elapsed: 11 seconds
+========================================================================================================================================================================================================
+
+16. 
+[COMMAND]
+==========
+pts/5:dabhinab@preprod518642:~/dabhinab_streams>
+pts/5:dabhinab@preprod518642:~/dabhinab_streams>Intercepting email (secolpci@athenahealth.com,larunkumar@athenahealth.com -> dabhinab@athenahealth.com)
+
+pts/5:dabhinab@preprod518642:~/dabhinab_streams>perl $ATHENA_HOME/scripts/crontab/athenacronclient.pl --jobid collector::ONETIMEJOBS::20260121::COLPCI_5698_STUCKBATCH_16 --onlyinstance DTEST47
+Since you gave any flag besides --jobid, you are now in developer mode.
+
+Running a distributed job through worker
+pts/5:dabhinab@preprod518642:~/dabhinab_streams>Intercepting email (secolpci@athenahealth.com,larunkumar@athenahealth.com -> dabhinab@athenahealth.com)
+
+pts/5:dabhinab@preprod518642:~/dabhinab_streams>
+pts/5:dabhinab@preprod518642:~/dabhinab_streams>
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+[OUTPUT]
+========
+[01/16/2026 03:33:41 preprod518642.athenahealth.com UNKNOWN@DTEST47 4144387] BEGIN Launcher::RunDistributedJob collector::ONETIMEJOBS::20260121::COLPCI_5698_STUCKBATCH_16 DAEMONSTATUS: Disabled
+[01/16/2026 03:33:39 preprod518642.athenahealth.com UNKNOWN@DTEST47 4144349] INFO - INVOKEDTIME : [01/16/2026 03:33:38] - Running a distributed job through worker for JOBID: [collector::ONETIMEJOBS::20260121::COLPCI_5698_STUCKBATCH_16] - UNIQUEJOBID: [aWn34wrIUF0APzzdAAAAAg]
+[01/16/2026 03:33:39 preprod518642.athenahealth.com UNKNOWN@DTEST47 4144349] INFO - INVOKEDTIME : [01/16/2026 03:33:38] - Running a distributed job through worker for JOBID: [collector::ONETIMEJOBS::20260121::COLPCI_5698_STUCKBATCH_16] - INSTANCE: [DTEST47] - UNIQUEJOBID: [aWn34wrIUF0APzzdAAAAAg]
+[01/16/2026 03:33:42 preprod518642.athenahealth.com ATHENA11679@DTEST47 4144394] BEGIN perl /home/dabhinab/dabhinab_streams/techops/collector/oneoffscripts/COLPCI_3904_ApplyClaim.pl DTEST47 ATHENA11679 --erabatch 1472293 --fromclaimid 5198108 --toclaimid 5248529 --allowpartialpost --chunksize 500 --timestampedprint --printlog
+[01/16/2026 03:33:52 preprod518642.athenahealth.com ATHENA11679@DTEST47 4144387] END Elapsed: 9 seconds
+[01/16/2026 03:33:52 preprod518642.athenahealth.com ATHENA11679@DTEST47 4144387] OUTPUT [01/16/2026 03:33:51] Connecting to database context 11679
+[01/16/2026 03:33:51] [BATCH 1472293] Starting processing
+[01/16/2026 03:33:51] [BATCH 1472293] Clearing Assignedto lock
+[01/16/2026 03:33:51] [BATCH 1472293] Started applying ERA batch
+[01/16/2026 03:33:51] [BATCH 1472293] Found matching PaymentBatch 7750560
+[01/16/2026 03:33:51] [BATCH 1472293][CLAIM from 5198108 to 5248529] Starting processing
+[01/16/2026 03:33:51] [BATCH 1472293] Total claim IDs to process: 1500
+[01/16/2026 03:33:51] [BATCH 1472293] [SET 1] Processing batch of 500 claims
+[01/16/2026 03:33:51] [BATCH 1472293] [SET 2] Processing batch of 500 claims
+[01/16/2026 03:33:51] [BATCH 1472293] [SET 3] Processing batch of 500 claims
+[01/16/2026 03:33:51] [BATCH 1472293][CLAIM from 5198108 to 5248529] Completed processing
+[01/16/2026 03:33:51] [BATCH 1472293] Apply claim completed
+[01/16/2026 03:33:52 preprod518642.athenahealth.com UNKNOWN@DTEST47 4144387] END Elapsed: 11 seconds
+
+========================================================================================================================================================================================================
+
+17.
+[COMMAND]
+==========
+pts/5:dabhinab@preprod518642:~/dabhinab_streams>
+pts/5:dabhinab@preprod518642:~/dabhinab_streams>perl $ATHENA_HOME/scripts/crontab/athenacronclient.pl --jobid collector::ONETIMEJOBS::20260121::COLPCI_5698_STUCKBATCH_17 --onlyinstance DTEST47
+Since you gave any flag besides --jobid, you are now in developer mode.
+
+Running a distributed job through worker
+pts/5:dabhinab@preprod518642:~/dabhinab_streams>Intercepting email (secolpci@athenahealth.com,larunkumar@athenahealth.com -> dabhinab@athenahealth.com)
+
+pts/5:dabhinab@preprod518642:~/dabhinab_streams>
+pts/5:dabhinab@preprod518642:~/dabhinab_streams>
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+[OUTPUT]
+========
+[01/16/2026 03:35:16 preprod518642.athenahealth.com UNKNOWN@DTEST47 4145611] INFO - INVOKEDTIME : [01/16/2026 03:35:15] - Running a distributed job through worker for JOBID: [collector::ONETIMEJOBS::20260121::COLPCI_5698_STUCKBATCH_17] - UNIQUEJOBID: [aWn4RArIUF0AP0HLAAAAAg]
+[01/16/2026 03:35:16 preprod518642.athenahealth.com UNKNOWN@DTEST47 4145611] INFO - INVOKEDTIME : [01/16/2026 03:35:15] - Running a distributed job through worker for JOBID: [collector::ONETIMEJOBS::20260121::COLPCI_5698_STUCKBATCH_17] - INSTANCE: [DTEST47] - UNIQUEJOBID: [aWn4RArIUF0AP0HLAAAAAg]
+[01/16/2026 03:35:18 preprod518642.athenahealth.com UNKNOWN@DTEST47 4145642] BEGIN Launcher::RunDistributedJob collector::ONETIMEJOBS::20260121::COLPCI_5698_STUCKBATCH_17 DAEMONSTATUS: Disabled
+[01/16/2026 03:35:19 preprod518642.athenahealth.com ATHENA11679@DTEST47 4145643] BEGIN perl /home/dabhinab/dabhinab_streams/techops/collector/oneoffscripts/COLPCI_3904_ApplyClaim.pl DTEST47 ATHENA11679 --erabatch 1472293 --fromclaimid 5248535 --toclaimid 5307678 --allowpartialpost --chunksize 500 --timestampedprint --printlog
+[01/16/2026 03:35:29 preprod518642.athenahealth.com UNKNOWN@DTEST47 4145642] END Elapsed: 11 seconds
+[01/16/2026 03:35:29 preprod518642.athenahealth.com ATHENA11679@DTEST47 4145642] OUTPUT [01/16/2026 03:35:28] Connecting to database context 11679
+[01/16/2026 03:35:28] [BATCH 1472293] Starting processing
+[01/16/2026 03:35:28] [BATCH 1472293] Clearing Assignedto lock
+[01/16/2026 03:35:28] [BATCH 1472293] Started applying ERA batch
+[01/16/2026 03:35:28] [BATCH 1472293] Found matching PaymentBatch 7750560
+[01/16/2026 03:35:28] [BATCH 1472293][CLAIM from 5248535 to 5307678] Starting processing
+[01/16/2026 03:35:28] [BATCH 1472293] Total claim IDs to process: 1500
+[01/16/2026 03:35:28] [BATCH 1472293] [SET 1] Processing batch of 500 claims
+[01/16/2026 03:35:28] [BATCH 1472293] [SET 2] Processing batch of 500 claims
+[01/16/2026 03:35:28] [BATCH 1472293] [SET 3] Processing batch of 500 claims
+[01/16/2026 03:35:28] [BATCH 1472293][CLAIM from 5248535 to 5307678] Completed processing
+
+========================================================================================================================================================================================================
+
+18. 
+[COMMAND]
+==========
+pts/5:dabhinab@preprod518642:~/dabhinab_streams>
+pts/5:dabhinab@preprod518642:~/dabhinab_streams>perl $ATHENA_HOME/scripts/crontab/athenacronclient.pl --jobid collector::ONETIMEJOBS::20260121::COLPCI_5698_STUCKBATCH_18 --onlyinstance DTEST47
+Since you gave any flag besides --jobid, you are now in developer mode.
+
+Running a distributed job through worker
+pts/5:dabhinab@preprod518642:~/dabhinab_streams>Intercepting email (secolpci@athenahealth.com,larunkumar@athenahealth.com -> dabhinab@athenahealth.com)
+
+pts/5:dabhinab@preprod518642:~/dabhinab_streams>
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+[OUTPUT]
+========
+[01/16/2026 03:38:35 preprod518642.athenahealth.com UNKNOWN@DTEST47 4146755] INFO - INVOKEDTIME : [01/16/2026 03:38:34] - Running a distributed job through worker for JOBID: [collector::ONETIMEJOBS::20260121::COLPCI_5698_STUCKBATCH_18] - INSTANCE: [DTEST47] - UNIQUEJOBID: [aWn5CwrIUF0AP0ZDAAAAAg]
+[01/16/2026 03:38:35 preprod518642.athenahealth.com UNKNOWN@DTEST47 4146755] INFO - INVOKEDTIME : [01/16/2026 03:38:34] - Running a distributed job through worker for JOBID: [collector::ONETIMEJOBS::20260121::COLPCI_5698_STUCKBATCH_18] - UNIQUEJOBID: [aWn5CwrIUF0AP0ZDAAAAAg]
+[01/16/2026 03:38:37 preprod518642.athenahealth.com UNKNOWN@DTEST47 4146786] BEGIN Launcher::RunDistributedJob collector::ONETIMEJOBS::20260121::COLPCI_5698_STUCKBATCH_18 DAEMONSTATUS: Disabled
+[01/16/2026 03:38:38 preprod518642.athenahealth.com ATHENA11679@DTEST47 4146787] BEGIN perl /home/dabhinab/dabhinab_streams/techops/collector/oneoffscripts/COLPCI_3904_ApplyClaim.pl DTEST47 ATHENA11679 --erabatch 1472293 --fromclaimid 5307684 --toclaimid 5393427 --allowpartialpost --chunksize 500 --timestampedprint --printlog
+[01/16/2026 03:38:48 preprod518642.athenahealth.com UNKNOWN@DTEST47 4146786] END Elapsed: 11 seconds
+[01/16/2026 03:38:48 preprod518642.athenahealth.com ATHENA11679@DTEST47 4146786] OUTPUT [01/16/2026 03:38:47] Connecting to database context 11679
+[01/16/2026 03:38:47] [BATCH 1472293] Starting processing
+[01/16/2026 03:38:47] [BATCH 1472293] Clearing Assignedto lock
+[01/16/2026 03:38:47] [BATCH 1472293] Started applying ERA batch
+[01/16/2026 03:38:47] [BATCH 1472293] Found matching PaymentBatch 7750560
+[01/16/2026 03:38:47] [BATCH 1472293][CLAIM from 5307684 to 5393427] Starting processing
+[01/16/2026 03:38:47] [BATCH 1472293] Total claim IDs to process: 982
+[01/16/2026 03:38:47] [BATCH 1472293] [SET 1] Processing batch of 500 claims
+[01/16/2026 03:38:47] [BATCH 1472293] [SET 2] Processing batch of 482 claims
+[01/16/2026 03:38:47] [BATCH 1472293][CLAIM from 5307684 to 5393427] Completed processing
+[01/16/2026 03:38:47] [BATCH 1472293] Apply claim completed
+========================================================================================================================================================================================================

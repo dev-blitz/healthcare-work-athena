@@ -1,0 +1,52 @@
+QA-TEST-NOTES
+=============
+
+dabhinab@preprod516623:~/dabhinab_streams$ p4 switch -Rn //anet/tasks/COLPCI_filtered/colpci_5493
+
+dabhinab@preprod516623:~/dabhinab_streams$ sql++
+sql++ version 18p1.  \h for help, for more search 'sql++' in the wiki.  \q or ^D to exit.
+athena1@ptest1 > \u 8042
+
+athena8042@ptest65 > \u 8042@dtest65
+
+athena8042@dtest65 > select u1.id,u2.id,rm.id 
+               sql > from unpostable u1, unpostable u2, remitmatch rm 
+               sql > where u1.id != u2.id 
+               sql > and ( (rm.matchfromid = u1.id and rm.matchtoid = u2.id) or (rm.matchfromid = u2.id and rm.matchtoid = u1.id))
+               sql > and u1.unpostabletypeid = 'MBUNMATCHEFT'
+               sql > and u2.unpostabletypeid = 'EOBUNLISTED'
+               sql > and rm.matchfromtype = 'UNPOSTABLE' 
+               sql > and rm.matchtotype = 'UNPOSTABLE' 
+               sql > and rm.reviewedby is null
+               sql > and rm.deleted is null 
+               sql > and rm.created > sysdate - 7;
++--------+--------+---------+
+|ID      |ID      |ID       |
++--------+--------+---------+
+|34569527|34235373|131663946|
+|34569528|34235373|131664109|
+|34569531|34555000|131662192|
++--------+--------+---------+
+3 rows selected in 1 second.
+
+* after clicking on the UNPOSTABLE posted by the user, click on audit-history, below audit-history was fetched:
+
+ATHENA (11/13/2025 10:23am)
+Changed Status from INPROCESS to OPEN
+Set Assignment to Athena
+Changed Post Date from 11/12/2025 to 11/13/2025
+Set Assignment Group to Posting
+Changed Event from Created: EFT Deposit to Posting Review Required
+ATHENA (11/20/2025 01:54am)
+Changed Payment Batch from 66277670 to 66284389
+Changed Post Date from 11/13/2025 to 11/20/2025
+Changed Event from Posting Review Required to Match Confirmed
+Changed Amount from 172.29 to 0
+Changed Status from OPEN to CLOSED
+Deleted Assignment (Previous value: Athena)
+Deleted Assignment Group (Previous value: Posting)
+Changed Event from Match Confirmed to Posted to athenaNet
+Set Correction Payment Batch to 66284389
+
+
+

@@ -1,0 +1,20 @@
+perl $ATHENA_HOME/scripts/crontab/athenacronclient.pl --jobid collector::ONETIMEJOBS::20260119::COLPCI_5698_STUCKBATCH_1 --onlyinstance PTEST56
+perl $ATHENA_HOME/scripts/crontab/athenacronclient.pl --jobid collector::ONETIMEJOBS::20260119::COLPCI_5698_STUCKBATCH_2 --onlyinstance PTEST56
+perl $ATHENA_HOME/scripts/crontab/athenacronclient.pl --jobid collector::ONETIMEJOBS::20260119::COLPCI_5698_STUCKBATCH_3 --onlyinstance PTEST56
+perl $ATHENA_HOME/scripts/crontab/athenacronclient.pl --jobid collector::ONETIMEJOBS::20260119::COLPCI_5698_STUCKBATCH_4 --onlyinstance PTEST56
+
+perl $ATHENA_HOME/scripts/crontab/athenacronclient.pl --jobid collector::ONETIMEJOBS::20260119::COLPCI_5698_STUCKBATCH_5 --onlyinstance PTEST47
+perl $ATHENA_HOME/scripts/crontab/athenacronclient.pl --jobid collector::ONETIMEJOBS::20260119::COLPCI_5698_STUCKBATCH_6 --onlyinstance PTEST47
+perl $ATHENA_HOME/scripts/crontab/athenacronclient.pl --jobid collector::ONETIMEJOBS::20260119::COLPCI_5698_STUCKBATCH_7 --onlyinstance PTEST47
+perl $ATHENA_HOME/scripts/crontab/athenacronclient.pl --jobid collector::ONETIMEJOBS::20260119::COLPCI_5698_STUCKBATCH_8 --onlyinstance PTEST47
+perl $ATHENA_HOME/scripts/crontab/athenacronclient.pl --jobid collector::ONETIMEJOBS::20260119::COLPCI_5698_STUCKBATCH_9 --onlyinstance PTEST47
+
+perl $ATHENA_HOME/scripts/crontab/athenacronclient.pl --jobid collector::ONETIMEJOBS::20260120::COLPCI_5698_STUCKBATCH_10 --onlyinstance PTEST47
+perl $ATHENA_HOME/scripts/crontab/athenacronclient.pl --jobid collector::ONETIMEJOBS::20260120::COLPCI_5698_STUCKBATCH_11 --onlyinstance PTEST47
+perl $ATHENA_HOME/scripts/crontab/athenacronclient.pl --jobid collector::ONETIMEJOBS::20260120::COLPCI_5698_STUCKBATCH_12 --onlyinstance PTEST47
+perl $ATHENA_HOME/scripts/crontab/athenacronclient.pl --jobid collector::ONETIMEJOBS::20260120::COLPCI_5698_STUCKBATCH_13 --onlyinstance PTEST47
+perl $ATHENA_HOME/scripts/crontab/athenacronclient.pl --jobid collector::ONETIMEJOBS::20260120::COLPCI_5698_STUCKBATCH_14 --onlyinstance PTEST47
+perl $ATHENA_HOME/scripts/crontab/athenacronclient.pl --jobid collector::ONETIMEJOBS::20260121::COLPCI_5698_STUCKBATCH_15 --onlyinstance PTEST47
+perl $ATHENA_HOME/scripts/crontab/athenacronclient.pl --jobid collector::ONETIMEJOBS::20260121::COLPCI_5698_STUCKBATCH_16 --onlyinstance PTEST47
+perl $ATHENA_HOME/scripts/crontab/athenacronclient.pl --jobid collector::ONETIMEJOBS::20260121::COLPCI_5698_STUCKBATCH_17 --onlyinstance PTEST47
+perl $ATHENA_HOME/scripts/crontab/athenacronclient.pl --jobid collector::ONETIMEJOBS::20260121::COLPCI_5698_STUCKBATCH_18 --onlyinstance PTEST47

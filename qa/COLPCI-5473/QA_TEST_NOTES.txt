@@ -1,0 +1,116 @@
+QA-TEST-NOTES
+=============
+
+
+BEFORE:
+=======
+
+dabhinab@preprod516623:~/dabhinab_streams$ sql++
+sql++ version 18p1.  \h for help, for more search 'sql++' in the wiki.  \q or ^D to exit.
+
+athena1@ptest1 > \u 2539
+
+athena2539@ptest38 > \t;\0; select * from ERARECORD where ID = 5477622;
+\0: 0 columns and 121 rows removed.
+\0: long fields trimmed.
++--------------------+-----------------------------------+
+|ID                  |5477622                            |
++--------------------+-----------------------------------+
+|CREATED             |2025-06-13 12:48:02                |
+|CREATEDBY           |ATHENA                             |
+|ERABATCHID          | 456313                            |
+|PAYMENT             |     84.53                         |
+|ACTION              |PATIENTPAYMENT                     |
+|BILLEDDATE          |2025-06-04 00:00:00                |
+|PATIENTID           | 476593                            |
+|PATIENTLASTNAME     |ECKHARDT                           |
+|PATIENTFIRSTNAME    |ROBERT                             |
+|LASTMODIFIED        |2025-11-10 06:57:48                |
+|LASTMODIFIEDBY      |ATHENA                             |
+|PATIENTMIDDLEINITIAL|E                                  |
+|IMAGEFILEPAGENUMBER |      3                            |
+|CHECKCCNUMBER       |   1345                            |
+|SOURCEDATA          |PATIENTSTUB|476593A2539|1345|8...  |
+|CHECKAMOUNT         |     84.53                         |
+|PARENTERARECORDID   |5477622                            |
+|PATIENTCONTROLNUMBER|476593A2539                        |
+|PATIENTSTATEMENTID  | 602782                            |
++--------------------+-----------------------------------+
+1 row selected in 0 seconds.
+
+
+AFTER:
+======
+
+dabhinab@preprod516623:~/dabhinab_streams$ sql++
+sql++ version 18p1.  \h for help, for more search 'sql++' in the wiki.  \q or ^D to exit.
+athena1@ptest1 > \u 2539 
+
+athena2539@ptest38 > update erabatch set status = 'CREATED' ,POSTED ='',POSTEDBY = '',ASSIGNEDTO ='', ASSIGNED ='' where id in (456313);
+1 row updated in 0 seconds.
+
+athena2539@ptest38 > update erarecord set matched = '' ,matchedby = '',applied= '' ,appliedby = '',CHARGEID = '' ,TRANSFERTYPE= '',PATIENTINSURANCEIDNUMBER = '' ,SUBSCRIBERINSURANCEIDNUMBER = '' ,CORRECTEDINSURANCEIDNUMBER = '',claimid = '',PARTIALPOSTRESOLVEBYREASON = '',UNPOSTABLEROUTEID= '', PARTIALPOSTSIGNEDOFF = '', PARTIALPOSTSIGNEDOFFby = '' ,ERADISCARDSTATUSREASONID ='', ERADISCARDSTATUSID = '', DISCARDED= '', DISCARDEDby = '' , FAILUREREASON= '',manualflag = '', note = '', matchingscore ='',patientid = 476593 ,PROVIDERGROUPID = '' where erabatchid in (456313) and  PATIENTCONTROLNUMBER ='476593A2539';
+1 row updated in 0 seconds.
+
+athena2539@ptest38 > update paymentbatch set statusid = 10 ,closed = '' where erabatchid in (456313);
+1 row updated in 0 seconds.
+
+athena2539@ptest38 > commit;
+Commit
+
+athena2539@ptest38 > ^C
+dabhinab@preprod516623:~/dabhinab_streams$ perl $ATHENA_HOME/scripts/app/practice/preprocess_erabatches.pl PTEST38 ATHENA2539 --timestampedprint  --erabatchids 456313 –prematchonly
+[2025/11/14 04:26:54] [04:26:54] Starting /home/dabhinab/dabhinab_streams/prod/scripts/app/practice/preprocess_erabatches.pl; practice time is 2025/11/14 04:26:54
+[2025/11/14 04:26:54] [04:26:54] Starting garbage collection.
+[2025/11/14 04:26:54] [04:26:54] Starting prematching.
+[2025/11/14 04:26:54] [04:26:54] Match ERA Batch 456313R2539: 
+[2025/11/14 04:26:54] [04:26:55] pre-matching... 
+[2025/11/14 04:26:54] [04:26:56] done.  Marking as pre-matched... 
+[2025/11/14 04:26:54] [04:26:56] done.
+[2025/11/14 04:26:54] [04:26:56] Starting preposting.
+[2025/11/14 04:26:54] [04:26:56] Post ERA Batch 456313R2539: 
+[2025/11/14 04:26:54] [04:26:56] Found paymentbatch with id 948771 for erabatch 456313R2539... 
+[2025/11/14 04:26:54] [04:26:56] check for new apply queue... 
+[2025/11/14 04:26:54] [04:26:56] matching again, for good measure... 
+[2025/11/14 04:26:54] [04:26:56] pre-posting... 
+[2025/11/14 04:26:54] [04:27:16] done.  Marking as pre-posted... 
+[2025/11/14 04:26:54] [04:27:17] done.
+dabhinab@preprod516623:~/dabhinab_streams$ sql++
+sql++ version 18p1.  \h for help, for more search 'sql++' in the wiki.  \q or ^D to exit.
+athena1@ptest1 > \u 2539 
+
+athena2539@ptest38 > \t ;  \0 ;  select * from ERARECORD where ID = 5477622;
+\0: 0 columns and 116 rows removed.
+\0: long fields trimmed.
++--------------------+-----------------------------------+
+|ID                  |5477622                            |
++--------------------+-----------------------------------+
+|CREATED             |2025-06-13 12:48:02                |
+|CREATEDBY           |ATHENA                             |
+|ERABATCHID          | 456313                            |
+|PAYMENT             |     84.53                         |
+|ACTION              |PATIENTPAYMENT                     |
+|BILLEDDATE          |2025-06-04 00:00:00                |
+|PATIENTID           | 478303                            |
+|PATIENTLASTNAME     |ECKHARDT                           |
+|PATIENTFIRSTNAME    |ROBERT                             |
+|APPLIED             |2025-11-14 04:27:01                |
+|APPLIEDBY           |ATHENA                             |
+|LASTMODIFIED        |2025-11-14 04:27:01                |
+|LASTMODIFIEDBY      |ATHENA                             |
+|PATIENTMIDDLEINITIAL|E                                  |
+|IMAGEFILEPAGENUMBER |      3                            |
+|CHECKCCNUMBER       |   1345                            |
+|PROVIDERGROUPID     |    161                            |
+|MATCHED             |2025-11-14 04:26:56                |
+|MATCHEDBY           |ATHENA                             |
+|SOURCEDATA          |PATIENTSTUB|476593A2539|1345|8...  |
+|CHECKAMOUNT         |     84.53                         |
+|PARENTERARECORDID   |5477622                            |
+|PATIENTCONTROLNUMBER|476593A2539                        |
+|PATIENTSTATEMENTID  | 602782                            |
++--------------------+-----------------------------------+
+1 row selected in 0 seconds.
+
+athena2539@ptest38 > 
+

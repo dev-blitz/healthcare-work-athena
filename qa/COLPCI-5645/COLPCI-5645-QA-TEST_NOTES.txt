@@ -1,0 +1,298 @@
+=========================
+COLPCI-5645-QA-TEST_NOTES
+=========================
+
+======
+BEFORE
+======
+
+pts/5:dabhinab@preprod518642:~>sql++
+sql++ version 18p1.  \h for help, for more search 'sql++' in the wiki.  \q or ^D to exit.
+athena1@dtest1 > \u 30195
+
+athena30195@dtest84 >
+athena30195@dtest84 > \t ;  \0 ;  select * from ERARECORD where ID in (181193, 181194, 181195, 181196, 181197, 181198, 181199, 181200);
+\0: 0 columns and 94 rows removed.
+\0: long fields trimmed.
++---------------------------+-----------------------------------+-----------------------------------+-----------------------------------+-----------------------------------+-----------------------------------+-----------------------------------+-----------------------------------+-----------------------------------+
+|ID                         |181193                             |181194                             |181195                             |181196                             |181197                             |181198                             |181199                             |181200                             |
++---------------------------+-----------------------------------+-----------------------------------+-----------------------------------+-----------------------------------+-----------------------------------+-----------------------------------+-----------------------------------+-----------------------------------+
+|ERABATCHID                 |      12301                        |      12301                        |      12301                        |      12301                        |      12301                        |      12301                        |      12301                        |      12301                        |
+|ORIGINALPAYMENT            |          0                        |          0                        |          0                        |          0                        |          0                        |          0                        |          0                        |          0                        |
+|PAYMENT                    |          0                        |          0                        |          0                        |          0                        |          0                        |          0                        |          0                        |          0                        |
+|FROMDATE                   |2024-11-27 00:00:00                |2024-11-27 00:00:00                |2024-11-26 00:00:00                |2024-11-26 00:00:00                |2024-11-27 00:00:00                |2024-11-27 00:00:00                |2024-11-26 00:00:00                |2024-11-26 00:00:00                |
+|TODATE                     |2024-11-27 00:00:00                |2024-11-27 00:00:00                |2024-11-26 00:00:00                |2024-11-26 00:00:00                |2024-11-27 00:00:00                |2024-11-27 00:00:00                |2024-11-26 00:00:00                |2024-11-26 00:00:00                |
+|PROCEDURECODE              |T1015                              |      99214                        |      90832                        |T1015                              |T1015                              |      99214                        |      90832                        |T1015                              |
+|DAYS                       |          1                        |          1                        |          1                        |          1                        |          1                        |          1                        |          1                        |          1                        |
+|AMOUNT                     |        270.98                     |          0                        |          0                        |        270.98                     |        270.98                     |          0                        |          0                        |        270.98                     |
+|PATIENTLASTNAME            |KRUGH                              |KRUGH                              |KRUGH                              |KRUGH                              |KRUGH                              |KRUGH                              |KRUGH                              |KRUGH                              |
+|PATIENTFIRSTNAME           |JEFFREY                            |JEFFREY                            |JEFFREY                            |JEFFREY                            |JEFFREY                            |JEFFREY                            |JEFFREY                            |JEFFREY                            |
+|APPLIED                    |2026-01-14 00:00:00                |2026-01-14 00:00:00                |2026-01-14 00:00:00                |2026-01-14 00:00:00                |2026-01-14 00:00:00                |2026-01-14 00:00:00                |2026-01-14 00:00:00                |2026-01-14 00:00:00                |
+|APPLIEDBY                  |ATHENA                             |ATHENA                             |ATHENA                             |ATHENA                             |ATHENA                             |ATHENA                             |ATHENA                             |ATHENA                             |
+|CONTROLNUMBER              |          0                        |          0                        |          0                        |          0                        |          0                        |          0                        |          0                        |          0                        |
+|PATIENTINSURANCEIDNUMBER   |21030017570                        |21030017570                        |21030017570                        |21030017570                        |21030017570                        |21030017570                        |21030017570                        |21030017570                        |
+|SUBSCRIBERINSURANCEIDNUMBER|21030017570                        |21030017570                        |21030017570                        |21030017570                        |21030017570                        |21030017570                        |21030017570                        |21030017570                        |
+|REVERSALFLAG               |                                   |                                   |                                   |                                   |Y                                  |Y                                  |Y                                  |Y                                  |
+|PATIENTMIDDLEINITIAL       |F                                  |F                                  |F                                  |F                                  |F                                  |F                                  |F                                  |F                                  |
+|TRANSFERTYPE               |          1                        |          2                        |          2                        |          1                        |          1                        |          2                        |          2                        |          1                        |
+|MANUALFLAG                 |D                                  |D                                  |D                                  |D                                  |D                                  |D                                  |D                                  |D                                  |
+|NOTE                       |Ambiguous match / tie (minimum...  |                                   |                                   |Ambiguous match / tie (minimum...  |Ambiguous match / tie (minimum...  |                                   |                                   |Ambiguous match / tie (minimum...  |
+|AEGISINSURANCEPACKAGEID    |     571429                        |     571429                        |     571429                        |     571429                        |     571429                        |     571429                        |     571429                        |     571429                        |
+|KICKREASONCATEGORYID       |       1666                        |       1666                        |       1666                        |       1666                        |       1666                        |       1666                        |       1666                        |       1666                        |
+|CHECKCCNUMBER              | 2007484460                        | 2007484460                        | 2007484460                        | 2007484460                        | 2007484460                        | 2007484460                        | 2007484460                        | 2007484460                        |
+|MATCHED                    |2025-12-24 09:06:59                |2025-12-22 17:27:10                |2025-12-22 17:27:11                |2025-12-24 09:06:50                |2025-12-24 09:06:44                |2025-12-22 17:27:11                |2025-12-22 17:27:11                |2025-12-24 09:06:37                |
+|MATCHEDBY                  |ahsmanogaran12                     |ATHENA                             |ATHENA                             |ahsmanogaran12                     |ahsmanogaran12                     |ATHENA                             |ATHENA                             |ahsmanogaran12                     |
+|ERADISCARDSTATUSREASONID   |ROUTETOOTHER                       |ROUTETOOTHER                       |ROUTETOOTHER                       |ROUTETOOTHER                       |ROUTETOOTHER                       |ROUTETOOTHER                       |ROUTETOOTHER                       |ROUTETOOTHER                       |
+|ERADISCARDSTATUSID         |INPROCESS                          |INPROCESS                          |INPROCESS                          |INPROCESS                          |INPROCESS                          |INPROCESS                          |INPROCESS                          |INPROCESS                          |
+|PATIENTINSURANCEID         |      34731                        |      34731                        |      34731                        |      34731                        |      34731                        |      34731                        |      34731                        |      34731                        |
+|DISCARDED                  |2026-01-14 07:51:45                |2026-01-14 07:51:53                |2026-01-14 07:51:54                |2026-01-14 07:51:54                |2026-01-14 07:51:54                |2026-01-14 07:51:54                |2026-01-14 07:51:54                |2026-01-14 07:51:54                |
+|DISCARDEDBY                |DBA_PATCH_20260114                 |DBA_PATCH_20260114                 |DBA_PATCH_20260114                 |DBA_PATCH_20260114                 |DBA_PATCH_20260114                 |DBA_PATCH_20260114                 |DBA_PATCH_20260114                 |DBA_PATCH_20260114                 |
+|CLAIMSOURCEDATA            |CLP*0*4*270.98*0**13*01   1120...  |CLP*0*4*270.98*0**13*01   1120...  |CLP*0*4*270.98*0**13*01   1120...  |CLP*0*4*270.98*0**13*01   1120...  |CLP*0*22*-270.98*0**13*01   08...  |CLP*0*22*-270.98*0**13*01   08...  |CLP*0*22*-270.98*0**13*01   08...  |CLP*0*22*-270.98*0**13*01   08...  |
+|SOURCEDATA                 |SVC*HC:T1015*270.98*0****1~DTM...  |SVC*HC:99214*0*0****1~DTM*472*...  |SVC*HC:90832*0*0****1~DTM*472*...  |SVC*HC:T1015*270.98*0****1~DTM...  |SVC*HC:T1015*-270.98*0****1~DT...  |SVC*HC:99214*0*0****1~DTM*472*...  |SVC*HC:90832*0*0****1~DTM*472*...  |SVC*HC:T1015*-270.98*0****1~DT...  |
+|UNPOSTABLEROUTEID          |          0                        |          0                        |          0                        |          0                        |          0                        |          0                        |          0                        |          0                        |
+|TREATASTERTIARYYN          |N                                  |                                   |                                   |N                                  |N                                  |                                   |                                   |N                                  |
+|PAYORCONTROLNUMBER         |01   112025 18607 04860            |01   112025 18607 04860            |01   112025 18607 04861            |01   112025 18607 04861            |01   081525 09577 17574            |01   081525 09577 17574            |01   081525 09577 17575            |01   081525 09577 17575            |
+|CHECKAMOUNT                |          0                        |          0                        |          0                        |          0                        |          0                        |          0                        |          0                        |          0                        |
+|CLAIMSTATUSCODE            |          4                        |          4                        |          4                        |          4                        |         22                        |         22                        |         22                        |         22                        |
+|PARENTERARECORDID          |     181193                        |     181193                        |     181195                        |     181195                        |     181197                        |     181197                        |     181199                        |     181199                        |
+|SUBMITTEDDAYS              |          1                        |          1                        |          1                        |          1                        |          1                        |          1                        |          1                        |          1                        |
+|ANSICLAIMFILINGINDICATORID |          5                        |          5                        |          5                        |          5                        |          5                        |          5                        |          5                        |          5                        |
+|PAYORPROVIDERNUMBER        | 1164431516                        | 1164431516                        | 1235799206                        | 1235799206                        | 1164431516                        | 1164431516                        | 1235799206                        | 1235799206                        |
+|MATCHINGSCORE              |         82                        |         78                        |         78                        |         82                        |         82                        |         78                        |         78                        |         82                        |
+|CREATED                    |2025-12-22 15:38:36                |2025-12-22 15:38:36                |2025-12-22 15:38:36                |2025-12-22 15:38:36                |2025-12-22 15:38:36                |2025-12-22 15:38:36                |2025-12-22 15:38:36                |2025-12-22 15:38:36                |
+|CREATEDBY                  |ATHENA                             |ATHENA                             |ATHENA                             |ATHENA                             |ATHENA                             |ATHENA                             |ATHENA                             |ATHENA                             |
+|LASTMODIFIED               |2026-01-14 07:51:45                |2026-01-14 07:51:53                |2026-01-14 07:51:54                |2026-01-14 07:51:54                |2026-01-14 07:51:54                |2026-01-14 07:51:54                |2026-01-14 07:51:54                |2026-01-14 07:51:54                |
+|LASTMODIFIEDBY             |DBA_PATCH_20260114                 |DBA_PATCH_20260114                 |DBA_PATCH_20260114                 |DBA_PATCH_20260114                 |DBA_PATCH_20260114                 |DBA_PATCH_20260114                 |DBA_PATCH_20260114                 |DBA_PATCH_20260114                 |
++---------------------------+-----------------------------------+-----------------------------------+-----------------------------------+-----------------------------------+-----------------------------------+-----------------------------------+-----------------------------------+-----------------------------------+
+8 rows selected in 0 seconds.
+
+athena30195@dtest84 >
+athena30195@dtest84 > \t ;  \0 ;  select * from ERABATCH where ID = 12301;
+\0: 0 columns and 37 rows removed.
+\0: long fields trimmed.
++---------------------------+-----------------------------------+
+|ID                         |12301                              |
++---------------------------+-----------------------------------+
+|RPOERAFILEID               | 317243335                         |
+|STATUS                     |PROCESSING                         |
+|TOTALCHARGES               |      1083.92                      |
+|TOTALPAYMENTS              |         0                         |
+|PROVIDERNUMBER             |1366425266                         |
+|CHECKNUMBER                |2007484460                         |
+|PAYMENTMETHOD              |NON                                |
+|PAYORNAME                  |Carelon Behavioral Health, Inc...  |
+|ASSIGNEDTO                 |aduttagupta                        |
+|ASSIGNED                   |2026-01-14 07:38:58                |
+|SOURCEHEADERDATA           |ST*835*00001130~BPR*H*0*C*NON*...  |
+|SOURCETRAILERDATA          |SE*78*00001130                     |
+|PAYDATE                    |2025-12-24 00:00:00                |
+|AUTOPAYMENTBATCH           |2025-12-24 02:23:16                |
+|TARGETPAYMENTBATCHID       |     31843                         |
+|KICKREASONCATEGORYID       |      1666                         |
+|AEGISKICKREASONCATEGORYID  |      1666                         |
+|AEGISINSREPORTINGCATEGORYID|      1307                         |
+|FEDERALIDNUMBER            |1541414194                         |
+|PAYORIDNUMBER              |MD5                                |
+|UNIQUESTRING               |BSwC8vSll4WLQ/QN/G5vLA             |
+|BYTEOFFSET                 |     49175                         |
+|BYTELENGTH                 |      1951                         |
+|PAYEETAXIDNUMBER           | 020575163                         |
+|PAYEEADDRESS               |PO BOX 37039                       |
+|PAYEECITY                  |BELFAST                            |
+|PAYEESTATE                 |ME                                 |
+|PAYEEZIP                   | 049151212                         |
+|EMCRECEIVERID              |       939                         |
+|PAYMENTBATCHROUTEID        |       301                         |
+|ANSIVERSIONID              |         3                         |
+|CREATED                    |2025-12-22 15:38:35                |
+|CREATEDBY                  |ATHENA                             |
+|LASTMODIFIED               |2026-01-14 07:38:58                |
+|LASTMODIFIEDBY             |ATHENA                             |
++---------------------------+-----------------------------------+
+1 row selected in 0 seconds.
+
+athena30195@dtest84 >
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+===============
+RUNNING THE OTJ
+===============
+pts/8:dabhinab@preprod518642:~/dabhinab_streams>
+pts/8:dabhinab@preprod518642:~/dabhinab_streams>DONOTLOADINTERFACEJOBS=1 perl prod/scripts/crontab/get_one_time_jobs.pl 20260206
+Reading the onetimejobs files for 20260206.
+0 6 06 02 * perl $ATHENA_HOME/scripts/crontab/athenacronclient.pl --jobid collector::ONETIMEJOBS::20260206::COLPCI_5645_DiscardERArecords
+pts/8:dabhinab@preprod518642:~/dabhinab_streams>
+pts/8:dabhinab@preprod518642:~/dabhinab_streams>perl $ATHENA_HOME/scripts/crontab/athenacronclient.pl --jobid collector::ONETIMEJOBS::20260206::COLPCI_5645_DiscardERArecords --onlyinstances DTEST84
+Since you gave any flag besides --jobid, you are now in developer mode.
+
+Running a distributed job through worker
+pts/8:dabhinab@preprod518642:~/dabhinab_streams>
+pts/8:dabhinab@preprod518642:~/dabhinab_streams>Intercepting email (secolpci@athenahealth.com,rsrivalli@athenahealth.com -> dabhinab@athenahealth.com)
+
+pts/8:dabhinab@preprod518642:~/dabhinab_streams>
+
+
+
+
+=====
+AFTER
+=====
+
+athena30195@dtest84 >
+athena30195@dtest84 > \t ;  \0 ;  select * from ERABATCH where ID = 12301;
+\0: 0 columns and 37 rows removed.
+\0: long fields trimmed.
++---------------------------+-----------------------------------+
+|ID                         |12301                              |
++---------------------------+-----------------------------------+
+|RPOERAFILEID               | 317243335                         |
+|STATUS                     |PROCESSING                         |
+|TOTALCHARGES               |      1083.92                      |
+|TOTALPAYMENTS              |         0                         |
+|PROVIDERNUMBER             |1366425266                         |
+|CHECKNUMBER                |2007484460                         |
+|PAYMENTMETHOD              |NON                                |
+|PAYORNAME                  |Carelon Behavioral Health, Inc...  |
+|ASSIGNEDTO                 |aduttagupta                        |
+|ASSIGNED                   |2026-01-14 07:38:58                |
+|SOURCEHEADERDATA           |ST*835*00001130~BPR*H*0*C*NON*...  |
+|SOURCETRAILERDATA          |SE*78*00001130                     |
+|PAYDATE                    |2025-12-24 00:00:00                |
+|AUTOPAYMENTBATCH           |2025-12-24 02:23:16                |
+|TARGETPAYMENTBATCHID       |     31843                         |
+|KICKREASONCATEGORYID       |      1666                         |
+|AEGISKICKREASONCATEGORYID  |      1666                         |
+|AEGISINSREPORTINGCATEGORYID|      1307                         |
+|FEDERALIDNUMBER            |1541414194                         |
+|PAYORIDNUMBER              |MD5                                |
+|UNIQUESTRING               |BSwC8vSll4WLQ/QN/G5vLA             |
+|BYTEOFFSET                 |     49175                         |
+|BYTELENGTH                 |      1951                         |
+|PAYEETAXIDNUMBER           | 020575163                         |
+|PAYEEADDRESS               |PO BOX 37039                       |
+|PAYEECITY                  |BELFAST                            |
+|PAYEESTATE                 |ME                                 |
+|PAYEEZIP                   | 049151212                         |
+|EMCRECEIVERID              |       939                         |
+|PAYMENTBATCHROUTEID        |       301                         |
+|ANSIVERSIONID              |         3                         |
+|CREATED                    |2025-12-22 15:38:35                |
+|CREATEDBY                  |ATHENA                             |
+|LASTMODIFIED               |2026-01-14 07:38:58                |
+|LASTMODIFIEDBY             |ATHENA                             |
++---------------------------+-----------------------------------+
+1 row selected in 0 seconds.
+
+athena30195@dtest84 >
+
+
+
+
+--------------------------------
+* Unassigned the BATCH in the UI
+--------------------------------
+
+athena30195@dtest84 >
+athena30195@dtest84 > \t ;  \0 ;  select * from ERABATCH where ID = 12301;
+\0: 0 columns and 39 rows removed.
+\0: long fields trimmed.
++---------------------------+-----------------------------------+
+|ID                         |12301                              |
++---------------------------+-----------------------------------+
+|RPOERAFILEID               | 317243335                         |
+|STATUS                     |PREPOSTED                          |
+|TOTALCHARGES               |      1083.92                      |
+|TOTALPAYMENTS              |         0                         |
+|PROVIDERNUMBER             |1366425266                         |
+|CHECKNUMBER                |2007484460                         |
+|PAYMENTMETHOD              |NON                                |
+|PAYORNAME                  |Carelon Behavioral Health, Inc...  |
+|SOURCEHEADERDATA           |ST*835*00001130~BPR*H*0*C*NON*...  |
+|SOURCETRAILERDATA          |SE*78*00001130                     |
+|PAYDATE                    |2025-12-24 00:00:00                |
+|AUTOPAYMENTBATCH           |2025-12-24 02:23:16                |
+|TARGETPAYMENTBATCHID       |     31843                         |
+|KICKREASONCATEGORYID       |      1666                         |
+|AEGISKICKREASONCATEGORYID  |      1666                         |
+|AEGISINSREPORTINGCATEGORYID|      1307                         |
+|FEDERALIDNUMBER            |1541414194                         |
+|PAYORIDNUMBER              |MD5                                |
+|UNIQUESTRING               |BSwC8vSll4WLQ/QN/G5vLA             |
+|BYTEOFFSET                 |     49175                         |
+|BYTELENGTH                 |      1951                         |
+|PAYEETAXIDNUMBER           | 020575163                         |
+|PAYEEADDRESS               |PO BOX 37039                       |
+|PAYEECITY                  |BELFAST                            |
+|PAYEESTATE                 |ME                                 |
+|PAYEEZIP                   | 049151212                         |
+|EMCRECEIVERID              |       939                         |
+|PAYMENTBATCHROUTEID        |       301                         |
+|ANSIVERSIONID              |         3                         |
+|CREATED                    |2025-12-22 15:38:35                |
+|CREATEDBY                  |ATHENA                             |
+|LASTMODIFIED               |2026-01-14 07:55:01                |
+|LASTMODIFIEDBY             |aduttagupta                        |
++---------------------------+-----------------------------------+
+1 row selected in 0 seconds.
+
+athena30195@dtest84 >
+
+
+
+-------------------------------
+* Processed the BATCH in the UI
+-------------------------------
+
+athena30195@dtest84 >
+athena30195@dtest84 > \t ;  \0 ;  select * from ERABATCH where ID = 12301;
+\0: 0 columns and 37 rows removed.
+\0: long fields trimmed.
++---------------------------+-----------------------------------+
+|ID                         |12301                              |
++---------------------------+-----------------------------------+
+|RPOERAFILEID               | 317243335                         |
+|STATUS                     |POSTED                             |
+|TOTALCHARGES               |      1083.92                      |
+|TOTALPAYMENTS              |         0                         |
+|PROVIDERNUMBER             |1366425266                         |
+|POSTED                     |2026-01-14 07:55:43                |
+|POSTEDBY                   |aduttagupta                        |
+|CHECKNUMBER                |2007484460                         |
+|PAYMENTMETHOD              |NON                                |
+|PAYORNAME                  |Carelon Behavioral Health, Inc...  |
+|SOURCEHEADERDATA           |ST*835*00001130~BPR*H*0*C*NON*...  |
+|SOURCETRAILERDATA          |SE*78*00001130                     |
+|PAYDATE                    |2025-12-24 00:00:00                |
+|AUTOPAYMENTBATCH           |2025-12-24 02:23:16                |
+|TARGETPAYMENTBATCHID       |     31843                         |
+|KICKREASONCATEGORYID       |      1666                         |
+|AEGISKICKREASONCATEGORYID  |      1666                         |
+|AEGISINSREPORTINGCATEGORYID|      1307                         |
+|FEDERALIDNUMBER            |1541414194                         |
+|PAYORIDNUMBER              |MD5                                |
+|UNIQUESTRING               |BSwC8vSll4WLQ/QN/G5vLA             |
+|BYTEOFFSET                 |     49175                         |
+|BYTELENGTH                 |      1951                         |
+|PAYEETAXIDNUMBER           | 020575163                         |
+|PAYEEADDRESS               |PO BOX 37039                       |
+|PAYEECITY                  |BELFAST                            |
+|PAYEESTATE                 |ME                                 |
+|PAYEEZIP                   | 049151212                         |
+|EMCRECEIVERID              |       939                         |
+|PAYMENTBATCHROUTEID        |       301                         |
+|ANSIVERSIONID              |         3                         |
+|CREATED                    |2025-12-22 15:38:35                |
+|CREATEDBY                  |ATHENA                             |
+|LASTMODIFIED               |2026-01-14 07:55:43                |
+|LASTMODIFIEDBY             |aduttagupta                        |
++---------------------------+-----------------------------------+
+1 row selected in 0 seconds.
+
+athena30195@dtest84 >
+
+======
+RESULT
+======
+BATCH was Successfully POSTED on processing in the UI after running the OTJ
+                                 --------------------
+
