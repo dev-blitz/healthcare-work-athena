@@ -1,0 +1,9 @@
+Condition,Description
+OTHERSYSBILLED denied claims,"If a claim is denied due to being billed to another system, it is moved to Manager Hold."
+Medicare Overpaid Readjudications,Medicare denials requiring adjustments are processed.
+$0 secondary charge,"If the Medicare secondary charge is zero and there is no outstanding balance, the claim is closed."
+BDE Denial Exists,"If a previous denial exists and meets certain conditions, further denial processing is triggered."
+Prior appeal occurred at least 7 days after denial,Ensures proper processing timeline.
+Claim charge under $5000,Small claims are eligible for automatic denial marking.
+No conflicting claim notes,Ensures denial note is correctly applied.
+Final denial note applied (BDEFWRAPPEALFAIL),Logs the claim failure officially.

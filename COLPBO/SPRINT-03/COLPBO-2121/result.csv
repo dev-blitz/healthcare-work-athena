@@ -1,0 +1,7 @@
+task,url,STATUS,remark,,
+COLPBO-2121-PR-BE-001948,https://remittance.int.web.athena.io/remittance-regression/regressions/7674/scenarios/2019/payers/92/files,done,all done,DONE
+COLPBO-2121-PR-BE-001950,https://remittance.int.web.athena.io/remittance-regression/regressions/7720/scenarios/1996/payers/216/files,done,all done,DONE
+COLPBO-2121-PR-BE-001922,duplicate files from COLPBO-1918,un-available,QUEUED,duplicate files were provided
+COLPBO-2121-PR-BE-001918,https://remittance.int.web.athena.io/remittance-regression/regressions/7698/scenarios/3004/payers/92/files,done,all done,DONE
+COLPBO-2121-PR-BE-001811,https://remittance.int.web.athena.io/remittance-regression/regressions/7721/scenarios/1528/payers/122/files,done,all done,DONE
+COLPBO-2121-PR-BE-001903,https://remittance.int.web.athena.io/remittance-regression/regressions/7702/scenarios/3005/payers/92/files,done,all done,DONE

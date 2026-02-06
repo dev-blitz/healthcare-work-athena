@@ -1,0 +1,37 @@
+DMN for Medicaid Tx-Era Discard reason is Unknown
+
+The story is complete when:
+
+* The DMN modelling is completed and aligns with business requirements.
+* The DMN testing is successful and expected behaviors are exhibited
+* The testing covered all decision scenario
+* Negative examples are also tested and made sure it is not firing
+* Defects identified in DMN testing are reported , resolved and retested.
+* The Regression testing is successful and expected behaviors are exhibited, New code changes do not introduce new bugs or break existing functionality
+* All findings are documented  and discussed with PO.
+* All DOD is met.
+
+DESCRIPTION:
+-----------
+
+As a developer, I need a DMN when below conditions are met:
+
+Condition
+
+Payor -Medicaid-Tx (PBR =45, ERA)
+
+Action = 'BATCHEXCEPTION'
+
+Eradiscardstatusreasonid = 'UNKNOWN'
+
+Action
+
+sets a discard status reason to 'OFFSET'.
+
+then discard the batch exception as offset and close the unpostable as 'Created: Offset'
+
+If an unpostable ID is found, it updates the unpostable record with the current date, event ID, and status, marking it as 'CLOSED
+
+adds a note to the unpostable record -  'Please contact Medicaid-TX as the money for this batch%'
+
+Hydra-h140088,h115102

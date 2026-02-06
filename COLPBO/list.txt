@@ -1,0 +1,67 @@
+total 1079161
+drwxr-xr-x 1 ATHENAHEALTH+dabhinab 4096         0 Jun 10 16:04 .vim/
+drwxr-xr-x 1 ATHENAHEALTH+dabhinab 4096         0 Jun 10 16:04 ./
+-rw-r--r-- 1 ATHENAHEALTH+dabhinab 4096     46601 Jun 10 16:04 .viminfo
+-rw-r--r-- 1 ATHENAHEALTH+dabhinab 4096        20 Jun 10 15:17 .lesshst
+-rw-r--r-- 1 ATHENAHEALTH+dabhinab 4096      1285 Jun 10 10:47 .vimrc
+drwxr-xr-x 1 ATHENAHEALTH+dabhinab 4096         0 Jun  9 19:15 Downloads/
+drwxr-xr-x 1 ATHENAHEALTH+dabhinab 4096         0 Jun  9 14:02 OneDrive - athenahealth/
+-rw-r--r-- 1 ATHENAHEALTH+dabhinab 4096   1048576 Jun  6 10:27 NTUSER.DAT{a2332f17-cdbf-11ec-8680-002248483d79}.TxR.0.regtrans-ms
+-rw-r--r-- 1 ATHENAHEALTH+dabhinab 4096     65536 Jun  6 10:27 NTUSER.DAT{a2332f17-cdbf-11ec-8680-002248483d79}.TxR.blf
+drwxr-xr-x 1 ATHENAHEALTH+dabhinab 4096         0 Jun  6 10:23 IntelGraphicsProfiles/
+-rw-r--r-- 1 ATHENAHEALTH+dabhinab 4096   1048576 Jun  6 10:16 NTUSER.DAT{a2332f17-cdbf-11ec-8680-002248483d79}.TxR.2.regtrans-ms
+-rw-r--r-- 1 ATHENAHEALTH+dabhinab 4096   1048576 Jun  6 10:16 NTUSER.DAT{a2332f17-cdbf-11ec-8680-002248483d79}.TxR.1.regtrans-ms
+-rw-r--r-- 1 ATHENAHEALTH+dabhinab 4096         5 Jun  4 15:29 .python_history
+-rw-r--r-- 1 ATHENAHEALTH+dabhinab 4096        99 Jun  3 13:22 .bash_profile
+-rw-r--r-- 1 ATHENAHEALTH+dabhinab 4096       103 Jun  3 13:19 .bashrc
+drwxr-xr-x 1 ATHENAHEALTH+dabhinab 4096         0 Jun  3 13:19 bin/
+-rw-r--r-- 1 ATHENAHEALTH+dabhinab 4096  11534336 Jun  3 11:16 NTUSER.DAT
+-rw-r--r-- 1 ATHENAHEALTH+dabhinab 4096       475 May 29 16:54 .bash_history
+drwxr-xr-x 1 ATHENAHEALTH+dabhinab 4096         0 May 22 15:57 .ssh/
+drwxr-xr-x 1 ATHENAHEALTH+dabhinab 4096         0 May 15 13:46 .p2/
+drwxr-xr-x 1 ATHENAHEALTH+dabhinab 4096         0 May 15 10:19 Searches/
+drwxr-xr-x 1 ATHENAHEALTH+dabhinab 4096         0 Apr 11 18:08 .m2/
+drwxr-xr-x 1 ATHENAHEALTH+dabhinab 4096         0 Apr 10 14:45 s3/
+drwxr-xr-x 1 ATHENAHEALTH+dabhinab 4096         0 Apr  9 15:12 sqs/
+-rw-r--r-- 1 ATHENAHEALTH+dabhinab 4096        21 Apr  9 12:05 .node_repl_history
+-rwxr-xr-x 1 ATHENAHEALTH+dabhinab 4096 351424400 Apr  9 11:57 postgresql_17.exe*
+drwxr-xr-x 1 ATHENAHEALTH+dabhinab 4096         0 Apr  8 12:05 .config/
+-rwxr-xr-x 1 ATHENAHEALTH+dabhinab 4096  21080920 Apr  4 17:00 edb_psqlodbc.exe*
+-rwxr-xr-x 1 ATHENAHEALTH+dabhinab 4096  12174360 Apr  4 17:00 edb_pgagent_pg17.exe*
+-rwxr-xr-x 1 ATHENAHEALTH+dabhinab 4096 699697104 Apr  4 17:00 edb_pem_server.exe*
+drwxr-xr-x 1 ATHENAHEALTH+dabhinab 4096         0 Apr  4 16:13 .sts4/
+-rw-r--r-- 1 ATHENAHEALTH+dabhinab 4096        72 Apr  4 15:34 .gitconfig
+drwxr-xr-x 1 ATHENAHEALTH+dabhinab 4096         0 Apr  3 12:04 .redis-insight/
+drwxr-xr-x 1 ATHENAHEALTH+dabhinab 4096         0 Mar 25 17:34 .webclipse/
+-rw-r--r-- 1 ATHENAHEALTH+dabhinab 4096       106 Mar 25 17:33 .ctsystem
+drwxr-xr-x 1 ATHENAHEALTH+dabhinab 4096         0 Mar 25 17:33 .codetogether/
+drwxr-xr-x 1 ATHENAHEALTH+dabhinab 4096         0 Mar 25 17:18 .eclipse/
+drwxr-xr-x 1 ATHENAHEALTH+dabhinab 4096         0 Mar 25 16:57 Eclipse/
+drwxr-xr-x 1 ATHENAHEALTH+dabhinab 4096         0 Mar 25 11:54 .vscode/
+drwxr-xr-x 1 ATHENAHEALTH+dabhinab 4096         0 Mar 25 10:29 .theia-ide/
+-rw-r--r-- 1 ATHENAHEALTH+dabhinab 4096     65536 Mar 24 18:44 NTUSER.DAT{a2332f18-cdbf-11ec-8680-002248483d79}.TM.blf
+drwxr-xr-x 1 ATHENAHEALTH+dabhinab 4096         0 Mar 24 18:33 ../
+drwxr-xr-x 1 ATHENAHEALTH+dabhinab 4096         0 Mar 24 18:26 Documents/
+drwxr-xr-x 1 ATHENAHEALTH+dabhinab 4096         0 Mar 24 18:16 Links/
+drwxr-xr-x 1 ATHENAHEALTH+dabhinab 4096         0 Mar 24 18:16 Saved Games/
+drwxr-xr-x 1 ATHENAHEALTH+dabhinab 4096         0 Mar 24 18:16 Music/
+drwxr-xr-x 1 ATHENAHEALTH+dabhinab 4096         0 Mar 24 18:16 Videos/
+drwxr-xr-x 1 ATHENAHEALTH+dabhinab 4096         0 Mar 24 18:16 Favorites/
+drwxr-xr-x 1 ATHENAHEALTH+dabhinab 4096         0 Mar 24 18:16 Contacts/
+drwxr-xr-x 1 ATHENAHEALTH+dabhinab 4096         0 Mar 24 18:16 AppData/
+lrwxrwxrwx 1 ATHENAHEALTH+dabhinab 4096        61 Mar 24 18:16 Cookies -> /c/Users/dabhinab/AppData/Local/Microsoft/Windows/INetCookies/
+-rw-r--r-- 1 ATHENAHEALTH+dabhinab 4096        20 Mar 24 18:16 ntuser.ini
+lrwxrwxrwx 1 ATHENAHEALTH+dabhinab 4096        33 Mar 24 18:16 Application Data -> /c/Users/dabhinab/AppData/Roaming/
+lrwxrwxrwx 1 ATHENAHEALTH+dabhinab 4096        31 Mar 24 18:16 Local Settings -> /c/Users/dabhinab/AppData/Local/
+lrwxrwxrwx 1 ATHENAHEALTH+dabhinab 4096        69 Mar 24 18:16 NetHood -> /c/Users/dabhinab/AppData/Roaming/Microsoft/Windows/Network Shortcuts/
+lrwxrwxrwx 1 ATHENAHEALTH+dabhinab 4096        69 Mar 24 18:16 PrintHood -> /c/Users/dabhinab/AppData/Roaming/Microsoft/Windows/Printer Shortcuts/
+lrwxrwxrwx 1 ATHENAHEALTH+dabhinab 4096        58 Mar 24 18:16 Recent -> /c/Users/dabhinab/AppData/Roaming/Microsoft/Windows/Recent/
+lrwxrwxrwx 1 ATHENAHEALTH+dabhinab 4096        58 Mar 24 18:16 SendTo -> /c/Users/dabhinab/AppData/Roaming/Microsoft/Windows/SendTo/
+lrwxrwxrwx 1 ATHENAHEALTH+dabhinab 4096        62 Mar 24 18:16 Start Menu -> /c/Users/dabhinab/AppData/Roaming/Microsoft/Windows/Start Menu/
+lrwxrwxrwx 1 ATHENAHEALTH+dabhinab 4096        61 Mar 24 18:16 Templates -> /c/Users/dabhinab/AppData/Roaming/Microsoft/Windows/Templates/
+lrwxrwxrwx 1 ATHENAHEALTH+dabhinab 4096        27 Mar 24 18:16 My Documents -> /c/Users/dabhinab/Documents/
+-rw-r--r-- 1 ATHENAHEALTH+dabhinab 4096    524288 Mar 24 18:16 NTUSER.DAT{a2332f18-cdbf-11ec-8680-002248483d79}.TMContainer00000000000000000001.regtrans-ms
+-rw-r--r-- 1 ATHENAHEALTH+dabhinab 4096    524288 Mar 24 18:16 NTUSER.DAT{a2332f18-cdbf-11ec-8680-002248483d79}.TMContainer00000000000000000002.regtrans-ms
+-rw-r--r-- 1 ATHENAHEALTH+dabhinab 4096   2328576 Mar 24 18:16 ntuser.dat.LOG1
+-rw-r--r-- 1 ATHENAHEALTH+dabhinab 4096   2324480 Mar 24 18:16 ntuser.dat.LOG2
+drwxr-xr-x 1 ATHENAHEALTH+dabhinab 4096         0 Mar 24 18:06 OneDrive/

@@ -1,0 +1,411 @@
+Note : Please check the LOGDIR in the bash have proper directory like "export LOGDIR='/home/rsanthoshkumar/logdir'" if not then change it to your local directory accordingly.
+
+Gear-> Root -> connections -> enter the connectionid - 73233.
+click on edit and update the local dev details like host, username, password and the Destination Directory where the newly created files have to be saved.
+
+In case, if the subscritopn group is unlinked, the same can be linked by adding new group. Click on add under the 'Subscription Group' column.
+->select data type as 'Custom Report' from the drop down and effective date as some 100 days before current date.
+->Click on Save.
+
+Click on Schedule id link in the connections page(after opening the connectionid) -> select the connection details from the drop down being shown. Also change the schedule hour as 2.
+click on save
+
+After doing the changes for the testing check the enable option and click the approve now.(Ignore if the instance is changed to DB1 , that can be changed to any testing DB in the next step and no approval is needed for the changes made through sql++)
+
+DB changes:
+
+Root level:
+update interfaceparameter set VALUE='PTEST1' where TABLENAME= 'INTERFACEENDPOINT' and NAME= 'INSTANCE' and TABLEROWID = (Select SENDERINTERFACEENDPOINTID from interfaceconnection where ID = 73233);
+
+===================================================================================================================================================
+prod/scripts/app/interfaces/generate_flatfile_message.pl
+209c209
+<
+---
+> @scheduleids = (6660);
+
+prod/perllib/Athena/ERA/Utils.pm
+
+>       #my $rootdbh = eval { DBConnect({
+>       #       INSTANCE => $stack,
+>       #       SCHEMA => "ATHENA1",
+>       #       ( $args->{USESTANDBYDB} ? ( USESTANDBY => 1, ALLOWFAILOVER => 0 ) : () )
+>       #}); } or die "Can't reach stack $stack";
+
+>               #$dbh ||= eval { DBConnect({
+>               #       MASTERDBH => $rootdbh,
+>               #       CONTEXTID => $context,
+>               #       ( $args->{USESTANDBYDB} ? ( USESTANDBY => 1, ALLOWFAILOVER => 0 ) : () )
+>               #}); } or die "Can't reach context $context on stack $stack\n";
+
+>       #my $maxerafileid = $sql->Values($rootdbh);
+
+
+==================================================================================================================================================
+Toggle off :
++++++++++++++++++
+Script to be run:
+$ATHENA_HOME/scripts/app/interfaces/generate_flatfile_message.pl
+
+
+pts/13:larunkumar@dev1006:/n/larunkumar_streams>perl $ATHENA_HOME/scripts/app/interfaces/generate_flatfile_message.pl MTEST69 ATHENA10275 SQLREPORTSCHEDULE
+Message already created for sqlreportscheduleid 6660 for 07/15/2024. Skipping.
+Message already created for sqlreportscheduleid 6660 for 07/16/2024. Skipping.
+Message already created for sqlreportscheduleid 6660 for 07/17/2024. Skipping.
+Report generation via worker is enabled
+Message 231320978 has been in NEW state for 12.6512962962963 days.
+Message 231320978 has been in NEW state for more than 1200 seconds now..
+Generating Report for message 231320978 in context 10275 for vendor TRANSLATION|23987...
+Report Arguments are generated in  5.18362097515869 seconds
+
+inside_findera at /home/larunkumar/larunkumar_streams/prod/perllib/Athena/ERA/Utils.pm line 631.
+
+Error :$VAR1 = 'Died at /home/larunkumar/larunkumar_streams/prod/perllib/Athena/ERA/Utils.pm line 836.
+';
+Message already created for sqlreportscheduleid 6660 for 07/18/2024. Skipping.
+Report generation via worker is enabled
+Message 231415906 has been in NEW state for 11.6463773148148 days.
+Message 231415906 has been in NEW state for more than 1200 seconds now..
+Generating Report for message 231415906 in context 10275 for vendor TRANSLATION|23987...
+Report Arguments are generated in  0.263614936981201 seconds
+
+inside_findera at /home/larunkumar/larunkumar_streams/prod/perllib/Athena/ERA/Utils.pm line 631.
+
+Error :$VAR1 = 'Died at /home/larunkumar/larunkumar_streams/prod/perllib/Athena/ERA/Utils.pm line 836.
+';
+Message already created for sqlreportscheduleid 6660 for 07/19/2024. Skipping.
+Report generation via worker is enabled
+Message 231506692 has been in NEW state for 10.6474652777778 days.
+Message 231506692 has been in NEW state for more than 1200 seconds now..
+Generating Report for message 231506692 in context 10275 for vendor TRANSLATION|23987...
+Report Arguments are generated in  0.276681911651611 seconds
+
+inside_findera at /home/larunkumar/larunkumar_streams/prod/perllib/Athena/ERA/Utils.pm line 631.
+
+Error :$VAR1 = 'Died at /home/larunkumar/larunkumar_streams/prod/perllib/Athena/ERA/Utils.pm line 836.
+';
+Message already created for sqlreportscheduleid 6660 for 07/20/2024. Skipping.
+Report generation via worker is enabled
+Message 231584379 has been in NEW state for 9.65167824074074 days.
+Message 231584379 has been in NEW state for more than 1200 seconds now..
+Generating Report for message 231584379 in context 10275 for vendor TRANSLATION|23987...
+Report Arguments are generated in  0.337748915802002 seconds
+
+inside_findera at /home/larunkumar/larunkumar_streams/prod/perllib/Athena/ERA/Utils.pm line 631.
+
+Error :$VAR1 = 'Died at /home/larunkumar/larunkumar_streams/prod/perllib/Athena/ERA/Utils.pm line 836.
+';
+Message already created for sqlreportscheduleid 6660 for 07/21/2024. Skipping.
+Report generation via worker is enabled
+Message 231596376 has been in NEW state for 8.65171296296296 days.
+Message 231596376 has been in NEW state for more than 1200 seconds now..
+Generating Report for message 231596376 in context 10275 for vendor TRANSLATION|23987...
+Report Arguments are generated in  0.207596014266968 seconds
+
+inside_findera at /home/larunkumar/larunkumar_streams/prod/perllib/Athena/ERA/Utils.pm line 631.
+
+Error :$VAR1 = 'Died at /home/larunkumar/larunkumar_streams/prod/perllib/Athena/ERA/Utils.pm line 836.
+';
+pts/13:larunkumar@dev1006:/n/larunkumar_streams>
+==============================================================================================================================================
+Logs :
+
+pts/4:larunkumar@dev1006:/n/larunkumar_streams>tail -f  mtest69_10275_TRANSLATION_23987_73233_12730_Claim_ERA_Reports_interface_report_athenaWorker_log
+
+[07/29/2024:23:45:05] Message ID: 231320978 - Updating interfacemessageparameter table with filenames..
+[07/29/2024:23:45:05] Message ID: 231320978 - Done updating interfacemessageparameter table with filenames.
+[07/29/2024:23:45:05] Moving message 231320978 to NEW
+[07/29/2024:23:45:05] Report Generation is completed and tables are updated
+[07/29/2024:23:45:05] Tables are updated and interface lock is removed in 0.0456860307922363 seconds.
+[07/29/2024:23:45:05] Generating Report for message 231415906 in context 10275 for vendor TRANSLATION|23987...
+[07/29/2024:23:45:06] Report Arguments are generated in  0.262591936981201 seconds
+[07/29/2024:23:45:06] [ContextID: 10275] Locking message: 231415906
+[07/29/2024:23:45:08] Generating Report in process 1724171 and in host dev1006...
+[07/29/2024:23:45:08] Retrieving file(s) of type ERA for practice 10275
+[07/29/2024:23:45:08] Using BINDS 07/17/2024 to 07/17/2024.
+[07/29/2024:23:45:08] Error while trying to generate flatfile for message 231415906. Died at /home/larunkumar/larunkumar_streams/prod/perllib/Athena/ERA/Utils.pm line 836.
+[07/29/2024:23:45:09] Message ID: 231415906 - Updating interfacemessageparameter table with filenames..
+[07/29/2024:23:45:09] Message ID: 231415906 - Done updating interfacemessageparameter table with filenames.
+[07/29/2024:23:45:09] Moving message 231415906 to NEW
+[07/29/2024:23:45:09] Report Generation is completed and tables are updated
+[07/29/2024:23:45:09] Tables are updated and interface lock is removed in 0.0351980734863281 seconds.
+[07/29/2024:23:45:10] Generating Report for message 231506692 in context 10275 for vendor TRANSLATION|23987...
+[07/29/2024:23:45:10] Report Arguments are generated in  0.275357911651611 seconds
+[07/29/2024:23:45:10] [ContextID: 10275] Locking message: 231506692
+[07/29/2024:23:45:12] Generating Report in process 1724171 and in host dev1006...
+[07/29/2024:23:45:12] Retrieving file(s) of type ERA for practice 10275
+[07/29/2024:23:45:12] Using BINDS 07/18/2024 to 07/18/2024.
+[07/29/2024:23:45:13] Error while trying to generate flatfile for message 231506692. Died at /home/larunkumar/larunkumar_streams/prod/perllib/Athena/ERA/Utils.pm line 836.
+[07/29/2024:23:45:14] Message ID: 231506692 - Updating interfacemessageparameter table with filenames..
+[07/29/2024:23:45:14] Message ID: 231506692 - Done updating interfacemessageparameter table with filenames.
+[07/29/2024:23:45:14] Moving message 231506692 to NEW
+[07/29/2024:23:45:14] Report Generation is completed and tables are updated
+[07/29/2024:23:45:14] Tables are updated and interface lock is removed in 0.033711907989502 seconds.
+[07/29/2024:23:45:15] Generating Report for message 231584379 in context 10275 for vendor TRANSLATION|23987...
+[07/29/2024:23:45:15] Report Arguments are generated in  0.336389915802002 seconds
+[07/29/2024:23:45:15] [ContextID: 10275] Locking message: 231584379
+[07/29/2024:23:45:17] Generating Report in process 1724171 and in host dev1006...
+[07/29/2024:23:45:17] Retrieving file(s) of type ERA for practice 10275
+[07/29/2024:23:45:17] Using BINDS 07/19/2024 to 07/19/2024.
+[07/29/2024:23:45:18] Error while trying to generate flatfile for message 231584379. Died at /home/larunkumar/larunkumar_streams/prod/perllib/Athena/ERA/Utils.pm line 836.
+[07/29/2024:23:45:19] Message ID: 231584379 - Updating interfacemessageparameter table with filenames..
+[07/29/2024:23:45:19] Message ID: 231584379 - Done updating interfacemessageparameter table with filenames.
+[07/29/2024:23:45:19] Moving message 231584379 to NEW
+[07/29/2024:23:45:19] Report Generation is completed and tables are updated
+[07/29/2024:23:45:19] Tables are updated and interface lock is removed in 0.0344960865631103 seconds.
+[07/29/2024:23:45:20] Generating Report for message 231596376 in context 10275 for vendor TRANSLATION|23987...
+[07/29/2024:23:45:20] Report Arguments are generated in  0.206462014266968 seconds
+[07/29/2024:23:45:20] [ContextID: 10275] Locking message: 231596376
+[07/29/2024:23:45:22] Generating Report in process 1724171 and in host dev1006...
+[07/29/2024:23:45:22] Retrieving file(s) of type ERA for practice 10275
+[07/29/2024:23:45:22] Using BINDS 07/20/2024 to 07/20/2024.
+[07/29/2024:23:45:22] Error while trying to generate flatfile for message 231596376. Died at /home/larunkumar/larunkumar_streams/prod/perllib/Athena/ERA/Utils.pm line 836.
+
+=================================================================================================================================================
+Toggle On :
++++++++++++++++++
+
+pts/24:larunkumar@dev1006:/n/larunkumar_streams>perl $ATHENA_HOME/scripts/app/interfaces/generate_flatfile_message.pl MTEST69 ATHENA10275 SQLREPORTSCHEDULE
+Message already created for sqlreportscheduleid 6660 for 07/15/2024. Skipping.
+Message already created for sqlreportscheduleid 6660 for 07/16/2024. Skipping.
+Message already created for sqlreportscheduleid 6660 for 07/17/2024. Skipping.
+Report generation via worker is enabled
+Message 231320978 has been in NEW state for 12.6588310185185 days.
+Message 231320978 has been in NEW state for more than 1200 seconds now..
+Generating Report for message 231320978 in context 10275 for vendor TRANSLATION|23987...
+Report Arguments are generated in  2.6166480294342 seconds
+
+inside_findera at /home/larunkumar/larunkumar_streams/prod/perllib/Athena/ERA/Utils.pm line 631.
+Message already created for sqlreportscheduleid 6660 for 07/18/2024. Skipping.
+Report generation via worker is enabled
+Message 231415906 has been in NEW state for 11.6543634259259 days.
+Message 231415906 has been in NEW state for more than 1200 seconds now..
+Generating Report for message 231415906 in context 10275 for vendor TRANSLATION|23987...
+Report Arguments are generated in  0.196375982559204 seconds
+
+inside_findera at /home/larunkumar/larunkumar_streams/prod/perllib/Athena/ERA/Utils.pm line 631.
+Message already created for sqlreportscheduleid 6660 for 07/19/2024. Skipping.
+
+==============================================================================================================================================
+Log :
+
+pts/4:larunkumar@dev1006:/n/larunkumar_streams>tail -f  mtest69_10275_TRANSLATION_23987_73233_12730_Claim_ERA_Reports_interface_report_athenaWorker_log
+
+[07/29/2024:23:55:43] Generating Report for message 231320978 in context 10275 for vendor TRANSLATION|23987...
+[07/29/2024:23:55:45] Report Arguments are generated in  2.6155940294342 seconds
+[07/29/2024:23:55:45] [ContextID: 10275] Locking message: 231320978
+[07/29/2024:23:55:51] Generating Report in process 1752928 and in host dev1006...
+[07/29/2024:23:55:51] Retrieving file(s) of type ERA for practice 10275
+[07/29/2024:23:55:51] Using BINDS 07/16/2024 to 07/16/2024.
+[07/29/2024:23:56:30] unzipping 10275_20240717_835_AARP.zip
+[07/29/2024:23:56:30] retrieved 10275_AARP.zip as 10275_20240717_835_AARP
+[07/29/2024:23:56:30] unzipping 10275_20240717_835_Aetna.zip
+[07/29/2024:23:56:30] retrieved 10275_Aetna.zip as 10275_20240717_835_Aetna
+[07/29/2024:23:56:30] unzipping 10275_20240717_835_AmerihealthCaritas.zip
+[07/29/2024:23:56:30] retrieved 10275_AmerihealthCaritas.zip as 10275_20240717_835_AmerihealthCaritas
+[07/29/2024:23:56:30] unzipping 10275_20240717_835_AutomatedBenefitServices.zip
+[07/29/2024:23:56:30] retrieved 10275_AutomatedBenefitServices.zip as 10275_20240717_835_AutomatedBenefitServices
+[07/29/2024:23:56:30] unzipping 10275_20240717_835_Cigna-GWH.zip
+[07/29/2024:23:56:30] retrieved 10275_Cigna-GWH.zip as 10275_20240717_835_Cigna-GWH
+[07/29/2024:23:56:30] unzipping 10275_20240717_835_EmblemHealthPlanInc.zip
+[07/29/2024:23:56:30] retrieved 10275_EmblemHealthPlanInc.zip as 10275_20240717_835_EmblemHealthPlanInc
+[07/29/2024:23:56:30] unzipping 10275_20240717_835_GEHA.zip
+[07/29/2024:23:56:30] retrieved 10275_GEHA.zip as 10275_20240717_835_GEHA
+[07/29/2024:23:56:30] unzipping 10275_20240717_835_GallagherBasset.zip
+[07/29/2024:23:56:30] retrieved 10275_GallagherBasset.zip as 10275_20240717_835_GallagherBasset
+[07/29/2024:23:56:31] unzipping 10275_20240717_835_GatewayHealthPlan.zip
+[07/29/2024:23:56:31] retrieved 10275_GatewayHealthPlan.zip as 10275_20240717_835_GatewayHealthPlan
+[07/29/2024:23:56:31] unzipping 10275_20240717_835_Hartford.zip
+[07/29/2024:23:56:31] retrieved 10275_Hartford.zip as 10275_20240717_835_Hartford
+[07/29/2024:23:56:31] unzipping 10275_20240717_835_HealthPartnersofPhiladelphia.zip
+[07/29/2024:23:56:31] retrieved 10275_HealthPartnersofPhiladelphia.zip as 10275_20240717_835_HealthPartnersofPhiladelphia
+[07/29/2024:23:56:31] unzipping 10275_20240717_835_Humana.zip
+[07/29/2024:23:56:31] retrieved 10275_Humana.zip as 10275_20240717_835_Humana
+[07/29/2024:23:56:31] unzipping 10275_20240717_835_LibertyMutual.zip
+[07/29/2024:23:56:31] retrieved 10275_LibertyMutual.zip as 10275_20240717_835_LibertyMutual
+[07/29/2024:23:56:31] unzipping 10275_20240717_835_LuminareHealth.zip
+[07/29/2024:23:56:31] retrieved 10275_LuminareHealth.zip as 10275_20240717_835_LuminareHealth
+[07/29/2024:23:56:31] unzipping 10275_20240717_835_MVPHealthPlan.zip
+[07/29/2024:23:56:31] retrieved 10275_MVPHealthPlan.zip as 10275_20240717_835_MVPHealthPlan
+[07/29/2024:23:56:31] unzipping 10275_20240717_835_MedicareA-NGS-WI_MI_MN_NY_NJ_PR_VI.zip
+[07/29/2024:23:56:31] retrieved 10275_MedicareA-NGS-WI_MI_MN_NY_NJ_PR_VI.zip as 10275_20240717_835_MedicareA-NGS-WI_MI_MN_NY_NJ_PR_VI
+[07/29/2024:23:56:31] unzipping 10275_20240717_835_Medicare-NYUpstate.zip
+[07/29/2024:23:56:31] retrieved 10275_Medicare-NYUpstate.zip as 10275_20240717_835_Medicare-NYUpstate
+[07/29/2024:23:56:31] unzipping 10275_20240717_835_Medicare-Railroad.zip
+[07/29/2024:23:56:32] retrieved 10275_Medicare-Railroad.zip as 10275_20240717_835_Medicare-Railroad
+[07/29/2024:23:56:32] unzipping 10275_20240717_835_MolinaHealthcareofNY.zip
+[07/29/2024:23:56:32] retrieved 10275_MolinaHealthcareofNY.zip as 10275_20240717_835_MolinaHealthcareofNY
+[07/29/2024:23:56:32] unzipping 10275_20240717_835_Optum-VACCN.zip
+[07/29/2024:23:56:32] retrieved 10275_Optum-VACCN.zip as 10275_20240717_835_Optum-VACCN
+[07/29/2024:23:56:32] unzipping 10275_20240717_835_Sedgwick.zip
+[07/29/2024:23:56:32] retrieved 10275_Sedgwick.zip as 10275_20240717_835_Sedgwick
+[07/29/2024:23:56:32] unzipping 10275_20240717_835_UMR.zip
+[07/29/2024:23:56:32] retrieved 10275_UMR.zip as 10275_20240717_835_UMR
+[07/29/2024:23:56:32] unzipping 10275_20240717_835_UnitedHealthcare.zip
+[07/29/2024:23:56:32] retrieved 10275_UnitedHealthcare.zip as 10275_20240717_835_UnitedHealthcare
+[07/29/2024:23:56:32] unzipping 10275_20240717_835_WC-SelectiveInsurance.zip
+[07/29/2024:23:56:32] retrieved 10275_WC-SelectiveInsurance.zip as 10275_20240717_835_WC-SelectiveInsurance
+[07/29/2024:23:56:32] unzipping 10275_20240717_835_WellMed.zip
+[07/29/2024:23:56:32] retrieved 10275_WellMed.zip as 10275_20240717_835_WellMed
+[07/29/2024:23:56:32] unzipping 10275_20240717_835_Wellcare.zip
+[07/29/2024:23:56:32] retrieved 10275_Wellcare.zip as 10275_20240717_835_Wellcare
+[07/29/2024:23:56:32] Generated 26 Report Files...
+[07/29/2024:23:56:32] Report generated in 41.6556850841675 seconds.
+[07/29/2024:23:56:32] Fetching s3 secrets from vault
+[07/29/2024:23:56:32] Connecting to Amazon s3
+[07/29/2024:23:56:32] Writing /tmp/10275/TRANSLATION_23987/flatfilemessage/generate/231320978/10275_20240717_835.zip into ard-reports-dev in the name of MTEST1_10275_231320978_10275_20240717_835.zip
+[07/29/2024:23:56:33] Staus of add_key_filename 1.
+[07/29/2024:23:56:33] File is put into s3 successfully in 0.279854976760864 seconds.
+[07/29/2024:23:56:35] Message ID: 231320978 - Updating interfacemessageparameter table with filenames..
+[07/29/2024:23:56:35] Message ID: 231320978 - Done updating interfacemessageparameter table with filenames.
+[07/29/2024:23:56:35] Moving message 231320978 to Pending
+[07/29/2024:23:56:35] Report Generation is completed and tables are updated
+[07/29/2024:23:56:35] Tables are updated and interface lock is removed in 0.202739905151367 seconds.
+[07/29/2024:23:56:35] Generating Report for message 231415906 in context 10275 for vendor TRANSLATION|23987...
+[07/29/2024:23:56:35] Report Arguments are generated in  0.195395982559204 seconds
+[07/29/2024:23:56:35] [ContextID: 10275] Locking message: 231415906
+[07/29/2024:23:56:37] Generating Report in process 1752928 and in host dev1006...
+[07/29/2024:23:56:37] Retrieving file(s) of type ERA for practice 10275
+[07/29/2024:23:56:37] Using BINDS 07/17/2024 to 07/17/2024.
+[07/29/2024:23:57:00] unzipping 10275_20240718_835_AARP.zip
+[07/29/2024:23:57:00] retrieved 10275_AARP.zip as 10275_20240718_835_AARP
+[07/29/2024:23:57:00] unzipping 10275_20240718_835_Aetna.zip
+[07/29/2024:23:57:00] retrieved 10275_Aetna.zip as 10275_20240718_835_Aetna
+[07/29/2024:23:57:00] unzipping 10275_20240718_835_AutomatedBenefitServices.zip
+[07/29/2024:23:57:00] retrieved 10275_AutomatedBenefitServices.zip as 10275_20240718_835_AutomatedBenefitServices
+[07/29/2024:23:57:00] unzipping 10275_20240718_835_EmblemHealthInsuranceCompany.zip
+[07/29/2024:23:57:00] retrieved 10275_EmblemHealthInsuranceCompany.zip as 10275_20240718_835_EmblemHealthInsuranceCompany
+[07/29/2024:23:57:00] unzipping 10275_20240718_835_EmblemHealthPlanInc.zip
+[07/29/2024:23:57:00] retrieved 10275_EmblemHealthPlanInc.zip as 10275_20240718_835_EmblemHealthPlanInc
+[07/29/2024:23:57:00] unzipping 10275_20240718_835_GallagherBasset.zip
+[07/29/2024:23:57:00] retrieved 10275_GallagherBasset.zip as 10275_20240718_835_GallagherBasset
+[07/29/2024:23:57:00] unzipping 10275_20240718_835_GeisingerHealth.zip
+[07/29/2024:23:57:00] retrieved 10275_GeisingerHealth.zip as 10275_20240718_835_GeisingerHealth
+[07/29/2024:23:57:00] unzipping 10275_20240718_835_GoldenRule.zip
+[07/29/2024:23:57:00] retrieved 10275_GoldenRule.zip as 10275_20240718_835_GoldenRule
+[07/29/2024:23:57:00] unzipping 10275_20240718_835_Humana.zip
+[07/29/2024:23:57:00] retrieved 10275_Humana.zip as 10275_20240718_835_Humana
+[07/29/2024:23:57:00] unzipping 10275_20240718_835_MVA-Allstate.zip
+[07/29/2024:23:57:00] retrieved 10275_MVA-Allstate.zip as 10275_20240718_835_MVA-Allstate
+[07/29/2024:23:57:01] unzipping 10275_20240718_835_MedicareA-NGS-WI_MI_MN_NY_NJ_PR_VI.zip
+[07/29/2024:23:57:01] retrieved 10275_MedicareA-NGS-WI_MI_MN_NY_NJ_PR_VI.zip as 10275_20240718_835_MedicareA-NGS-WI_MI_MN_NY_NJ_PR_VI
+[07/29/2024:23:57:01] unzipping 10275_20240718_835_Medicare-NYUpstate.zip
+[07/29/2024:23:57:01] retrieved 10275_Medicare-NYUpstate.zip as 10275_20240718_835_Medicare-NYUpstate
+[07/29/2024:23:57:01] unzipping 10275_20240718_835_Medicare-Railroad.zip
+[07/29/2024:23:57:01] retrieved 10275_Medicare-Railroad.zip as 10275_20240718_835_Medicare-Railroad
+[07/29/2024:23:57:01] unzipping 10275_20240718_835_Optum-VACCN.zip
+[07/29/2024:23:57:01] retrieved 10275_Optum-VACCN.zip as 10275_20240718_835_Optum-VACCN
+[07/29/2024:23:57:01] unzipping 10275_20240718_835_Oxford.zip
+[07/29/2024:23:57:01] retrieved 10275_Oxford.zip as 10275_20240718_835_Oxford
+[07/29/2024:23:57:01] unzipping 10275_20240718_835_Sedgwick.zip
+[07/29/2024:23:57:01] retrieved 10275_Sedgwick.zip as 10275_20240718_835_Sedgwick
+[07/29/2024:23:57:01] unzipping 10275_20240718_835_St.PaulTravelers.zip
+[07/29/2024:23:57:01] retrieved 10275_St.PaulTravelers.zip as 10275_20240718_835_St.PaulTravelers
+[07/29/2024:23:57:01] unzipping 10275_20240718_835_UMR.zip
+[07/29/2024:23:57:01] retrieved 10275_UMR.zip as 10275_20240718_835_UMR
+[07/29/2024:23:57:01] unzipping 10275_20240718_835_UnitedHealthcare.zip
+[07/29/2024:23:57:01] retrieved 10275_UnitedHealthcare.zip as 10275_20240718_835_UnitedHealthcare
+[07/29/2024:23:57:01] unzipping 10275_20240718_835_Wellcare.zip
+[07/29/2024:23:57:01] retrieved 10275_Wellcare.zip as 10275_20240718_835_Wellcare
+[07/29/2024:23:57:01] Generated 20 Report Files...
+[07/29/2024:23:57:01] Report generated in 24.1854290694427 seconds.
+[07/29/2024:23:57:01] Fetching s3 secrets from vault
+[07/29/2024:23:57:01] Connecting to Amazon s3
+[07/29/2024:23:57:01] Writing /tmp/10275/TRANSLATION_23987/flatfilemessage/generate/231415906/10275_20240718_835.zip into ard-reports-dev in the name of MTEST1_10275_231415906_10275_20240718_835.zip
+[07/29/2024:23:57:02] Staus of add_key_filename 1.
+[07/29/2024:23:57:02] File is put into s3 successfully in 0.273849964981079 seconds.
+[07/29/2024:23:57:03] Message ID: 231415906 - Updating interfacemessageparameter table with filenames..
+[07/29/2024:23:57:03] Message ID: 231415906 - Done updating interfacemessageparameter table with filenames.
+[07/29/2024:23:57:03] Moving message 231415906 to Pending
+[07/29/2024:23:57:04] Report Generation is completed and tables are updated
+[07/29/2024:23:57:04] Tables are updated and interface lock is removed in 0.0372520814666748 seconds.
+[07/29/2024:23:57:04] Generating Report for message 231506692 in context 10275 for vendor TRANSLATION|23987...
+[07/29/2024:23:57:04] Report Arguments are generated in  0.215984009933472 seconds
+[07/29/2024:23:57:04] [ContextID: 10275] Locking message: 231506692
+[07/29/2024:23:57:06] Generating Report in process 1752928 and in host dev1006...
+[07/29/2024:23:57:06] Retrieving file(s) of type ERA for practice 10275
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+erafilesearch.esp
+
+ContextID: 10275
+
+Gear -> Practice Manager -> ERA file search -> Download
+
+962804,962467,961779,961079,960604,959471,958922,956951,956393,955267,954801,954277
+
+Toggle off :
++++++++++++++++++
+
+Error:
+Died at /home/larunkumar/larunkumar_streams/prod/htdocs/practiceadmin/erafilesearch.esp line 84.
+, /home/larunkumar/larunkumar_streams/prod/perllib/Athena/Apache/ASP.pm line 1538
+30/Jul/2024 00:04:09
+
+Toggle on :
++++++++++++++++++
+
+Able to download the file successfully.
+
+============================================================================================================================================
+Few other Cases :
+
+Gear -> Practice Manager -> ERA file search -> Download
+
+Two or more batches having checknumber as 0 and same rpoerafileid (5418525R2983)
+
+Toggle :1 at /home/larunkumar/larunkumar_streams/prod/perllib/Athena/ERA/Lookup.pm line 819.
+output :$VAR1 = 'ISA*00*          *00*          *ZZ*200787505      *ZZ*043387530      *230331*0450*^*00501*106673135*0*P*:/nGS*HP*200787505*043387530*20230331*0450*109841950*X*005010X221A1/nST*835*0001/nBPR*H*0*C*NON************20230330/nTRN*1*0*1363365500/nDTM*405*20230330/n
+02:31 [timer] 2050511 GET /2983/56/practiceadmin/5418525R2983.835?CSRFPROTECT=079537418578df4c56a022c02de81da6 aloganathan3 ZqiIsH0v--9pJh9D8@-jMgAAAAA END 0.676232
+
+Toggle :0 at /home/larunkumar/larunkumar_streams/prod/perllib/Athena/ERA/Lookup.pm line 819.
+output :$VAR1 = 'ISA*00*          *00*          *ZZ*200787505      *ZZ*043387530      *230331*0450*^*00501*106673135*0*P*:/nGS*HP*200787505*043387530*20230331*0450*109841950*X*005010X221A1/nST*835*0001/nBPR*H*0*C*NON************20230330/nTRN*1*0*1363365500/nDTM*405*20230330/n
+
+-----------------------------------------------------------------------------------------------------------------------------------------
+
+Two or more batches having same checknumber as 0 , same rpoerafileid and both not a discarded/duplicate batch (2586123R2983)
+
+Toggle :0 at /home/larunkumar/larunkumar_streams/prod/perllib/Athena/ERA/Lookup.pm line 819.
+output :$VAR1 = 'ISA*00*          *00*          *ZZ*200787505      *ZZ*043387530      *181205*1401*^*00501*109925204*0*P*:/nGS*HP*200787505*043387530*20181205*1401*101342412*X*005010X221A1/nST*835*0001/nBPR*H*0*C*NON************20181203/nTRN*1*0*1756017952/nDTM*405*20181130/n
+
+Toggle :1 at /home/larunkumar/larunkumar_streams/prod/perllib/Athena/ERA/Lookup.pm line 819.
+output :$VAR1 = 'ISA*00*          *00*          *ZZ*200787505      *ZZ*043387530      *181205*1401*^*00501*109925204*0*P*:/nGS*HP*200787505*043387530*20181205*1401*101342412*X*005010X221A1/nST*835*0001/nBPR*H*0*C*NON************20181203/nTRN*1*0*1756017952/nDTM*405*20181130/n
+
+-----------------------------------------------------------------------------------------------------------------------------------------
+Two or more batches having same checknumber as 0000000000 , same rpoerafileid and only one common controlnumber (5545295R2983)
+
+Toggle :1 at /home/larunkumar/larunkumar_streams/prod/perllib/Athena/ERA/Lookup.pm line 819.
+output :$VAR1 = 'ISA*00*          *00*          *ZZ*200787505      *ZZ*043387530      *230506*1320*^*00501*100491902*0*P*:/nGS*HP*200787505*043387530*20230506*1320*100503570*X*005010X221A1/nST*835*0001/nBPR*H*0*C*NON************20230208/nTRN*1*0000000000*1116002815/n
+
+Toggle :0 at /home/larunkumar/larunkumar_streams/prod/perllib/Athena/ERA/Lookup.pm line 819.
+output :$VAR1 = 'ISA*00*          *00*          *ZZ*200787505      *ZZ*043387530      *230506*1320*^*00501*100491902*0*P*:/nGS*HP*200787505*043387530*20230506*1320*100503570*X*005010X221A1/nST*835*0001/nBPR*H*0*C*NON************20230208/nTRN*1*0000000000*1116002815/n
+
+-----------------------------------------------------------------------------------------------------------------------------------------
+784977R27404  | as separator
+
+Toggle :0 at /home/larunkumar/larunkumar_streams/prod/perllib/Athena/ERA/Lookup.pm line 819.
+output :$VAR1 = 'ISA|00|          |00|          |ZZ|WAYSTAR        |ZZ|MedExpress     |240421|0405|}|00501|000000000|0|P|^/nGS|HP|WAYSTAR|MedExpress|20240421|0405|6969175|X|005010X221A1/nST|835|0001/nBPR|I|49|C|ACH|CCP|01|121000248|DA|4113994776|1591293865|000004567|01|123000848|DA|153912008403|20240423/nTRN|1|24111B1000170034|1591293865|000004567/nREF|EV|BFT220003440/nREF|F2|1333/nDTM|405|20240418/nN1|PR|UNITEDHEALTHCARE OF FLORIDA INC/nN3|PO BOX 5280/nN4||NY|124025280/nREF|2U|04567/nPER|CX|UNITEDHEALTHCARE ESOLUTIONS|TE|8884784760/nPER|BL|UHC ESOLUTIONS|TE|8884784760|EM|ACEDIOPS@UHC.COM|UR|WWW.UHCPROVIDER.COM/nN1|PE|MEDEXPRESS URGENT CARE MAINE PC|XX|1740882570/nN3|423 FORTRESS BLVD/nN4|MORGANTOWN|WV|26508/nREF|TJ|821719888/nLX|1/nTS3|007706502511|10|20241231|1|111/nCLP|4784610V27404|1|111|49||14|R24E16612400|10|1/nNM1|QC|1|FLETCHER|BETH/nNM1|IL|1|||||MI|128955663/nDTM|232|20240415/nDTM|233|20240415/nDTM|050|20240417/nAMT|AU|49/nSVC|HC^99212^GT|111|49||1||0/nDTM|472|20240415/nCAS|CO|45|62/nREF|LU|M1/nREF|6R|39493639P27404B393065/nAMT|B6|49/nSE|32|0001/nGE|1|6969175/nIEA|1|000000000/n';
+
+Toggle :1 at /home/larunkumar/larunkumar_streams/prod/perllib/Athena/ERA/Lookup.pm line 819.
+output :$VAR1 = 'ISA|00|          |00|          |ZZ|WAYSTAR        |ZZ|MedExpress     |240421|0405|}|00501|000000000|0|P|^/nGS|HP|WAYSTAR|MedExpress|20240421|0405|6969175|X|005010X221A1/nST|835|0001/nBPR|I|49|C|ACH|CCP|01|121000248|DA|4113994776|1591293865|000004567|01|123000848|DA|153912008403|20240423/nTRN|1|24111B1000170034|1591293865|000004567/nREF|EV|BFT220003440/nREF|F2|1333/nDTM|405|20240418/nN1|PR|UNITEDHEALTHCARE OF FLORIDA INC/nN3|PO BOX 5280/nN4||NY|124025280/nREF|2U|04567/nPER|CX|UNITEDHEALTHCARE ESOLUTIONS|TE|8884784760/nPER|BL|UHC ESOLUTIONS|TE|8884784760|EM|ACEDIOPS@UHC.COM|UR|WWW.UHCPROVIDER.COM/nN1|PE|MEDEXPRESS URGENT CARE MAINE PC|XX|1740882570/nN3|423 FORTRESS BLVD/nN4|MORGANTOWN|WV|26508/nREF|TJ|821719888/nLX|1/nTS3|007706502511|10|20241231|1|111/nCLP|4784610V27404|1|111|49||14|R24E16612400|10|1/nNM1|QC|1|FLETCHER|BETH/nNM1|IL|1|||||MI|128955663/nDTM|232|20240415/nDTM|233|20240415/nDTM|050|20240417/nAMT|AU|49/nSVC|HC^99212^GT|111|49||1||0/nDTM|472|20240415/nCAS|CO|45|62/nREF|LU|M1/nREF|6R|39493639P27404B393065/nAMT|B6|49/nSE|32|0001/nGE|1|6969175/nIEA|1|000000000/n';
+
+-----------------------------------------------------------------------------------------------------------------------------------------
+785131R27404  ^ as separator
+
+Toggle :1 at /home/larunkumar/larunkumar_streams/prod/perllib/Athena/ERA/Lookup.pm line 819.
+
+output :$VAR1 = 'ISA^00^          ^00^          ^33^54704          ^ZZ^V135974        ^240421^0802^{^00501^363640979^0^P^>/nGS^HP^54704^9804202^20240421^08023408^542019705^X^005010X221A1/nST^835^0001/nBPR^H^0^C^NON^^^^^^^^^^^^20240424/nTRN^1^C000008151^1463867722/nREF^EV^9804202/nDTM^405^20240419/n
+
+Toggle :0 at /home/larunkumar/larunkumar_streams/prod/perllib/Athena/ERA/Lookup.pm line 819.
+
+output :$VAR1 = 'ISA^00^          ^00^          ^33^54704          ^ZZ^V135974        ^240421^0802^{^00501^363640979^0^P^>/nGS^HP^54704^9804202^20240421^08023408^542019705^X^005010X221A1/nST^835^0001/nBPR^H^0^C^NON^^^^^^^^^^^^20240424/nTRN^1^C000008151^1463867722/nREF^EV^9804202/nDTM^405^20240419/n
+
+-----------------------------------------------------------------------------------------------------------------------------------------
+502362R10729 /n as separator
+
+Toggle :1 at /home/larunkumar/larunkumar_streams/prod/perllib/Athena/ERA/Lookup.pm line 819.
+output :$VAR1 = 'ISA/n00/n          /n00/n          /nZZ/nCHC            /nZZ/n460762C9807423 /n240421/n0932/n|/n00501/n306810815/n0/nP/n^_GS/nHP/nCHC/n460762C9807423/n20240421/n09323400/n1/nX/n005010X221A1_ST/n835/n000000001_BPR/nH/n0/nC/nNON/n/n/n/n/n/n/n/n/n/n/n/n20240419_TRN/n1/n93107654/n1026000618_REF/nEV/n3102780_DTM/n405/n20240412_N1
+
+Toggle :0 at /home/larunkumar/larunkumar_streams/prod/perllib/Athena/ERA/Lookup.pm line 819.
+output :$VAR1 = 'ISA/n00/n          /n00/n          /nZZ/nCHC            /nZZ/n460762C9807423 /n240421/n0932/n|/n00501/n306810815/n0/nP/n^_GS/nHP/nCHC/n460762C9807423/n20240421/n09323400/n1/nX/n005010X221A1_ST/n835/n000000001_BPR/nH/n0/nC/nNON/n/n/n/n/n/n/n/n/n/n/n/n20240419_TRN/n1/n93107654/n1026000618_REF/nEV/n3102780_DTM/n405/n20240412_N1
+-----------------------------------------------------------------------------------------------------------------------------------------
