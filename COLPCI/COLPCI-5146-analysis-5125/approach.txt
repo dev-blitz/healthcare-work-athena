@@ -1,0 +1,2 @@
+make the status as PREMATCHED in the backend in the DB for the ERA Batch
+process the ERA Batch

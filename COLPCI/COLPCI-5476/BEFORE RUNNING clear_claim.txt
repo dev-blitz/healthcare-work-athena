@@ -1,0 +1,252 @@
+BEFORE RUNNING clear_claim
+==========================
+
+
+athena27472@ptest18 > \t ;  \0 ;  select * from PAYMENTBATCH where ID = 93614;
+\0: 0 columns and 31 rows removed.
++----------------------+-------------------+
+|ID                    |93614              |
++----------------------+-------------------+
+|CREATED               |2024-05-21 17:54:53|
+|CREATEDBY             |kkramer            |
+|NOTES                 |COLPCI-5476        |
+|LASTMODIFIED          |2025-11-07 12:53:47|
+|LASTMODIFIEDBY        |kkramer            |
+|CHECKNUMBER           |1003058284         |
+|TOTALSUMAMOUNT        |         1.77      |
+|TOTALUNPOSTEDAMOUNT   |         0         |
+|DEPOSITDATE           |2024-05-21 00:00:00|
+|DEPOSITBATCHID        |     33306         |
+|PRACTICESUBTOTALS     |27472:             |
+|ERABATCHID            |     32494         |
+|PREPAREDBY            |mcastro163         |
+|PROVIDERGROUPSUBTOTALS|101:1.77           |
+|PAYMENTBATCHROUTEID   |         1         |
+|ASSOCIATED            |2024-05-27 12:33:03|
+|ASSOCIATEDBY          |ATHENA             |
+|DONOTAUTOASSIGN       |Y                  |
+|PAPERLESSFLAG         |N                  |
+|SCANNINGLOCATION      |EREMIT             |
+|STATUSID              |        10         |
+|RPODATAENTRYVENDORID  |         2         |
+|RPOSCANFIRSTJOBTYPEID |         6         |
++----------------------+-------------------+
+1 row selected in 0 seconds.
+
+athena27472@ptest18 > \t ;  \0 ;  select * from ERABATCH where ID = 32494;
+\0: 0 columns and 51 rows removed.
+\0: long fields trimmed.
++---------------------------+-----------------------------------+
+|ID                         |32494                              |
++---------------------------+-----------------------------------+
+|RPOERAFILEID               | 240708036                         |
+|STATUS                     |PROCESSING                         |
+|TOTALCHARGES               |     12113.09                      |
+|TOTALPAYMENTS              |         1.77                      |
+|CHECKNUMBER                |1003058284                         |
+|IMAGEFILENAME              |93614A27472.pdf                    |
+|ASSIGNEDTO                 |kkramer                            |
+|ASSIGNED                   |2025-08-11 08:19:51                |
+|SOURCEHEADERDATA           |PAYMENTBATCH|1.77|93614A27472....  |
+|PAYDATE                    |2024-05-21 00:00:00                |
+|TARGETPAYMENTBATCHID       |     93614                         |
+|KICKREASONCATEGORYID       |       611                         |
+|AEGISKICKREASONCATEGORYID  |       611                         |
+|AEGISINSREPORTINGCATEGORYID|       982                         |
+|UNIQUESTRING               |p74BWsCStJZleWEEZ60IFA             |
+|EMCRECEIVERID              |       964                         |
+|PAYMENTBATCHROUTEID        |         1                         |
+|CREATED                    |2024-05-27 10:41:47                |
+|CREATEDBY                  |ATHENA                             |
+|LASTMODIFIED               |2025-11-07 12:45:45                |
+|LASTMODIFIEDBY             |ATHENA                             |
++---------------------------+-----------------------------------+
+1 row selected in 0 seconds.
+
+athena27472@ptest18 > \t ;  \0 ;  select * from ERARECORD where ERABATCHID = 32494 and MATCHED is not null and APPLIED is null;
+\0: 0 columns and 103 rows removed.
+\0: long fields trimmed.
++------------------------+-----------------------------------+-----------------------------------+
+|ID                      |1618350                            |1618351                            |
++------------------------+-----------------------------------+-----------------------------------+
+|ERABATCHID              |     32494                         |     32494                         |
+|ALLOWABLE               |         0                         |         0                         |
+|OTHERADJUSTMENTREASON   |OTHER                              |OTHER                              |
+|OTHERTRANSFERREASON     |OTHER                              |OTHER                              |
+|PAYMENT                 |         0                         |         0                         |
+|FROMDATE                |2023-07-31 00:00:00                |2023-07-31 00:00:00                |
+|TODATE                  |2023-07-31 00:00:00                |2023-07-31 00:00:00                |
+|PROCEDURECODE           |3074F                              |3078F                              |
+|DAYS                    |         1                         |         1                         |
+|AMOUNT                  |         0                         |         0                         |
+|PATIENTLASTNAME         |LY                                 |LY                                 |
+|PATIENTFIRSTNAME        |NAM                                |NAM                                |
+|CLAIMID                 |                                   |    176653                         |
+|CONTROLNUMBER           |     69820                         |     69820                         |
+|PATIENTINSURANCEIDNUMBER|  30205667                         |  30205667                         |
+|PATIENTMIDDLEINITIAL    |T                                  |T                                  |
+|TRANSFERTYPE            |         1                         |         2                         |
+|NOTE                    |                                   |[NMC]                              |
+|IMAGEFILEPAGENUMBER     |        24                         |        24                         |
+|AEGISINSURANCEPACKAGEID |    311799                         |    313623                         |
+|KICKREASONCATEGORYID    |       611                         |       611                         |
+|CHECKCCNUMBER           |1003058284                         |1003058284                         |
+|MATCHED                 |2025-08-11 08:23:18                |2025-08-11 08:23:18                |
+|MATCHEDBY               |kkramer                            |ATHENA                             |
+|PATIENTINSURANCEID      |    705021                         |     68918                         |
+|INTEREST                |         0                         |         0                         |
+|CLAIMSOURCEDATA         |CLAIMINFO|69820|LY|NAM|T||611|...  |CLAIMINFO|69820|LY|NAM|T||611|...  |
+|SOURCEDATA              |DETAIL|07/31/2023|07/31/2023|3...  |DETAIL|07/31/2023|07/31/2023|3...  |
+|TREATASTERTIARYYN       |N                                  |                                   |
+|CHECKAMOUNT             |         1.77                      |         1.77                      |
+|CHECKDATE               |2024-05-21 00:00:00                |2024-05-21 00:00:00                |
+|PARENTERARECORDID       |   1618349                         |   1618349                         |
+|MATCHINGSCORE           |        81                         |        82                         |
+|CREATED                 |2024-05-27 10:41:51                |2024-05-27 10:41:51                |
+|CREATEDBY               |ATHENA                             |ATHENA                             |
+|LASTMODIFIED            |2025-11-07 12:45:45                |2025-11-07 12:45:45                |
+|LASTMODIFIEDBY          |ATHENA                             |ATHENA                             |
++------------------------+-----------------------------------+-----------------------------------+
+2 rows selected in 0 seconds.
+
+athena27472@ptest18 > \T;\0; select * from CLAIM where ID = 176653;
+\0: 0 columns and 83 rows removed.
++---------------------------+-------------------+
+|ID                         |176653             |
++---------------------------+-------------------+
+|PATIENTID                  |   6775            |
+|PROVIDERID                 |     41            |
+|PRIMARYPATIENTINSURANCEID  |      0            |
+|SECONDARYPATIENTINSURANCEID|      0            |
+|DEPARTMENTID               |     16            |
+|APPOINTMENTID              |3486486            |
+|CURRENTILLNESSDATE         |2023-07-31 18:00:00|
+|SERVICEDATE                |2023-07-31 18:00:00|
+|ORIGINALCLAIMID            | 176653            |
+|LASTACTION                 |CLOSE              |
+|LASTACTIONDATE             |2023-07-31 18:00:00|
+|SUPERVISINGPROVIDERID      |     41            |
+|STATUS1                    |CLOSED             |
+|STATUS2                    |CLOSED             |
+|STATUSP                    |CLOSED             |
+|LASTBILLEDDATE1            |2023-07-31 18:00:00|
+|LASTBILLEDDATE2            |2023-07-31 18:00:00|
+|LASTBILLEDDATEP            |2023-07-31 18:00:00|
+|CREATED                    |2024-02-22 15:08:56|
+|CREATEDBY                  |lholland33.1246    |
+|LASTMODIFIED               |2024-02-22 15:08:56|
+|LASTMODIFIEDBY             |lholland33.1246    |
++---------------------------+-------------------+
+1 row selected in 0 seconds.
+
+athena27472@ptest18 > \t ;  \0 ;  select * from TRANSACTION where CLAIMID = 176653;
+\0: 0 columns and 93 rows removed.
++------------------+-------------------+-------------------+-------------------+
+|ID                |1383299            |1383300            |1383301            |
++------------------+-------------------+-------------------+-------------------+
+|CLAIMID           |176653             |176653             |176653             |
+|PATIENTID         |  6775             |  6775             |  6775             |
+|TYPE              |CHARGE             |CHARGE             |CHARGE             |
+|FROMDATE          |2023-07-31 18:00:00|2023-07-31 18:00:00|2023-07-31 18:00:00|
+|TODATE            |2023-07-31 18:00:00|2023-07-31 18:00:00|2023-07-31 18:00:00|
+|PROCEDURECODE     |3078F              | 99214             |3074F              |
+|DEPARTMENTID      |    16             |    16             |    16             |
+|PROVIDERID        |    41             |    41             |    41             |
+|PRINTPROCEDURECODE|3078F              |                   |3074F              |
+|CREATED           |2024-02-22 15:08:56|2024-02-22 15:08:56|2024-02-22 15:08:56|
+|CREATEDBY         |lholland33.1246    |lholland33.1246    |lholland33.1246    |
+|LASTMODIFIED      |2024-05-17 06:34:57|                   |2024-05-17 06:34:57|
+|LASTMODIFIEDBY    |COLRS_20240517     |                   |COLRS_20240517     |
++------------------+-------------------+-------------------+-------------------+
+3 rows selected in 0 seconds.
+
+
+UPDATING THE DB
+===============
+
+dabhinab@preprod51002:~/dabhinab_streams$ sql++
+\u 27472
+sql++ version 18p1.  \h for help, for more search 'sql++' in the wiki.  \q or ^D to exit.
+athena1@ptest1 > \u 27472
+
+athena27472@ptest18 > update ERABATCH set status = 'CREATED' ,POSTED ='',POSTEDBY = '', ASSIGNED = '', ASSIGNEDTO = '' where ID = 32494;
+1 row updated in 0 seconds.
+
+athena27472@ptest18 >  update PAYMENTBATCH set STATUSID = 1, CLOSED = '', ASSOCIATED = '', ASSOCIATEDBY = '' where ERABATCHID = 32494;
+1 row updated in 0 seconds.
+
+athena27472@ptest18 > update ERARECORD set MATCHED = '' , MATCHEDBY = '' , APPLIED = '' , APPLIEDBY = '' , TRANSFERTYPE = '' , PATIENTINSURANCEID = '' , SUBSCRIBERINSURANCEIDNUMBER = '' , CORRECTEDINSURANCEIDNUMBER = '' , CLAIMID = '' , MATCHINGSCORE = '' where ERABATCHID = 32494 and CLAIMID = 176653;
+1 row updated in 0 seconds.
+
+athena27472@ptest18 > update ERARECORD set MATCHED = '' , MATCHEDBY = '' , APPLIED = '' , APPLIEDBY = '' , TRANSFERTYPE = '' , PATIENTINSURANCEID = '' , SUBSCRIBERINSURANCEIDNUMBER = '' , CORRECTEDINSURANCEIDNUMBER = '' , CLAIMID = '' , MATCHINGSCORE = '' where ID = 1618350;
+1 row updated in 0 seconds.
+
+athena27472@ptest18 > commit;
+Commit
+
+athena27472@ptest18 > ^C
+
+
+RUN PREPROCESS_SCRIPT
+=====================
+dabhinab@preprod51002:~/dabhinab_streams$ perl prod/scripts/app/practice/preprocess_erabatches.pl PTEST18 ATHENA27472 --erabatchids 32494
+Starting prod/scripts/app/practice/preprocess_erabatches.pl; practice time is 2025/12/01 05:24:19
+Starting garbage collection.
+Starting prematching.
+Match ERA Batch 32494R27472:
+pre-matching... done.  Marking as pre-matched... done.
+Starting preposting.
+Post ERA Batch 32494R27472: Found paymentbatch with id 93614 for erabatch 32494R27472...
+check for new apply queue...
+matching again, for good measure... pre-posting... done.  Marking as pre-posted... done.
+
+
+DATA AFTER RUNNING THE PREPROCESS-SCRIPT
+========================================
+
+athena27472@ptest18 >  \t ;  \0 ;  select * from ERARECORD where ERABATCHID = 32494 and MATCHED is not null and APPLIED is null;
+\0: 0 columns and 103 rows removed.
+\0: long fields trimmed.
++------------------------+-----------------------------------+-----------------------------------+
+|ID                      |1618350                            |1618351                            |
++------------------------+-----------------------------------+-----------------------------------+
+|ERABATCHID              |     32494                         |     32494                         |
+|ALLOWABLE               |         0                         |         0                         |
+|OTHERADJUSTMENTREASON   |OTHER                              |OTHER                              |
+|OTHERTRANSFERREASON     |OTHER                              |OTHER                              |
+|PAYMENT                 |         0                         |         0                         |
+|FROMDATE                |2023-07-31 00:00:00                |2023-07-31 00:00:00                |
+|TODATE                  |2023-07-31 00:00:00                |2023-07-31 00:00:00                |
+|PROCEDURECODE           |3074F                              |3078F                              |
+|DAYS                    |         1                         |         1                         |
+|AMOUNT                  |         0                         |         0                         |
+|PATIENTLASTNAME         |LY                                 |LY                                 |
+|PATIENTFIRSTNAME        |NAM                                |NAM                                |
+|CLAIMID                 |    176653                         |    176653                         |
+|CONTROLNUMBER           |     69820                         |     69820                         |
+|PATIENTINSURANCEIDNUMBER|  30205667                         |  30205667                         |
+|PATIENTMIDDLEINITIAL    |T                                  |T                                  |
+|TRANSFERTYPE            |         2                         |         2                         |
+|NOTE                    |                                   |[NMC]                              |
+|IMAGEFILEPAGENUMBER     |        24                         |        24                         |
+|AEGISINSURANCEPACKAGEID |    311799                         |    311799                         |
+|KICKREASONCATEGORYID    |       611                         |       611                         |
+|CHECKCCNUMBER           |1003058284                         |1003058284                         |
+|MATCHED                 |2025-12-01 05:24:31                |2025-12-01 05:24:31                |
+|MATCHEDBY               |ATHENA                             |ATHENA                             |
+|PATIENTINSURANCEID      |    705021                         |    705021                         |
+|INTEREST                |         0                         |         0                         |
+|CLAIMSOURCEDATA         |CLAIMINFO|69820|LY|NAM|T||611|...  |CLAIMINFO|69820|LY|NAM|T||611|...  |
+|SOURCEDATA              |DETAIL|07/31/2023|07/31/2023|3...  |DETAIL|07/31/2023|07/31/2023|3...  |
+|TREATASTERTIARYYN       |N                                  |                                   |
+|CHECKAMOUNT             |         1.77                      |         1.77                      |
+|CHECKDATE               |2024-05-21 00:00:00                |2024-05-21 00:00:00                |
+|PARENTERARECORDID       |   1618349                         |   1618349                         |
+|MATCHINGSCORE           |        83                         |        83                         |
+|CREATED                 |2024-05-27 10:41:51                |2024-05-27 10:41:51                |
+|CREATEDBY               |ATHENA                             |ATHENA                             |
+|LASTMODIFIED            |2025-12-01 05:28:03                |2025-12-01 05:28:03                |
+|LASTMODIFIEDBY          |ATHENA                             |ATHENA                             |
++------------------------+-----------------------------------+-----------------------------------+
+2 rows selected in 0 seconds.
+

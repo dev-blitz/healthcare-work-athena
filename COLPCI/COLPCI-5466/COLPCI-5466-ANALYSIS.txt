@@ -1,0 +1,175 @@
+=======================
+COLPCI-5466-ANALYSIS ||
+=======================
+
+==========================
+claim-details from the DB:
+==========================
+
+athena27673@atest86 > \t ;  \0 ;  select * from CLAIM where ID = 395740;
+\0: 0 columns and 56 rows removed.
++---------------------------+-------------------+
+|ID                         |395740             |
++---------------------------+-------------------+
+|PATIENTID                  |    516434         |
+|PROVIDERID                 |       175         |
+|PRIMARYPATIENTINSURANCEID  |    193988         |
+|SECONDARYPATIENTINSURANCEID|         0         |
+|DEPARTMENTID               |       131         |
+|PATIENTDEPARTMENTID        |       131         |
+|APPOINTMENTID              |   6245215         |
+|CURRENTILLNESSDATE         |2025-10-06 00:00:00|
+|SERVICEDATE                |2025-10-06 00:00:00|
+|ORIGINALCLAIMID            |    395740         |
+|LASTACTION                 |POSTINGRULE        |
+|LASTACTIONDATE             |2025-10-30 04:21:49|
+|SUPERVISINGPROVIDERID      |       175         |
+|STATUS1                    |CLOSED             |
+|STATUS2                    |CLOSED             |
+|STATUSP                    |CLOSED             |
+|OUTSTANDING1               |         0         |
+|OUTSTANDING2               |         0         |
+|OUTSTANDINGP               |         0         |
+|LASTBILLEDDATE1            |2025-10-13 03:39:14|
+|ACCEPTASSIGNMENTYN1        |Y                  |
+|ACCEPTASSIGNMENTYN2        |Y                  |
+|PRINTZERODOLLARCHARGESYN1  |Y                  |
+|STATUS1LASTMODIFIED        |2025-10-30 04:21:49|
+|PARENTCLAIMID              |    395740         |
+|RELATEDTOEMPLOYMENTYN      |N                  |
+|RELATEDTOAUTOACCIDENTYN    |N                  |
+|RELATEDTOOTHERACCIDENTYN   |N                  |
+|RELEASEOFINFORMATIONYN1    |Y                  |
+|PHYSICIANSIGNATUREDATE     |2025-10-13 03:39:14|
+|SIGNATURESOURCECODE        |B                  |
+|ASSIGNMENTOFBENEFITSFLAG   |Y                  |
+|SCHEDULINGPROVIDERID       |       175         |
+|ANOTHERPARTYRESPONSIBLEYN  |N                  |
+|HEALTHCARECLAIMTYPEID1     |         1         |
+|STATUS1CLAIMNOTEID         |   6421468         |
+|CLAIMALARMELIGIBLEYN       |Y                  |
+|NODENIALMANAGEMENTYN       |N                  |
+|LASTSCRUBDATE1             |2025-10-23 12:00:14|
+|PAYTOTAXID1                | 060871319         |
+|PAYTONPI1                  |1376756908         |
+|PRIMARYBILLINGPROVIDERID   |       175         |
+|COVERAGESCANYN             |N                  |
+|RETROMEDICAIDENROLLMENTYN  |N                  |
+|VISITBILLID                |    390254         |
+|CREATED                    |2025-10-12 13:34:26|
+|CREATEDBY                  |vjones190          |
+|LASTMODIFIED               |2025-10-30 04:21:49|
+|LASTMODIFIEDBY             |ATHENA             |
++---------------------------+-------------------+
+1 row selected in 0 seconds.
+
+
+
+======================
+ERA-RECORD DB details:
+======================
+
+athena27673@atest86 > \t ;  \0 ;  select * from ERARECORD where CLAIMID = 395740 and rownum < 2;
+\0: 0 columns and 105 rows removed.
+\0: long fields trimmed.
++--------------------------+-----------------------------------+
+|ID                        |3377194                            |
++--------------------------+-----------------------------------+
+|ERABATCHID                |       105364                      |
+|CHARGEID                  |      4819876                      |
+|ORIGINALPAYMENT           |            0                      |
+|PAYMENT                   |            0                      |
+|FROMDATE                  |2025-10-06 00:00:00                |
+|TODATE                    |2025-10-06 00:00:00                |
+|PROCEDURECODE             |99213,SA                           |
+|DAYS                      |            1                      |
+|AMOUNT                    |          243                      |
+|PATIENTLASTNAME           |SMITH                              |
+|PATIENTFIRSTNAME          |SARAH                              |
+|CLAIMID                   |       395740                      |
+|APPLIED                   |2025-10-30 00:00:00                |
+|APPLIEDBY                 |ATHENA                             |
+|CONTROLNUMBER             |395740V27673                       |
+|PATIENTINSURANCEIDNUMBER  |    003021698                      |
+|TRANSFERTYPE              |            1                      |
+|KICKREASONCATEGORYID      |          673                      |
+|CHECKCCNUMBER             |01190057042000013  301778071       |
+|MATCHED                   |2025-10-30 10:26:11                |
+|MATCHEDBY                 |ATHENA                             |
+|PATIENTINSURANCEID        |       193988                      |
+|CLAIMSOURCEDATA           |CLP*395740V27673*1*243*0**MC*2...  |
+|SOURCEDATA                |SVC*HC:99213:SA*243*0**1~DTM*4...  |
+|PAYORCONTROLNUMBER        |2025286603362                      |
+|CHECKAMOUNT               |         9828.63                   |
+|CLAIMSTATUSCODE           |            1                      |
+|PARENTERARECORDID         |      3377194                      |
+|ANSICLAIMFILINGINDICATORID|           20                      |
+|PROVIDERCONTROLNUMBER     |4819876P27673                      |
+|BILLINGBATCHID            |        24044                      |
+|CREATED                   |2025-10-30 10:26:11                |
+|CREATEDBY                 |ATHENA                             |
+|LASTMODIFIED              |2025-10-30 10:26:11                |
+|LASTMODIFIEDBY            |ATHENA                             |
++--------------------------+-----------------------------------+
+1 row selected in 0 seconds.
+
+
+athena27673@atest86 > select count(*) as total from ERARECORD where CLAIMID = 395740;
++-----+
+|TOTAL|
++-----+
+|10   |
++-----+
+1 row selected in 0 seconds.
+
+
+=====================
+ERA-BATCH DB details:
+=====================
+
+athena27673@atest86 > \t;\0; select * from ERABATCH where ID = 105364;
+\0: 0 columns and 35 rows removed.
+\0: long fields trimmed.
++---------------------------+-----------------------------------+
+|ID                         |105364                             |
++---------------------------+-----------------------------------+
+|RPOERAFILEID               |   309919920                       |
+|STATUS                     |POSTED                             |
+|TOTALCHARGES               |      114394.54                    |
+|TOTALPAYMENTS              |        9828.63                    |
+|PROVIDERNUMBER             |  1376756908                       |
+|NOTES                      |Remittance advice was original...  |
+|POSTED                     |2025-10-31 03:07:00                |
+|POSTEDBY                   |ahsramesh162                       |
+|CHECKNUMBER                |01190057042000013  301778071       |
+|PAYMENTMETHOD              |ACH                                |
+|PAYORNAME                  |CT DSS MMIS CONTRACT ADMINISTR...  |
+|SOURCEHEADERDATA           |ST*835*008842508~BPR*I*9828.63...  |
+|SOURCETRAILERDATA          |SE*9969*008842508                  |
+|PAYDATE                    |2025-10-28 00:00:00                |
+|TARGETPAYMENTBATCHID       |      285033                       |
+|BANKACCOUNTNUMBER          |130132181244                       |
+|BANKROUTINGNUMBER          |   042000013                       |
+|KICKREASONCATEGORYID       |         673                       |
+|AEGISKICKREASONCATEGORYID  |         673                       |
+|AEGISINSREPORTINGCATEGORYID|         218                       |
+|FEDERALIDNUMBER            |  1061274678                       |
+|UNIQUESTRING               |DBS1e6pYtIgh935zeiXh1w             |
+|BYTEOFFSET                 |     8956405                       |
+|BYTELENGTH                 |      207947                       |
+|PAYEETAXIDNUMBER           |   060871319                       |
+|ADDITIONALPAYEEIDNUMBER    |363LF0000X,049151260               |
+|PAYEEADDRESS               |PO BOX 40811                       |
+|PAYEECITY                  |BELFAST                            |
+|PAYEESTATE                 |ME                                 |
+|PAYEEZIP                   |       04915                       |
+|EMCRECEIVERID              |        1099                       |
+|PAYMENTBATCHROUTEID        |          27                       |
+|ANSIVERSIONID              |           3                       |
+|CREATED                    |2025-10-30 10:26:10                |
+|CREATEDBY                  |ATHENA                             |
+|LASTMODIFIED               |2025-10-31 03:07:00                |
+|LASTMODIFIEDBY             |ahsramesh162                       |
++---------------------------+-----------------------------------+
+1 row selected in 0 seconds.
+

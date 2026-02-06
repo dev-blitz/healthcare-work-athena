@@ -1,0 +1,76 @@
+1.
+dabhinab@preprod510289:~/tasks/COLPCI-4939$ perl ~/dabhinab_streams/bin/clear_claim.pl --claimid=6438045V7654 --stack PTEST1
+claimid: 6438045V7654 at /home/dabhinab/dabhinab_streams/bin/clear_claim.pl line 42.
+stack :PTEST1 at /home/dabhinab/dabhinab_streams/bin/clear_claim.pl line 43.
+
+--before--->PBS--->$VAR1 = {
+  ERABATCHID => '1174798',
+  PAYMENTBATCHID => '2879323',
+  POSTED => '01/02/2020',
+  TRANSFERTYPE => '1'
+};
+$VAR2 = {
+  ERABATCHID => '1178821',
+  PAYMENTBATCHID => '2880958',
+  POSTED => '01/07/2020',
+  TRANSFERTYPE => '1'
+};
+
+----->PBS--->$VAR1 = {
+  ERABATCHID => '1178821',
+  PAYMENTBATCHID => '2880958',
+  POSTED => '01/07/2020',
+  TRANSFERTYPE => '1'
+};
+$VAR2 = {
+  ERABATCHID => '1174798',
+  PAYMENTBATCHID => '2879323',
+  POSTED => '01/02/2020',
+  TRANSFERTYPE => '1'
+};
+You have mail in /var/spool/mail/dabhinab
+
+2.
+dabhinab@preprod510289:~/tasks/COLPCI-4939$ sql++
+please make a '~/sql' directory or set RECALLSQLDIR environment variable and create the directory to house your named sql.
+
+sql++ version 18p1.  \h for help, for more search 'sql++' in the wiki.  \q or ^D to exit.
+athena1@ptest1 > \u 7654
+
+athena7654@ptest8 > UPDATE erabatch SET status = 'CREATED', POSTED ='', POSTEDBY = '' WHERE id IN (1174798);
+1 row updated in 0 seconds.
+
+athena7654@ptest8 > UPDATE erarecord SET matched = '', matchedby = '', applied= '', appliedby = '', CHARGEID = '', TRANSFERTYPE= '', PATIENTINSURANCEIDNUMBER = '', SUBSCRIBERINSURANCEIDNUMBER = '', CORRECTEDINSURANCEIDNUMBER = '', claimid = '' WHERE erabatchid IN (1174798) AND claimid = 6438045;
+1 row updated in 0 seconds.
+
+athena7654@ptest8 >  UPDATE paymentbatch SET statusid = 1, closed = '', ASSOCIATED = '', ASSOCIATEDBY = '', erabatchid = '' WHERE erabatchid IN (1174798);
+1 row updated in 0 seconds.
+
+athena7654@ptest8 > commit;
+Commit
+
+3.
+dabhinab@preprod510289:~/tasks/COLPCI-4939$ perl ~/dabhinab_streams/prod/scripts/app/practice/preprocess_erabatches.pl PTEST8 ATHENA7654 --erabatchids 1174798
+Starting /home/dabhinab/dabhinab_streams/prod/scripts/app/practice/preprocess_erabatches.pl; practice time is 2025/07/31 06:00:10
+Starting garbage collection.
+Starting prematching.
+Match ERA Batch 1174798R7654:
+pre-matching... done.  Marking as pre-matched... done.
+Starting preposting.
+Post ERA Batch 1174798R7654: Found paymentbatch with id 2879323 for erabatch 1174798R7654...
+check for new apply queue...
+matching again, for good measure... pre-posting... done.  Posted completely and cleanly.  Marking as posted... done.
+You have mail in /var/spool/mail/dabhinab
+
+4.
+athena7654@ptest8 > select k.kickcode, k.kickedamount, kr.athenakickcode, r.id, r.erabatchid, kr.balancetransactiontype, kr.balancetransactionreason, kr.nextclaimstatus from erakick k, erarecord r, kickreason kr where k.kickreasonid = kr.id and k.erarecordid = r.id and r.controlnumber = '6438045V7654' and r.erabatchid = 1174798 order by r.created;
++--------------+------------+--------------+--------+----------+----------------------+------------------------+---------------+
+|KICKCODE      |KICKEDAMOUNT|ATHENAKICKCODE|ID      |ERABATCHID|BALANCETRANSACTIONTYPE|BALANCETRANSACTIONREASON|NEXTCLAIMSTATUS|
++--------------+------------+--------------+--------+----------+----------------------+------------------------+---------------+
+|CO45          |  0         |CONTRACT      |18454023|1174798   |                      |                        |               |
+|ADNPATIENTAIRP|137         |AIRP          |18454023|1174798   |                      |                        |               |
+|ADJTRANSINFORM| 32.55      |INFORM        |18454023|1174798   |                      |                        |               |
+|OAA1          |104.45      |INFORM        |18454023|1174798   |                      |                        |               |
+|N179          |  0         |ADNPATIENT    |18454023|1174798   |                      |                        |               |
++--------------+------------+--------------+--------+----------+----------------------+------------------------+---------------+
+5 rows selected in 0 seconds.

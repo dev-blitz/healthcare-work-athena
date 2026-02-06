@@ -1,0 +1,33 @@
+ROOT-CAUSE-ANALYSIS
+===================
+
+athena27673@ptest86 > SELECT 
+                sql >     c.id claimid,
+                sql >     c.status1,
+                sql >     c.departmentid,
+                sql >     c.primarypatientinsuranceid,
+                sql >     pi.insurancepackageid,
+                sql >     t.id chargeid,
+                sql >     t.outstanding,
+                sql >     t.transfertype
+                sql > FROM 
+                sql >     claim c,
+                sql >     patientinsurance pi,
+                sql >     tcharge t
+                sql > WHERE 
+                sql >     c.id = 395740
+                sql >     AND c.primarypatientinsuranceid = pi.id
+                sql >     AND t.claimid = c.id;
+Truncated from 8 to 6 columns.
++-------+-------+------------+-------------------------+------------------+--------+
+|CLAIMID|STATUS1|DEPARTMENTID|PRIMARYPATIENTINSURANCEID|INSURANCEPACKAGEID|CHARGEID|
++-------+-------+------------+-------------------------+------------------+--------+
+|395740 |DROP   |131         |193988                   |2232              |4819876 |
+|395740 |DROP   |131         |193988                   |2232              |4819877 |
+|395740 |DROP   |131         |193988                   |2232              |4819878 |
+|395740 |DROP   |131         |193988                   |2232              |4819879 |
+|395740 |DROP   |131         |193988                   |2232              |4819880 |
++-------+-------+------------+-------------------------+------------------+--------+
+Truncated from 8 to 6 columns.
+5 rows selected in 0 seconds.
+

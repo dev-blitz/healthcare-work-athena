@@ -1,0 +1,74 @@
+AUTOMATED-TEST-RESULTS
+======================
+
+dabhinab@preprod518642:~/dabhinab_streams$
+dabhinab@preprod518642:~/dabhinab_streams$ $AX_HOME/athenax perl-test --prove-options -j16 --type int Charge::PaymentPost
+Testing under /home/dabhinab/dabhinab_streams/athenax/release
+Running tests for modules: Charge::PaymentPost
+
+Run: /usr/local/bin/prove -j16 /home/dabhinab/dabhinab_streams/prod/test/perl/Charge/PaymentPost/t/int/generate_html.t /home/dabhinab/dabhinab_streams/prod/test/perl/Charge/PaymentPost/t/int/post.t /home/dabhinab/dabhinab_streams/prod/test/perl/Charge/PaymentPost/t/int/setup.t
+
+===(       2;0  1/2  1/4  0/1 )=========================================# Connected to athena24449 on ptest2.
+# Connected to athena15147 on ptest77.
+/home/dabhinab/dabhinab_streams/prod/test/perl/Charge/PaymentPost/t/int/setup.t .......... ok
+===(       3;4  1/2  1/4 )==============================================# Connected to athena9804 on ptest33.
+/home/dabhinab/dabhinab_streams/prod/test/perl/Charge/PaymentPost/t/int/generate_html.t .. ok
+/home/dabhinab/dabhinab_streams/prod/test/perl/Charge/PaymentPost/t/int/post.t ........... ok
+All tests successful.
+Files=3, Tests=7, 21 wallclock secs ( 0.02 usr  0.01 sys + 32.03 cusr  4.25 csys = 36.31 CPU)
+Result: PASS
+dabhinab@preprod518642:~/dabhinab_streams$
+dabhinab@preprod518642:~/dabhinab_streams$ p4 opened
+//anet/tasks/COLPCI_filtered/colpci_5425/prod/htdocs/static/postpayment.js#2 - edit default change (text)
+//anet/tasks/COLPCI_filtered/colpci_5425/prod/perllib/Athena/Charge/PaymentPost.pm#1 - edit default change (text)
+//anet/tasks/COLPCI_filtered/colpci_5425/prod/perllib/Athena/StaticContent.pm#1 - edit default change (text)
+//anet/tasks/COLPCI_filtered/colpci_5425/prod/test/perl/Charge/ClientLedPosting/PaymentPost/t/unit/open_momentary_payment_batch.t#1 - edit default change (text)
+//anet/tasks/COLPCI_filtered/colpci_5425/prod/test/perl/Charge/PaymentPost/t/unit/generate_html.t#1 - edit default change (text)
+dabhinab@preprod518642:~/dabhinab_streams$
+dabhinab@preprod518642:~/dabhinab_streams$ $AX_HOME/athenax perl-test --prove-options -j16 --type unit Charge::PaymentPost
+Setting the MASTER_ROOT_INSTANCE to null. For more details, refer go/tapunit
+Testing under /home/dabhinab/dabhinab_streams/athenax/release
+Running tests for modules: Charge::PaymentPost
+
+Run: /usr/local/bin/prove -j16 /home/dabhinab/dabhinab_streams/prod/test/perl/Charge/PaymentPost/t/unit/claim_filter_html.t /home/dabhinab/dabhinab_streams/prod/test/perl/Charge/PaymentPost/t/unit/generate_html.t /home/dabhinab/dabhinab_streams/prod/test/perl/Charge/PaymentPost/t/unit/html.t /home/dabhinab/dabhinab_streams/prod/test/perl/Charge/PaymentPost/t/unit/next.t /home/dabhinab/dabhinab_streams/prod/test/perl/Charge/PaymentPost/t/unit/post.t /home/dabhinab/dabhinab_streams/prod/test/perl/Charge/PaymentPost/t/unit/setup.t /home/dabhinab/dabhinab_streams/prod/test/perl/Charge/PaymentPost/t/unit/split_remit_for_branded_financials.t
+
+/home/dabhinab/dabhinab_streams/prod/test/perl/Charge/PaymentPost/t/unit/setup.t ............................... ok
+/home/dabhinab/dabhinab_streams/prod/test/perl/Charge/PaymentPost/t/unit/split_remit_for_branded_financials.t .. ok
+/home/dabhinab/dabhinab_streams/prod/test/perl/Charge/PaymentPost/t/unit/html.t ................................ ok
+/home/dabhinab/dabhinab_streams/prod/test/perl/Charge/PaymentPost/t/unit/post.t ................................ ok
+/home/dabhinab/dabhinab_streams/prod/test/perl/Charge/PaymentPost/t/unit/claim_filter_html.t ................... ok
+/home/dabhinab/dabhinab_streams/prod/test/perl/Charge/PaymentPost/t/unit/next.t ................................ ok
+/home/dabhinab/dabhinab_streams/prod/test/perl/Charge/PaymentPost/t/unit/generate_html.t ....................... ok
+All tests successful.
+Files=7, Tests=36, 20 wallclock secs ( 0.08 usr  0.02 sys + 56.08 cusr  8.86 csys = 65.04 CPU)
+Result: PASS
+dabhinab@preprod518642:~/dabhinab_streams$
+dabhinab@preprod518642:~/dabhinab_streams$ utest --ignorewip --failedonly --color --parallel max StaticContent
+/home/dabhinab/dabhinab_streams/techops/coredev/bin/utest --ignorewip --failedonly --color --parallel max StaticContent
+Running tests for 10@PTEST71.
+^CSTOPPED BY SIGNAL at /home/dabhinab/dabhinab_streams/prod/perllib/Athena/Proc.pm line 286.
+dabhinab@preprod518642:~/dabhinab_streams$
+dabhinab@preprod518642:~/dabhinab_streams$ $AX_HOME/athenax perl-test --prove-options -j16 --type unit Charge::PaymentPost
+Setting the MASTER_ROOT_INSTANCE to null. For more details, refer go/tapunit
+Testing under /home/dabhinab/dabhinab_streams/athenax/release
+Running tests for modules: Charge::PaymentPost
+
+Run: /usr/local/bin/prove -j16 /home/dabhinab/dabhinab_streams/prod/test/perl/Charge/PaymentPost/t/unit/claim_filter_html.t /home/dabhinab/dabhinab_streams/prod/test/perl/Charge/PaymentPost/t/unit/generate_html.t /home/dabhinab/dabhinab_streams/prod/test/perl/Charge/PaymentPost/t/unit/html.t /home/dabhinab/dabhinab_streams/prod/test/perl/Charge/PaymentPost/t/unit/next.t /home/dabhinab/dabhinab_streams/prod/test/perl/Charge/PaymentPost/t/unit/post.t /home/dabhinab/dabhinab_streams/prod/test/perl/Charge/PaymentPost/t/unit/setup.t /home/dabhinab/dabhinab_streams/prod/test/perl/Charge/PaymentPost/t/unit/split_remit_for_branded_financials.t
+
+/home/dabhinab/dabhinab_streams/prod/test/perl/Charge/PaymentPost/t/unit/setup.t ............................... ok
+/home/dabhinab/dabhinab_streams/prod/test/perl/Charge/PaymentPost/t/unit/claim_filter_html.t ................... ok
+/home/dabhinab/dabhinab_streams/prod/test/perl/Charge/PaymentPost/t/unit/next.t ................................ ok
+/home/dabhinab/dabhinab_streams/prod/test/perl/Charge/PaymentPost/t/unit/split_remit_for_branded_financials.t .. ok
+/home/dabhinab/dabhinab_streams/prod/test/perl/Charge/PaymentPost/t/unit/html.t ................................ ok
+/home/dabhinab/dabhinab_streams/prod/test/perl/Charge/PaymentPost/t/unit/post.t ................................ ok
+/home/dabhinab/dabhinab_streams/prod/test/perl/Charge/PaymentPost/t/unit/generate_html.t ....................... ok
+All tests successful.
+Files=7, Tests=36, 19 wallclock secs ( 0.09 usr  0.02 sys + 56.75 cusr  8.88 csys = 65.74 CPU)
+Result: PASS
+dabhinab@preprod518642:~/dabhinab_streams$
+dabhinab@preprod518642:~/dabhinab_streams$ utest --ignorewip --failedonly --color --parallel max StaticContent
+/home/dabhinab/dabhinab_streams/techops/coredev/bin/utest --ignorewip --failedonly --color --parallel max StaticContent
+Running tests for 10@PTEST71.
+Summary for StaticContent: 50 tests, 50 passed, 0 failed, 0 skipped (100.00% success - skipped not counted)
+OK
+dabhinab@preprod518642:~/dabhinab_streams$

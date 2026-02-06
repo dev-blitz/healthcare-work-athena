@@ -1,0 +1,5 @@
+Analysis:
+
+* DBA-PATCH had deleted the closed-date to reopen the payment-batch for business requirements, hence there is a STATUS mismatch with the deposit batch associated with it.
+
+* based on the business requirement, the core team can make the changes.

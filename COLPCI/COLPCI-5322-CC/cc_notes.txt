@@ -1,0 +1,20 @@
+dabhinab@preprod512511:~$ cd dabhinab_streams/
+dabhinab@preprod512511:~/tasks/COLPCI-5322-CC$ p4 switch -Rn //anet/tasks/COLPMCI_filtered/colpmci_rrt
+dabhinab@preprod512511:~/dabhinab_streams$ export DONOTLOADINTERFACEJOBS=1;
+dabhinab@preprod512511:~/dabhinab_streams$ mkdir ~/cron; perl $ATHENA_HOME/scripts/crontab/write_cron_files.pl --crondir ~/cron/
+dabhinab@preprod512511:~/dabhinab_streams$ ls
+total 60
+-r-xr-xr-x  1 dabhinab users   897 Aug 21 03:19 20250807_COLPCI-5033_dml.pl
+drwxr-xr-x  3 dabhinab users  4096 Jul 10 08:11 athenax
+drwxr-xr-x  7 dabhinab users 16384 Aug 19 12:37 bin
+-rw-r--r--  1 dabhinab users  1380 Sep 10 09:17 command-steps.md
+drwxr-xr-x  2 dabhinab users  4096 Sep 29 01:29 cron
+drwxr-xr-x 60 dabhinab users  8192 Sep  9 03:29 intranet
+drwxr-xr-x 25 dabhinab users  4096 Sep 29 01:16 prod
+drwxr-xr-x  3 dabhinab users  4096 Jul 10 08:18 scripts
+-rw-r-----  1 dabhinab users  4641 Sep 12 05:42 sqlnet.log
+drwxr-xr-x 45 dabhinab users  4096 Sep  9 03:29 techops
+dabhinab@preprod512511:~/cron$ grep 'mdmedicaid_generate_npi_tin_combos' *
+launcher.cron:0 6 1 * * perl $ATHENA_HOME/scripts/crontab/athenacronclient.pl --jobid RPO::LAUNCHER::mdmedicaid_generate_npi_tin_combos
+dabhinab@preprod512511:~/cron$
+

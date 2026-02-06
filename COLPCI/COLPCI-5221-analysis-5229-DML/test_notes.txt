@@ -1,0 +1,234 @@
+COLPCI-5221 TEST-NOTES
+======================
+
+* Data before clicking 'PROCESS' button:
+=======================================
+\0: 0 columns and 35 rows removed.
+\0: long fields trimmed.
++---------------------------+-----------------------------------+
+|ID                         |9644                               |
++---------------------------+-----------------------------------+
+|RPOERAFILEID               |   301311208                       |
+|STATUS                     |PROCESSING                         |
+|TOTALCHARGES               |        8371.4                     |
+|TOTALPAYMENTS              |         603.36                    |
+|PROVIDERNUMBER             |  1366425266                       |
+|CHECKNUMBER                |  0040163038                       |
+|PAYMENTMETHOD              |ACH                                |
+|PAYORNAME                  |Carelon Behavioral Health, Inc...  |
+|ASSIGNEDTO                 |kkramer                            |
+|ASSIGNED                   |2025-09-23 07:50:33                |
+|SOURCEHEADERDATA           |ST*835*00001184~BPR*I*603.36*C...  |
+|SOURCETRAILERDATA          |SE*491*00001184                    |
+|PAYDATE                    |2025-08-28 00:00:00                |
+|AUTOPAYMENTBATCH           |2025-08-29 09:12:28                |
+|TARGETPAYMENTBATCHID       |       25120                       |
+|BANKACCOUNTNUMBER          |153912215321                       |
+|BANKROUTINGNUMBER          |   123000848                       |
+|KICKREASONCATEGORYID       |        1666                       |
+|AEGISKICKREASONCATEGORYID  |        1666                       |
+|AEGISINSREPORTINGCATEGORYID|        1307                       |
+|FEDERALIDNUMBER            |  1541414194                       |
+|PAYORIDNUMBER              |MD5                                |
+|UNIQUESTRING               |ksR8yOTkLcC4qKs16VbPnw             |
+|BYTEOFFSET                 |       75196                       |
+|BYTELENGTH                 |       12911                       |
+|PAYEETAXIDNUMBER           |   020575163                       |
+|PAYEEADDRESS               |PO BOX 37039                       |
+|PAYEECITY                  |BELFAST                            |
+|PAYEESTATE                 |ME                                 |
+|PAYEEZIP                   |   049151212                       |
+|EMCRECEIVERID              |         939                       |
+|PAYMENTBATCHROUTEID        |         301                       |
+|ANSIVERSIONID              |           3                       |
+|CREATED                    |2025-08-26 14:25:16                |
+|CREATEDBY                  |ATHENA                             |
+|LASTMODIFIED               |2025-09-23 07:50:33                |
+|LASTMODIFIEDBY             |ATHENA                             |
++---------------------------+-----------------------------------+
+1 row selected in 0 seconds.
+
+
+
+* running the DML update:
+=========================
+dabhinab@preprod512511:~/dabhinab_streams$ perl scripts/build/patch_harness.pl PTEST1 techops/collector/dailydml/20251103_142955_ERABATCH_dml.pl --allowxtest
+
+---------------
+Checking Environment
+$ENV{ATHENA_HOME} set to /home/dabhinab/dabhinab_streams/prod
+Is this correct? (Waiting for a y/n    ):y
+Time: 10/13/2025 02:56AM, continuing on...
+Done Checking Environment
+---------------
+
+
+---------------
+Checking Script Options Found
+{
+ SQLCUBEUSERPASS=>  sqlcube/sqlcube,
+ ALLOWXTEST=>  1,
+ ROOTUSERPASS=>  athena1/athena1,
+ SQLCUBESID=>  PREPORT1,
+ QUEUESID=>  PQUEUE1,
+ WORKLISTENGINESID=>  PQUEUE4,
+ WORKLISTENGINEUSERPASS=>  worklistengine/worklistengine,
+ PROVIDERDIRECTORYSID=>  PQUEUE5,
+ PATIENTIDENTITYUSERPASS=>  patientidentity/patientidentity,
+ INTERFACEQUEUE01SID=>  PQUEUE2,
+ ECRDIRECTSID=>  PQUEUE3,
+ SCRIBE=>  DEFAULT,
+ DEVROPLUSUSERPASS=>  devroplus/devroplus,
+ ROOTSID=>  PTEST1,
+ SKIPSNAPSHOTS=>  1,
+ PATIENTIDENTITYSID=>  PQUEUE5,
+ ECRDIRECTUSERPASS=>  ecrdirect/ecrdirect,
+ DEVROPLUSSID=>  PQUEUE4,
+ CONSUMERENGAGEMENTSID=>  PQUEUE3,
+ GLOBALSCHEDULINGUSERPASS=>  globalscheduling/globalscheduling,
+ PAPERCLAIMSSID=>  PQUEUE4,
+ PLACEHOLDER01SID=>  PQUEUE4,
+ PROVIDERDIRECTORYUSERPASS=>  providerdirectory/providerdirectory,
+ GLOBALSCHEDULINGSID=>  PQUEUE5,
+ AUTOCLAIMWIZARDSID=>  PQUEUE4,
+ PLACEHOLDER01USERPASS=>  placeholder01/placeholder01,
+ IMPORTUSERPASS=>  import/import,
+ PAPERCLAIMSUSERPASS=>  paperclaims/paperclaims,
+ IMPORTSID=>  PQUEUE4,
+ INTERFACEQUEUE01USERPASS=>  interfacequeue01/interfacequeue01,
+ AUTOCLAIMWIZARDUSERPASS=>  autoclaimwizard/autoclaimwizard,
+ MASTERPATIENTINDEXUSERPASS=>  masterpatientindex/masterpatientindex,
+ CONSUMERENGAGEMENTUSERPASS=>  consumerengagement/consumerengagement,
+ ECOSYSTEMSID=>  PQUEUE3,
+ WAREHOUSEUSERPASS=>  warehouse/warehouse,
+ QUEUEUSERPASS=>  queue/queue,
+ MASTERPATIENTINDEXSID=>  PQUEUE3,
+ ECOSYSTEMUSERPASS=>  ecosystem/ecosystem,
+ WAREHOUSESID=>  PREPORT1,
+}
+Is this correct? (Waiting for a y/n    ):y
+Time: 10/13/2025 02:56AM, continuing on...
+Done Checking Script Options Found
+---------------
+
+
+---------------
+Checking DXL Found
+{
+ PRACTICEDXL=>
+         [
+                {
+                 DXLID=>  0,
+                 MESSAGE=>  COLPCI-5221 & COLPCI-5290: Update for PAYMENTBATCHES 25120A30195 & 25460A30195,
+                 DML=>
+        update
+          ERARECORD
+        set
+          CHARGEID = '76582',
+          CLAIMID = '15030',
+          MATCHED='',
+          MATCHEDBY = '',
+          ERADISCARDSTATUSREASONID = '',
+          ERADISCARDSTATUSID = ''
+        where
+          ID in (142955)
+      ,
+                 OWNEREMAIL=>  dabhinab@athenahealth.com,SECOLPCIDev@athenahealth.com,
+                 MAINTENANCESTATUS=>  MAINTENANCEON,
+                 IGNOREERROR=>  ,
+                 PRACTICEID=>  30195,
+                },
+         ],
+}
+
+Is this correct? (Waiting for a y/n ...):y
+Time: 10/13/2025 02:56AM, continuing on...
+Done Checking DXL Found
+---------------
+
+
+---------------
+Running Generated Practice DML script, DXLID(s) => 0
+
+/usr/local/bin/perl /home/dabhinab/dabhinab_streams/prod/scripts/run_script_in_all_practices.pl --parallel 3 --parallelinstances 2 --outputdir /tmp/20251103_142955_ERABATCH_dml.pl_1425731_0 --scribecategory patch_harness-PTEST1  --sqlfilter id=30195    /tmp/20251103_142955_ERABATCH_dml.pl_1425731_0_codedir/practice_MAINTENANCEON_DML_1.pl
+
+Logging output in /tmp/20251103_142955_ERABATCH_dml.pl_1425731_0
+
+Do you want to continue? (Waiting for a y/n ...):y
+Time: 10/13/2025 02:56AM, continuing on...
+Connecting to the random instance at PTEST1
+
+Executing /tmp/20251103_142955_ERABATCH_dml.pl_1425731_0_codedir/practice_MAINTENANCEON_DML_1.pl with arguments :
+
+
+
+Executing { { {  perl  /tmp/20251103_142955_ERABATCH_dml.pl_1425731_0_codedir/practice_MAINTENANCEON_DML_1.pl PTEST84 ATHENA30195  ; } |tee -a /tmp/20251103_142955_ERABATCH_dml.pl_1425731_0/practice_MAINTENANCEON_DML_1.pl_ATHENA30195_out |sed 's/^/[practice_MAINTENANCEON_DML_1.pl_ATHENA30195_out] /' |scribe_cat.pl --category=patch_harness-PTEST1 ; } 2>&1 ; } |tee -a /tmp/20251103_142955_ERABATCH_dml.pl_1425731_0/practice_MAINTENANCEON_DML_1.pl_ATHENA30195_err |sed 's/^/[practice_MAINTENANCEON_DML_1.pl_ATHENA30195_err] /' |scribe_cat.pl --category=patch_harness-PTEST1
+ListUtil.c: loadable library and perl binaries are mismatched (got handshake key 0xc180000, needed 0xe180000)
+sed: couldn't flush stdout: Broken pipe
+Intercepting email (dabhinab@athenahealth.com -> dabhinab@athenahealth.com)
+Done
+Intercepting email (dabhinab@athenahealth.com,SECOLPCIDev@athenahealth.com -> dabhinab@athenahealth.com)
+Done Running Generated Practice DML script, DXLID(s) => 0
+---------------
+
+
+---------------
+All DML required to run while Maintenance is ON has completed!
+You can begin restarting production
+---------------
+
+
+---------------
+Completed Megapatch
+---------------
+
+Intercepting email (dabhinab@athenahealth.com -> dabhinab@athenahealth.com)
+
+
+* go to UI, open the ERABATCH and click on the process button, the BATCH will get POSTED without any issues.
+
+* Data after processing:
+=======================
++---------------------------+-----------------------------------+
+|ID                         |9644                               |
++---------------------------+-----------------------------------+
+|RPOERAFILEID               |   301311208                       |
+|STATUS                     |POSTED                             |
+|TOTALCHARGES               |        8371.4                     |
+|TOTALPAYMENTS              |         603.36                    |
+|PROVIDERNUMBER             |  1366425266                       |
+|POSTED                     |2025-10-13 03:05:15                |
+|POSTEDBY                   |aduttagupta                        |
+|CHECKNUMBER                |  0040163038                       |
+|PAYMENTMETHOD              |ACH                                |
+|PAYORNAME                  |Carelon Behavioral Health, Inc...  |
+|SOURCEHEADERDATA           |ST*835*00001184~BPR*I*603.36*C...  |
+|SOURCETRAILERDATA          |SE*491*00001184                    |
+|PAYDATE                    |2025-08-28 00:00:00                |
+|AUTOPAYMENTBATCH           |2025-08-29 09:12:28                |
+|TARGETPAYMENTBATCHID       |       25120                       |
+|BANKACCOUNTNUMBER          |153912215321                       |
+|BANKROUTINGNUMBER          |   123000848                       |
+|KICKREASONCATEGORYID       |        1666                       |
+|AEGISKICKREASONCATEGORYID  |        1666                       |
+|AEGISINSREPORTINGCATEGORYID|        1307                       |
+|FEDERALIDNUMBER            |  1541414194                       |
+|PAYORIDNUMBER              |MD5                                |
+|UNIQUESTRING               |ksR8yOTkLcC4qKs16VbPnw             |
+|BYTEOFFSET                 |       75196                       |
+|BYTELENGTH                 |       12911                       |
+|PAYEETAXIDNUMBER           |   020575163                       |
+|PAYEEADDRESS               |PO BOX 37039                       |
+|PAYEECITY                  |BELFAST                            |
+|PAYEESTATE                 |ME                                 |
+|PAYEEZIP                   |   049151212                       |
+|EMCRECEIVERID              |         939                       |
+|PAYMENTBATCHROUTEID        |         301                       |
+|ANSIVERSIONID              |           3                       |
+|CREATED                    |2025-08-26 14:25:16                |
+|CREATEDBY                  |ATHENA                             |
+|LASTMODIFIED               |2025-10-13 03:05:15                |
+|LASTMODIFIEDBY             |aduttagupta                        |
++---------------------------+-----------------------------------+
+1 row selected in 0 seconds.
+

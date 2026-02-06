@@ -1,0 +1,123 @@
+IMPORTANT DATA FOR ANALYSIS
+===========================
+
+athena27673@ptest86 > \t;\0; select * from TCHARGE where CLAIMID = 395740;
+\0: 0 columns and 68 rows removed.
+Truncated from 6 to 2 columns.
++---------------------+-------------------+
+|ID                   |4819876            |
++---------------------+-------------------+
+|CLAIMID              | 395740            |
+|CHARGEID             |4819876            |
+|PARENTCHARGEID       |4819876            |
+|PATIENTID            | 516434            |
+|TYPE                 |CHARGE             |
+|POSTDATE             |2025-10-12 00:00:00|
+|AMOUNT               |    243            |
+|FROMDATE             |2025-10-06 00:00:00|
+|TODATE               |2025-10-06 00:00:00|
+|PROCEDURECODE        |  99213            |
+|DAYS                 |      1            |
+|KICKREASONID         |  37762            |
+|UNITAMOUNT           |    243            |
+|TRANSFERTYPE         |      1            |
+|FIRSTBILLEDDATE      |2025-10-13 03:39:09|
+|LASTBILLEDDATE       |2025-10-13 03:39:09|
+|PAYMENTS             |      0            |
+|ADJUSTMENTS          |   -243            |
+|TRANSFERS            |      0            |
+|OUTSTANDING          |      0            |
+|CLOSEDPOSTDATE       |2025-10-30 00:00:00|
+|TRANSFERINTENT       |      1            |
+|OTHERMODIFIER        |SA                 |
+|FEESCHEDULEID        |     61            |
+|ALLOWABLELASTMODIFIED|2025-10-12 13:34:26|
+|PRINTPROCEDURECODE   |99213,SA           |
+|CREDITS              |      0            |
+|TOTALRVU             |      2.75         |
+|WORKRVU              |      1.3          |
+|PRACTICEEXPENSERVU   |      1.35         |
+|MALPRACTICERVU       |.1                 |
+|POSTEDBY             |vjones190          |
+|PATIENTINSURANCEID   | 193988            |
+|HASBEENZEROPAIDYN    |Y                  |
+|CREATED              |2025-10-12 13:34:26|
+|CREATEDBY            |vjones190          |
+|LASTMODIFIED         |2025-10-30 04:21:49|
+|LASTMODIFIEDBY       |ATHENA             |
++---------------------+-------------------+
+Truncated from 6 to 2 columns.
+5 rows selected in 0 seconds.
+
+
+athena27673@ptest86 > \t ;  \0 ;  select * from TRANSACTION w
+here CLAIMID = 395740;
+\0: 0 columns and 68 rows removed.
+Truncated from 6 to 2 columns.
++---------------------+-------------------+
+|ID                   |4819876            |
++---------------------+-------------------+
+|CLAIMID              | 395740            |
+|CHARGEID             |4819876            |
+|PARENTCHARGEID       |4819876            |
+|PATIENTID            | 516434            |
+|TYPE                 |CHARGE             |
+|POSTDATE             |2025-10-12 00:00:00|
+|AMOUNT               |    243            |
+|FROMDATE             |2025-10-06 00:00:00|
+|TODATE               |2025-10-06 00:00:00|
+|PROCEDURECODE        |  99213            |
+|DAYS                 |      1            |
+|KICKREASONID         |  37762            |
+|UNITAMOUNT           |    243            |
+|TRANSFERTYPE         |      1            |
+|FIRSTBILLEDDATE      |2025-10-13 03:39:09|
+|LASTBILLEDDATE       |2025-10-13 03:39:09|
+|PAYMENTS             |      0            |
+|ADJUSTMENTS          |   -243            |
+|TRANSFERS            |      0            |
+|OUTSTANDING          |      0            |
+|CLOSEDPOSTDATE       |2025-10-30 00:00:00|
+|TRANSFERINTENT       |      1            |
+|OTHERMODIFIER        |SA                 |
+|FEESCHEDULEID        |     61            |
+|ALLOWABLELASTMODIFIED|2025-10-12 13:34:26|
+|PRINTPROCEDURECODE   |99213,SA           |
+|CREDITS              |      0            |
+|TOTALRVU             |      2.75         |
+|WORKRVU              |      1.3          |
+|PRACTICEEXPENSERVU   |      1.35         |
+|MALPRACTICERVU       |.1                 |
+|POSTEDBY             |vjones190          |
+|PATIENTINSURANCEID   | 193988            |
+|HASBEENZEROPAIDYN    |Y                  |
+|CREATED              |2025-10-12 13:34:26|
+|CREATEDBY            |vjones190          |
+|LASTMODIFIED         |2025-10-30 04:21:49|
+|LASTMODIFIEDBY       |ATHENA             |
++---------------------+-------------------+
+Truncated from 6 to 2 columns.
+5 rows selected in 0 seconds.
+
+
+
+athena27673@ptest86 > select * from PATIENTINSURANCE where ID
+ = 193988;
+Truncated from 134 to 4 columns.
++------+---------+---------+-----------------------+
+|ID    |PATIENTID|INSUREDID|RELATIONSHIPTOINSUREDID|
++------+---------+---------+-----------------------+
+|193988|516434   |         |1                      |
++------+---------+---------+-----------------------+
+Truncated from 134 to 4 columns.
+1 row selected in 0 seconds.
+
+athena27673@ptest86 > select * from CAPWIZARD where ID = 1;
+Truncated from 20 to 3 columns.
++--+------------------+-----------------------------------------------------+
+|ID|NAME              |INSURANCEPACKAGEIDS                                  |
++--+------------------+-----------------------------------------------------+
+|1 |CT MEDICAID BUNDLE|2232\t157085\t45806\t157087\t157084\t157086\t251957\t|
++--+------------------+-----------------------------------------------------+
+Truncated from 20 to 3 columns.
+1 row selected in 0 seconds.

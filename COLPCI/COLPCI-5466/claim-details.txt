@@ -1,0 +1,291 @@
+CLAIM-DETAILS
+=============
+
+athena27673@ptest86 > SELECT id, status1, departmentid, supervisingproviderid, primarypatientinsuranceid, secondarypatientinsuranceid, created, LASTBILLEDDATE1 FROM claim W
+HERE id = 395740;
+Truncated from 8 to 5 columns.
++------+-------+------------+---------------------+-------------------------+
+|ID    |STATUS1|DEPARTMENTID|SUPERVISINGPROVIDERID|PRIMARYPATIENTINSURANCEID|
++------+-------+------------+---------------------+-------------------------+
+|395740|CLOSED |131         |175                  |193988                   |
++------+-------+------------+---------------------+-------------------------+
+Truncated from 8 to 5 columns.
+1 row selected in 0 seconds.
+
+
+
+athena27673@ptest86 > SELECT id, procedurecode, amount, outstanding, allowable, 
+                sql >        fromdate, todate, postdate, transfertype
+                sql > FROM tcharge 
+                sql > WHERE claimid = 395740
+                sql > ORDER BY id;
+Truncated from 9 to 6 columns.
++-------+-------------+------+-----------+---------+-------------------+
+|ID     |PROCEDURECODE|AMOUNT|OUTSTANDING|ALLOWABLE|FROMDATE           |
++-------+-------------+------+-----------+---------+-------------------+
+|4819876|99213        |243   |0          |         |2025-10-06 00:00:00|
+|4819877|3008F        |  0   |0          |         |2025-10-06 00:00:00|
+|4819878|3074F        |  0   |0          |         |2025-10-06 00:00:00|
+|4819879|3078F        |  0   |0          |         |2025-10-06 00:00:00|
+|4819880|3725F        |  0   |0          |         |2025-10-06 00:00:00|
++-------+-------------+------+-----------+---------+-------------------+
+Truncated from 9 to 6 columns.
+5 rows selected in 0 seconds.
+
+
+
+
+athena27673@ptest86 > SELECT t.id, t.claimid, t.chargeid, t.amount, t.transactionreasonid, 
+                sql >        t.postdate, t.voided
+                sql > FROM transaction t
+                sql > JOIN tcharge c ON t.chargeid = c.id
+                sql > WHERE c.claimid = 395740 
+                sql >   AND t.transactionreasonid IN ('CAPITATED', 'COPAY', 'CONTRACTUAL');
++-------+-------+--------+-------+-------------------+-------------------+------+
+|ID     |CLAIMID|CHARGEID|AMOUNT |TRANSACTIONREASONID|POSTDATE           |VOIDED|
++-------+-------+--------+-------+-------------------+-------------------+------+
+|5003151|       |4819876 | -85.08|CAPITATED          |2025-10-30 00:00:00|      |
+|5003152|       |4819876 |-157.92|CONTRACTUAL        |2025-10-30 00:00:00|      |
++-------+-------+--------+-------+-------------------+-------------------+------+
+2 rows selected in 0 seconds.
+
+
+
+
+
+
+
+athena27673@ptest86 > SELECT pi.id, pi.insurancepackageid, ip.name, ip.id FROM patient
+insurance pi JOIN insurancepackage ip ON pi.insurancepackageid = ip.id WHERE pi.id = (
+SELECT primarypatientinsuranceid FROM claim WHERE id = 395740);
++------+------------------+------------------------+----+
+|ID    |INSURANCEPACKAGEID|NAME                    |ID  |
++------+------------------+------------------------+----+
+|193988|2232              |MEDICAID - CT (MEDICAID)|2232|
++------+------------------+------------------------+----+
+1 row selected in 0 seconds.
+
+
+
+athena27673@ptest86 > SELECT cd.sequencenumber, cd.diagnosiscode, cd.diagnosiscodesetid, cd.deleted
+                sql > FROM claimdiagnosis cd
+                sql > WHERE cd.claimid = 395740
+                sql > ORDER BY cd.sequencenumber;
++--------------+-------------+------------------+-------+
+|SEQUENCENUMBER|DIAGNOSISCODE|DIAGNOSISCODESETID|DELETED|
++--------------+-------------+------------------+-------+
+|1             |O09892       |21                |       |
+|2             |Z3A23        |21                |       |
+|3             |Z3493        |21                |       |
++--------------+-------------+------------------+-------+
+3 rows selected in 0 seconds.
+
+========================================================
+
+athena27673@ptest86 > \t ;  \0 ;  select * from capwizard;
+\0: 0 columns and 6 rows removed.
+\0: long fields trimmed.
++-------------------+----------------------------------------+
+|ID                 |1                                       |
++-------------------+----------------------------------------+
+|NAME               |CT MEDICAID BUNDLE                      |
+|INSURANCEPACKAGEIDS|2232\t157085\t45806\t157087\t15708...   |
+|PROCEDURECODES     |99202\t99203\t99204\t99205\t99212\t...  |
+|CREATED            |2025-08-06 11:46:16                     |
+|CREATEDBY          |jcavanaugh3                             |
+|LASTMODIFIED       |2025-10-21 17:06:43                     |
+|LASTMODIFIEDBY     |jcavanaugh3                             |
+|OMITPROCEDURECODES |\t\t\t                                  |
+|DIAGNOSES          |O1003\tO1013\tO1023\tO1033\tO1043\t...  |
+|OMITDIAGNOSES      |\t\t\t                                  |
+|EFFECTIVEDATE      |2025-08-06 00:00:00                     |
+|DEPARTMENTIDS      |132\t131\t176\t174\t173                 |
+|DIAGNOSISCODESETID |21                                      |
++-------------------+----------------------------------------+
+1 row selected in 0 seconds.
+
+
+
+athena27673@ptest86 > SELECT t.fromdate, cw.effectivedate, cw.expirationdate,
+                sql >        CASE 
+                sql >          WHEN t.fromdate BETWEEN cw.effectivedate AND cw.expirationdate 
+                sql >          THEN 'IN RANGE' 
+                sql >          ELSE 'OUT OF RANGE' 
+                sql >        END as date_check
+                sql > FROM tcharge t, capwizard cw
+                sql > WHERE t.claimid = 395740
+                sql >   AND cw.deleted IS NULL;
++-------------------+-------------------+--------------+------------+
+|FROMDATE           |EFFECTIVEDATE      |EXPIRATIONDATE|DATE_CHECK  |
++-------------------+-------------------+--------------+------------+
+|2025-10-06 00:00:00|2025-08-06 00:00:00|              |OUT OF RANGE|
+|2025-10-06 00:00:00|2025-08-06 00:00:00|              |OUT OF RANGE|
+|2025-10-06 00:00:00|2025-08-06 00:00:00|              |OUT OF RANGE|
+|2025-10-06 00:00:00|2025-08-06 00:00:00|              |OUT OF RANGE|
+|2025-10-06 00:00:00|2025-08-06 00:00:00|              |OUT OF RANGE|
++-------------------+-------------------+--------------+------------+
+5 rows selected in 0 seconds.
+
+
+
+
+
+athena27673@ptest86 > \t;\0; SELECT * FROM capwizard WHERE deleted IS NULL AND (proced
+urecodes LIKE '%99213%' OR procedurecodes = '*' );
+\0: 0 columns and 6 rows removed.
+\0: long fields trimmed.
++-------------------+----------------------------------------+
+|ID                 |1                                       |
++-------------------+----------------------------------------+
+|NAME               |CT MEDICAID BUNDLE                      |
+|INSURANCEPACKAGEIDS|2232\t157085\t45806\t157087\t15708...   |
+|PROCEDURECODES     |99202\t99203\t99204\t99205\t99212\t...  |
+|CREATED            |2025-08-06 11:46:16                     |
+|CREATEDBY          |jcavanaugh3                             |
+|LASTMODIFIED       |2025-10-21 17:06:43                     |
+|LASTMODIFIEDBY     |jcavanaugh3                             |
+|OMITPROCEDURECODES |\t\t\t                                  |
+|DIAGNOSES          |O1003\tO1013\tO1023\tO1033\tO1043\t...  |
+|OMITDIAGNOSES      |\t\t\t                                  |
+|EFFECTIVEDATE      |2025-08-06 00:00:00                     |
+|DEPARTMENTIDS      |132\t131\t176\t174\t173                 |
+|DIAGNOSISCODESETID |21                                      |
++-------------------+----------------------------------------+
+1 row selected in 0 seconds.
+
+
+
+
+athena27673@ptest86 > SELECT c.id as claim_id, 
+                sql >        pi.insurancepackageid,
+                sql >        cw.id as capwizard_id,
+                sql >        cw.insurancepackageids,
+                sql >        CASE 
+                sql >          WHEN INSTR(cw.insurancepackageids, pi.insurancepackageid) > 0 
+                sql >          THEN 'MATCH'
+                sql >          WHEN cw.insurancepackageids IN ('*', '%')
+                sql >          THEN 'WILDCARD MATCH'
+                sql >          ELSE 'NO MATCH'
+                sql >        END as package_match
+                sql > FROM claim c
+                sql > JOIN patientinsurance pi ON c.primarypatientinsuranceid = pi.id
+                sql > CROSS JOIN capwizard cw
+                sql > WHERE c.id = 395740
+NULL;                sql >   AND cw.deleted IS NULL;
+Truncated from 5 to 3 columns.
++--------+------------------+------------+
+|CLAIM_ID|INSURANCEPACKAGEID|CAPWIZARD_ID|
++--------+------------------+------------+
+|395740  |2232              |1           |
++--------+------------------+------------+
+Truncated from 5 to 3 columns.
+1 row selected in 0 seconds.
+
+
+====================================
+PROVIDER / DEPARTMENT RESTRICTION
+====================================
+
+athena27673@ptest86 > SELECT c.id, c.supervisingproviderid, c.departmentid,
+                sql >        cw.id as capwizard_id, 
+                sql >        cw.providerids, cw.departmentids, cw.providergroupid
+                sql > FROM claim c
+                sql > CROSS JOIN capwizard cw
+                sql > WHERE c.id = 395740
+                sql >   AND cw.deleted IS NULL;
+Truncated from 7 to 5 columns.
++------+---------------------+------------+------------+-----------+
+|ID    |SUPERVISINGPROVIDERID|DEPARTMENTID|CAPWIZARD_ID|PROVIDERIDS|
++------+---------------------+------------+------------+-----------+
+|395740|175                  |131         |1           |           |
++------+---------------------+------------+------------+-----------+
+Truncated from 7 to 5 columns.
+1 row selected in 0 seconds.
+
+=====================================
+DIAGNOSIS CODE FILTER ISSUE
+=====================================
+
+
+athena27673@ptest86 > SELECT cd.diagnosiscode, cd.diagnosiscodesetid,
+                sql >        cw.id as capwizard_id,
+                sql >        cw.diagnoses, cw.omitdiagnoses, cw.diagnosiscodesetid
+                sql > FROM claimdiagnosis cd
+                sql > CROSS JOIN capwizard cw
+                sql > WHERE cd.claimid = 395740
+                sql >   AND cd.deleted IS NULL
+                sql >   AND cw.deleted IS NULL;
+Truncated from 6 to 3 columns.
++-------------+------------------+------------+
+|DIAGNOSISCODE|DIAGNOSISCODESETID|CAPWIZARD_ID|
++-------------+------------------+------------+
+|O09892       |21                |1           |
+|Z3A23        |21                |1           |
+|Z3493        |21                |1           |
++-------------+------------------+------------+
+Truncated from 6 to 3 columns.
+3 rows selected in 0 seconds.
+
+
+
+=============================
+OUTSTANDING-BALANCE 0
+=============================
+
+
+athena27673@ptest86 > SELECT id, procedurecode, amount, outstanding FROM tcharge WHERE claimid = 395740;
++-------+-------------+------+-----------+
+|ID     |PROCEDURECODE|AMOUNT|OUTSTANDING|
++-------+-------------+------+-----------+
+|4819876|99213        |243   |0          |
+|4819877|3008F        |  0   |0          |
+|4819878|3074F        |  0   |0          |
+|4819879|3078F        |  0   |0          |
+|4819880|3725F        |  0   |0          |
++-------+-------------+------+-----------+
+5 rows selected in 0 seconds.
+
+
+
+
+athena27673@ptest86 > \T ;  \0 ;  select * from CLAIMDIAGNOSIS where CLAIMID = 357379;
+\0: 0 columns and 5 rows removed.
+Truncated from 12 to 4 columns.
++------------------+-------------------+-------------------+-------------------+
+|ID                |1447521            |1447522            |1447523            |
++------------------+-------------------+-------------------+-------------------+
+|CLAIMID           |357379             |357379             |357379             |
+|DIAGNOSISCODE     |I10                |R739               |I2510              |
+|SEQUENCENUMBER    |     1             |     2             |     3             |
+|DIAGNOSISCODESETID|    21             |    21             |    21             |
+|ICDCODEALLID      |343305             | 27756             |337616             |
+|CREATED           |2025-08-18 18:17:38|2025-08-18 18:17:38|2025-08-18 18:17:38|
+|CREATEDBY         |kdavis881          |kdavis881          |kdavis881          |
+|LASTMODIFIED      |2025-08-18 18:17:44|2025-08-18 18:17:44|2025-08-18 18:17:44|
+|LASTMODIFIEDBY    |AUTO               |AUTO               |AUTO               |
++------------------+-------------------+-------------------+-------------------+
+Truncated from 12 to 4 columns.
+11 rows selected in 0 seconds.
+
+
+athena27673@ptest86 > \t;\0; select * from capwizard where id = 1;
+\0: 0 columns and 6 rows removed.
+\0: long fields trimmed.
++-------------------+----------------------------------------+
+|ID                 |1                                       |
++-------------------+----------------------------------------+
+|NAME               |CT MEDICAID BUNDLE                      |
+|INSURANCEPACKAGEIDS|2232\t157085\t45806\t157087\t15708...   |
+|PROCEDURECODES     |99202\t99203\t99204\t99205\t99212\t...  |
+|CREATED            |2025-08-06 11:46:16                     |
+|CREATEDBY          |jcavanaugh3                             |
+|LASTMODIFIED       |2025-10-21 17:06:43                     |
+|LASTMODIFIEDBY     |jcavanaugh3                             |
+|OMITPROCEDURECODES |\t\t\t                                  |
+|DIAGNOSES          |O1003\tO1013\tO1023\tO1033\tO1043\t...  |
+|OMITDIAGNOSES      |\t\t\t                                  |
+|EFFECTIVEDATE      |2025-08-06 00:00:00                     |
+|DEPARTMENTIDS      |132\t131\t176\t174\t173                 |
+|DIAGNOSISCODESETID |21                                      |
++-------------------+----------------------------------------+
+1 row selected in 0 seconds.

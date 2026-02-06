@@ -1,0 +1,194 @@
+TAP-TEST-RESULTS
+================
+
+dabhinab@preprod518642:~$
+dabhinab@preprod518642:~$ cd dabhinab_streams/
+dabhinab@preprod518642:~/dabhinab_streams$
+dabhinab@preprod518642:~/dabhinab_streams$ $AX_HOME/athenax perl-test Charge::ClientLedPosting::Util Charge::ClientLedPosting::MoveToUnapplied Charge::ClientLedPosting::PaymentPost Charge::PaymentPost
+Note: TAP unit tests should be run using `--type unit` to ensure it is a true unit test and all external dependencies are mocked. For more details, refer go/tapunit
+Running tests with $ENV{MASTER_ROOT_INSTANCE}:PTEST1
+Testing under /home/dabhinab/dabhinab_streams/athenax/release
+Running tests for modules: Charge::ClientLedPosting::Util, Charge::ClientLedPosting::MoveToUnapplied, Charge::ClientLedPosting::PaymentPost, Charge::PaymentPost
+
+Run: /usr/local/bin/prove /home/dabhinab/dabhinab_streams/prod/test/perl/Charge/ClientLedPosting/MoveToUnapplied/t/int/get_void_transactions.t /home/dabhinab/dabhinab_streams/prod/test/perl/Charge/ClientLedPosting/MoveToUnapplied/t/int/move.t /home/dabhinab/dabhinab_streams/prod/test/perl/Charge/ClientLedPosting/MoveToUnapplied/t/int/open_momentary_payment_batch.t /home/dabhinab/dabhinab_streams/prod/test/perl/Charge/ClientLedPosting/MoveToUnapplied/t/int/void_transactions_query.t /home/dabhinab/dabhinab_streams/prod/test/perl/Charge/ClientLedPosting/MoveToUnapplied/t/unit/get_void_transactions.t /home/dabhinab/dabhinab_streams/prod/test/perl/Charge/ClientLedPosting/MoveToUnapplied/t/unit/move.t /home/dabhinab/dabhinab_streams/prod/test/perl/Charge/ClientLedPosting/MoveToUnapplied/t/unit/open_momentary_payment_batch.t /home/dabhinab/dabhinab_streams/prod/test/perl/Charge/ClientLedPosting/PaymentPost/t/int/check_uncreate_payment_batch.t /home/dabhinab/dabhinab_streams/prod/test/perl/Charge/ClientLedPosting/PaymentPost/t/int/setup.t /home/dabhinab/dabhinab_streams/prod/test/perl/Charge/ClientLedPosting/PaymentPost/t/int/void_repost.t /home/dabhinab/dabhinab_streams/prod/test/perl/Charge/ClientLedPosting/PaymentPost/t/unit/add_reob_images_to_paymentbatch.t /home/dabhinab/dabhinab_streams/prod/test/perl/Charge/ClientLedPosting/PaymentPost/t/unit/check_uncreate_payment_batch.t /home/dabhinab/dabhinab_streams/prod/test/perl/Charge/ClientLedPosting/PaymentPost/t/unit/ledger.t /home/dabhinab/dabhinab_streams/prod/test/perl/Charge/ClientLedPosting/PaymentPost/t/unit/messages.t /home/dabhinab/dabhinab_streams/prod/test/perl/Charge/ClientLedPosting/PaymentPost/t/unit/open_momentary_payment_batch.t /home/dabhinab/dabhinab_streams/prod/test/perl/Charge/ClientLedPosting/PaymentPost/t/unit/setup.t /home/dabhinab/dabhinab_streams/prod/test/perl/Charge/ClientLedPosting/PaymentPost/t/unit/void_repost.t /home/dabhinab/dabhinab_streams/prod/test/perl/Charge/ClientLedPosting/Util/t/int/assign_user_payment_batch.t /home/dabhinab/dabhinab_streams/prod/test/perl/Charge/ClientLedPosting/Util/t/int/enabled.t /home/dabhinab/dabhinab_streams/prod/test/perl/Charge/ClientLedPosting/Util/t/int/get_claim_or_patient_permissions.t /home/dabhinab/dabhinab_streams/prod/test/perl/Charge/ClientLedPosting/Util/t/int/get_payments.t /home/dabhinab/dabhinab_streams/prod/test/perl/Charge/ClientLedPosting/Util/t/int/void_payment_sql.t /home/dabhinab/dabhinab_streams/prod/test/perl/Charge/ClientLedPosting/Util/t/unit/get_claim_or_patient_permissions.t /home/dabhinab/dabhinab_streams/prod/test/perl/Charge/PaymentPost/t/int/generate_html.t /home/dabhinab/dabhinab_streams/prod/test/perl/Charge/PaymentPost/t/int/post.t /home/dabhinab/dabhinab_streams/prod/test/perl/Charge/PaymentPost/t/int/setup.t /home/dabhinab/dabhinab_streams/prod/test/perl/Charge/PaymentPost/t/unit/claim_filter_html.t /home/dabhinab/dabhinab_streams/prod/test/perl/Charge/PaymentPost/t/unit/generate_html.t /home/dabhinab/dabhinab_streams/prod/test/perl/Charge/PaymentPost/t/unit/html.t /home/dabhinab/dabhinab_streams/prod/test/perl/Charge/PaymentPost/t/unit/next.t /home/dabhinab/dabhinab_streams/prod/test/perl/Charge/PaymentPost/t/unit/post.t /home/dabhinab/dabhinab_streams/prod/test/perl/Charge/PaymentPost/t/unit/setup.t /home/dabhinab/dabhinab_streams/prod/test/perl/Charge/PaymentPost/t/unit/split_remit_for_branded_financials.t
+
+/home/dabhinab/dabhinab_streams/prod/test/perl/Charge/ClientLedPosting/MoveToUnapplied/t/int/get_void_transactions.t .......... # Connected to athena18444 on ptest81.
+/home/dabhinab/dabhinab_streams/prod/test/perl/Charge/ClientLedPosting/MoveToUnapplied/t/int/get_void_transactions.t .......... ok
+/home/dabhinab/dabhinab_streams/prod/test/perl/Charge/ClientLedPosting/MoveToUnapplied/t/int/move.t ........................... # Connected to athena19217 on ptest92.
+/home/dabhinab/dabhinab_streams/prod/test/perl/Charge/ClientLedPosting/MoveToUnapplied/t/int/move.t ........................... ok
+/home/dabhinab/dabhinab_streams/prod/test/perl/Charge/ClientLedPosting/MoveToUnapplied/t/int/open_momentary_payment_batch.t ... # Connected to athena20694 on ptest10.
+/home/dabhinab/dabhinab_streams/prod/test/perl/Charge/ClientLedPosting/MoveToUnapplied/t/int/open_momentary_payment_batch.t ... ok
+/home/dabhinab/dabhinab_streams/prod/test/perl/Charge/ClientLedPosting/MoveToUnapplied/t/int/void_transactions_query.t ........ # Connected to athena15359 on ptest92.
+/home/dabhinab/dabhinab_streams/prod/test/perl/Charge/ClientLedPosting/MoveToUnapplied/t/int/void_transactions_query.t ........ ok
+/home/dabhinab/dabhinab_streams/prod/test/perl/Charge/ClientLedPosting/MoveToUnapplied/t/unit/get_void_transactions.t ......... ok
+/home/dabhinab/dabhinab_streams/prod/test/perl/Charge/ClientLedPosting/MoveToUnapplied/t/unit/move.t .......................... ok
+/home/dabhinab/dabhinab_streams/prod/test/perl/Charge/ClientLedPosting/MoveToUnapplied/t/unit/open_momentary_payment_batch.t .. ok
+/home/dabhinab/dabhinab_streams/prod/test/perl/Charge/ClientLedPosting/PaymentPost/t/int/check_uncreate_payment_batch.t ....... # Connected to athena3569 on ptest7.
+/home/dabhinab/dabhinab_streams/prod/test/perl/Charge/ClientLedPosting/PaymentPost/t/int/check_uncreate_payment_batch.t ....... ok
+/home/dabhinab/dabhinab_streams/prod/test/perl/Charge/ClientLedPosting/PaymentPost/t/int/setup.t .............................. # Connected to athena10513 on ptest36.
+/home/dabhinab/dabhinab_streams/prod/test/perl/Charge/ClientLedPosting/PaymentPost/t/int/setup.t .............................. ok
+/home/dabhinab/dabhinab_streams/prod/test/perl/Charge/ClientLedPosting/PaymentPost/t/int/void_repost.t ........................ # Connected to athena24672 on ptest89.
+/home/dabhinab/dabhinab_streams/prod/test/perl/Charge/ClientLedPosting/PaymentPost/t/int/void_repost.t ........................ 2/3 Un-mocked method 'RequestOnCommit()' called at /home/dabhinab/dabhinab_streams/prod/perllib/Athena/Athena/Events.pm line 917.
+Un-mocked method 'RequestOnCommit()' called at /home/dabhinab/dabhinab_streams/prod/perllib/Athena/Athena/Events.pm line 917.
+Un-mocked method 'RequestOnCommit()' called at /home/dabhinab/dabhinab_streams/prod/perllib/Athena/Athena/Events.pm line 917.
+Un-mocked method 'RequestOnCommit()' called at /home/dabhinab/dabhinab_streams/prod/perllib/Athena/Athena/Events.pm line 917.
+Un-mocked method 'RequestOnCommit()' called at /home/dabhinab/dabhinab_streams/prod/perllib/Athena/Athena/Events.pm line 917.
+Un-mocked method 'RequestOnCommit()' called at /home/dabhinab/dabhinab_streams/prod/perllib/Athena/Athena/Events.pm line 917.
+Un-mocked method 'RequestOnCommit()' called at /home/dabhinab/dabhinab_streams/prod/perllib/Athena/Athena/Events.pm line 917.
+Un-mocked method 'RequestOnCommit()' called at /home/dabhinab/dabhinab_streams/prod/perllib/Athena/Athena/Events.pm line 917.
+Un-mocked method 'RequestOnCommit()' called at /home/dabhinab/dabhinab_streams/prod/perllib/Athena/Athena/Events.pm line 917.
+Un-mocked method 'RequestOnCommit()' called at /home/dabhinab/dabhinab_streams/prod/perllib/Athena/Athena/Events.pm line 917.
+Un-mocked method 'RequestOnCommit()' called at /home/dabhinab/dabhinab_streams/prod/perllib/Athena/Athena/Events.pm line 917.
+Un-mocked method 'RequestOnCommit()' called at /home/dabhinab/dabhinab_streams/prod/perllib/Athena/Athena/Events.pm line 917.
+/home/dabhinab/dabhinab_streams/prod/test/perl/Charge/ClientLedPosting/PaymentPost/t/int/void_repost.t ........................ ok
+/home/dabhinab/dabhinab_streams/prod/test/perl/Charge/ClientLedPosting/PaymentPost/t/unit/add_reob_images_to_paymentbatch.t ... 1/3 Can't load '/usr/local/lib/perl5/5.30.1/x86_64-linux/auto/Cwd/Cwd.so' for module Cwd: /usr/local/lib/perl5/5.30.1/x86_64-linux/auto/Cwd/Cwd.so: undefined symbol: PL_stack_sp at /usr/local/lib/perl5/5.30.1/XSLoader.pm line 93.
+ at /usr/local/lib/perl5/5.30.1/x86_64-linux/Cwd.pm line 82.
+Compilation failed in require at /usr/local/lib/perl5/5.30.1/x86_64-linux/File/Spec/Unix.pm line 4.
+BEGIN failed--compilation aborted at /usr/local/lib/perl5/5.30.1/x86_64-linux/File/Spec/Unix.pm line 4.
+Compilation failed in require at /usr/local/lib/perl5/5.30.1/x86_64-linux/File/Spec.pm line 21.
+Compilation failed in require at /usr/local/lib/perl5/5.30.1/File/Temp.pm line 147.
+BEGIN failed--compilation aborted at /usr/local/lib/perl5/5.30.1/File/Temp.pm line 147.
+Compilation failed in require at /usr/bin/html2ps line 356.
+BEGIN failed--compilation aborted at /usr/bin/html2ps line 356.
+/home/dabhinab/dabhinab_streams/prod/test/perl/Charge/ClientLedPosting/PaymentPost/t/unit/add_reob_images_to_paymentbatch.t ... ok
+/home/dabhinab/dabhinab_streams/prod/test/perl/Charge/ClientLedPosting/PaymentPost/t/unit/check_uncreate_payment_batch.t ...... ok
+/home/dabhinab/dabhinab_streams/prod/test/perl/Charge/ClientLedPosting/PaymentPost/t/unit/ledger.t ............................ ok
+/home/dabhinab/dabhinab_streams/prod/test/perl/Charge/ClientLedPosting/PaymentPost/t/unit/messages.t .......................... ok
+/home/dabhinab/dabhinab_streams/prod/test/perl/Charge/ClientLedPosting/PaymentPost/t/unit/open_momentary_payment_batch.t ...... 1/2 Redundant argument in sprintf at /home/dabhinab/dabhinab_streams/prod/test/perl/Charge/ClientLedPosting/PaymentPost/t/unit/open_momentary_payment_batch.t line 178.
+Redundant argument in sprintf at /home/dabhinab/dabhinab_streams/prod/test/perl/Charge/ClientLedPosting/PaymentPost/t/unit/open_momentary_payment_batch.t line 178.
+Redundant argument in sprintf at /home/dabhinab/dabhinab_streams/prod/test/perl/Charge/ClientLedPosting/PaymentPost/t/unit/open_momentary_payment_batch.t line 178.
+Redundant argument in sprintf at /home/dabhinab/dabhinab_streams/prod/test/perl/Charge/ClientLedPosting/PaymentPost/t/unit/open_momentary_payment_batch.t line 178.
+Redundant argument in sprintf at /home/dabhinab/dabhinab_streams/prod/test/perl/Charge/ClientLedPosting/PaymentPost/t/unit/open_momentary_payment_batch.t line 178.
+Redundant argument in sprintf at /home/dabhinab/dabhinab_streams/prod/test/perl/Charge/ClientLedPosting/PaymentPost/t/unit/open_momentary_payment_batch.t line 178.
+Redundant argument in sprintf at /home/dabhinab/dabhinab_streams/prod/test/perl/Charge/ClientLedPosting/PaymentPost/t/unit/open_momentary_payment_batch.t line 178.
+Redundant argument in sprintf at /home/dabhinab/dabhinab_streams/prod/test/perl/Charge/ClientLedPosting/PaymentPost/t/unit/open_momentary_payment_batch.t line 178.
+Redundant argument in sprintf at /home/dabhinab/dabhinab_streams/prod/test/perl/Charge/ClientLedPosting/PaymentPost/t/unit/open_momentary_payment_batch.t line 178.
+Redundant argument in sprintf at /home/dabhinab/dabhinab_streams/prod/test/perl/Charge/ClientLedPosting/PaymentPost/t/unit/open_momentary_payment_batch.t line 178.
+Redundant argument in sprintf at /home/dabhinab/dabhinab_streams/prod/test/perl/Charge/ClientLedPosting/PaymentPost/t/unit/open_momentary_payment_batch.t line 178.
+Redundant argument in sprintf at /home/dabhinab/dabhinab_streams/prod/test/perl/Charge/ClientLedPosting/PaymentPost/t/unit/open_momentary_payment_batch.t line 178.
+Redundant argument in sprintf at /home/dabhinab/dabhinab_streams/prod/test/perl/Charge/ClientLedPosting/PaymentPost/t/unit/open_momentary_payment_batch.t line 178.
+Redundant argument in sprintf at /home/dabhinab/dabhinab_streams/prod/test/perl/Charge/ClientLedPosting/PaymentPost/t/unit/open_momentary_payment_batch.t line 178.
+Redundant argument in sprintf at /home/dabhinab/dabhinab_streams/prod/test/perl/Charge/ClientLedPosting/PaymentPost/t/unit/open_momentary_payment_batch.t line 178.
+Redundant argument in sprintf at /home/dabhinab/dabhinab_streams/prod/test/perl/Charge/ClientLedPosting/PaymentPost/t/unit/open_momentary_payment_batch.t line 178.
+Redundant argument in sprintf at /home/dabhinab/dabhinab_streams/prod/test/perl/Charge/ClientLedPosting/PaymentPost/t/unit/open_momentary_payment_batch.t line 178.
+Redundant argument in sprintf at /home/dabhinab/dabhinab_streams/prod/test/perl/Charge/ClientLedPosting/PaymentPost/t/unit/open_momentary_payment_batch.t line 178.
+Redundant argument in sprintf at /home/dabhinab/dabhinab_streams/prod/test/perl/Charge/ClientLedPosting/PaymentPost/t/unit/open_momentary_payment_batch.t line 178.
+Redundant argument in sprintf at /home/dabhinab/dabhinab_streams/prod/test/perl/Charge/ClientLedPosting/PaymentPost/t/unit/open_momentary_payment_batch.t line 178.
+Redundant argument in sprintf at /home/dabhinab/dabhinab_streams/prod/test/perl/Charge/ClientLedPosting/PaymentPost/t/unit/open_momentary_payment_batch.t line 178.
+Redundant argument in sprintf at /home/dabhinab/dabhinab_streams/prod/test/perl/Charge/ClientLedPosting/PaymentPost/t/unit/open_momentary_payment_batch.t line 178.
+Redundant argument in sprintf at /home/dabhinab/dabhinab_streams/prod/test/perl/Charge/ClientLedPosting/PaymentPost/t/unit/open_momentary_payment_batch.t line 178.
+Redundant argument in sprintf at /home/dabhinab/dabhinab_streams/prod/test/perl/Charge/ClientLedPosting/PaymentPost/t/unit/open_momentary_payment_batch.t line 178.
+Redundant argument in sprintf at /home/dabhinab/dabhinab_streams/prod/test/perl/Charge/ClientLedPosting/PaymentPost/t/unit/open_momentary_payment_batch.t line 178.
+Redundant argument in sprintf at /home/dabhinab/dabhinab_streams/prod/test/perl/Charge/ClientLedPosting/PaymentPost/t/unit/open_momentary_payment_batch.t line 178.
+Redundant argument in sprintf at /home/dabhinab/dabhinab_streams/prod/test/perl/Charge/ClientLedPosting/PaymentPost/t/unit/open_momentary_payment_batch.t line 178.
+Redundant argument in sprintf at /home/dabhinab/dabhinab_streams/prod/test/perl/Charge/ClientLedPosting/PaymentPost/t/unit/open_momentary_payment_batch.t line 178.
+Redundant argument in sprintf at /home/dabhinab/dabhinab_streams/prod/test/perl/Charge/ClientLedPosting/PaymentPost/t/unit/open_momentary_payment_batch.t line 178.
+Redundant argument in sprintf at /home/dabhinab/dabhinab_streams/prod/test/perl/Charge/ClientLedPosting/PaymentPost/t/unit/open_momentary_payment_batch.t line 178.
+Redundant argument in sprintf at /home/dabhinab/dabhinab_streams/prod/test/perl/Charge/ClientLedPosting/PaymentPost/t/unit/open_momentary_payment_batch.t line 178.
+Redundant argument in sprintf at /home/dabhinab/dabhinab_streams/prod/test/perl/Charge/ClientLedPosting/PaymentPost/t/unit/open_momentary_payment_batch.t line 178.
+Redundant argument in sprintf at /home/dabhinab/dabhinab_streams/prod/test/perl/Charge/ClientLedPosting/PaymentPost/t/unit/open_momentary_payment_batch.t line 178.
+Redundant argument in sprintf at /home/dabhinab/dabhinab_streams/prod/test/perl/Charge/ClientLedPosting/PaymentPost/t/unit/open_momentary_payment_batch.t line 178.
+Redundant argument in sprintf at /home/dabhinab/dabhinab_streams/prod/test/perl/Charge/ClientLedPosting/PaymentPost/t/unit/open_momentary_payment_batch.t line 178.
+Redundant argument in sprintf at /home/dabhinab/dabhinab_streams/prod/test/perl/Charge/ClientLedPosting/PaymentPost/t/unit/open_momentary_payment_batch.t line 178.
+Redundant argument in sprintf at /home/dabhinab/dabhinab_streams/prod/test/perl/Charge/ClientLedPosting/PaymentPost/t/unit/open_momentary_payment_batch.t line 178.
+Redundant argument in sprintf at /home/dabhinab/dabhinab_streams/prod/test/perl/Charge/ClientLedPosting/PaymentPost/t/unit/open_momentary_payment_batch.t line 178.
+Redundant argument in sprintf at /home/dabhinab/dabhinab_streams/prod/test/perl/Charge/ClientLedPosting/PaymentPost/t/unit/open_momentary_payment_batch.t line 178.
+Redundant argument in sprintf at /home/dabhinab/dabhinab_streams/prod/test/perl/Charge/ClientLedPosting/PaymentPost/t/unit/open_momentary_payment_batch.t line 178.
+Redundant argument in sprintf at /home/dabhinab/dabhinab_streams/prod/test/perl/Charge/ClientLedPosting/PaymentPost/t/unit/open_momentary_payment_batch.t line 178.
+Redundant argument in sprintf at /home/dabhinab/dabhinab_streams/prod/test/perl/Charge/ClientLedPosting/PaymentPost/t/unit/open_momentary_payment_batch.t line 178.
+Redundant argument in sprintf at /home/dabhinab/dabhinab_streams/prod/test/perl/Charge/ClientLedPosting/PaymentPost/t/unit/open_momentary_payment_batch.t line 178.
+Redundant argument in sprintf at /home/dabhinab/dabhinab_streams/prod/test/perl/Charge/ClientLedPosting/PaymentPost/t/unit/open_momentary_payment_batch.t line 178.
+Redundant argument in sprintf at /home/dabhinab/dabhinab_streams/prod/test/perl/Charge/ClientLedPosting/PaymentPost/t/unit/open_momentary_payment_batch.t line 178.
+Redundant argument in sprintf at /home/dabhinab/dabhinab_streams/prod/test/perl/Charge/ClientLedPosting/PaymentPost/t/unit/open_momentary_payment_batch.t line 178.
+Redundant argument in sprintf at /home/dabhinab/dabhinab_streams/prod/test/perl/Charge/ClientLedPosting/PaymentPost/t/unit/open_momentary_payment_batch.t line 178.
+Redundant argument in sprintf at /home/dabhinab/dabhinab_streams/prod/test/perl/Charge/ClientLedPosting/PaymentPost/t/unit/open_momentary_payment_batch.t line 178.
+Redundant argument in sprintf at /home/dabhinab/dabhinab_streams/prod/test/perl/Charge/ClientLedPosting/PaymentPost/t/unit/open_momentary_payment_batch.t line 178.
+Redundant argument in sprintf at /home/dabhinab/dabhinab_streams/prod/test/perl/Charge/ClientLedPosting/PaymentPost/t/unit/open_momentary_payment_batch.t line 178.
+Redundant argument in sprintf at /home/dabhinab/dabhinab_streams/prod/test/perl/Charge/ClientLedPosting/PaymentPost/t/unit/open_momentary_payment_batch.t line 178.
+Redundant argument in sprintf at /home/dabhinab/dabhinab_streams/prod/test/perl/Charge/ClientLedPosting/PaymentPost/t/unit/open_momentary_payment_batch.t line 178.
+Redundant argument in sprintf at /home/dabhinab/dabhinab_streams/prod/test/perl/Charge/ClientLedPosting/PaymentPost/t/unit/open_momentary_payment_batch.t line 178.
+Redundant argument in sprintf at /home/dabhinab/dabhinab_streams/prod/test/perl/Charge/ClientLedPosting/PaymentPost/t/unit/open_momentary_payment_batch.t line 178.
+Redundant argument in sprintf at /home/dabhinab/dabhinab_streams/prod/test/perl/Charge/ClientLedPosting/PaymentPost/t/unit/open_momentary_payment_batch.t line 178.
+Redundant argument in sprintf at /home/dabhinab/dabhinab_streams/prod/test/perl/Charge/ClientLedPosting/PaymentPost/t/unit/open_momentary_payment_batch.t line 178.
+Redundant argument in sprintf at /home/dabhinab/dabhinab_streams/prod/test/perl/Charge/ClientLedPosting/PaymentPost/t/unit/open_momentary_payment_batch.t line 178.
+Redundant argument in sprintf at /home/dabhinab/dabhinab_streams/prod/test/perl/Charge/ClientLedPosting/PaymentPost/t/unit/open_momentary_payment_batch.t line 178.
+Redundant argument in sprintf at /home/dabhinab/dabhinab_streams/prod/test/perl/Charge/ClientLedPosting/PaymentPost/t/unit/open_momentary_payment_batch.t line 178.
+Redundant argument in sprintf at /home/dabhinab/dabhinab_streams/prod/test/perl/Charge/ClientLedPosting/PaymentPost/t/unit/open_momentary_payment_batch.t line 178.
+Redundant argument in sprintf at /home/dabhinab/dabhinab_streams/prod/test/perl/Charge/ClientLedPosting/PaymentPost/t/unit/open_momentary_payment_batch.t line 178.
+Redundant argument in sprintf at /home/dabhinab/dabhinab_streams/prod/test/perl/Charge/ClientLedPosting/PaymentPost/t/unit/open_momentary_payment_batch.t line 178.
+Redundant argument in sprintf at /home/dabhinab/dabhinab_streams/prod/test/perl/Charge/ClientLedPosting/PaymentPost/t/unit/open_momentary_payment_batch.t line 178.
+Redundant argument in sprintf at /home/dabhinab/dabhinab_streams/prod/test/perl/Charge/ClientLedPosting/PaymentPost/t/unit/open_momentary_payment_batch.t line 178.
+/home/dabhinab/dabhinab_streams/prod/test/perl/Charge/ClientLedPosting/PaymentPost/t/unit/open_momentary_payment_batch.t ...... ok
+/home/dabhinab/dabhinab_streams/prod/test/perl/Charge/ClientLedPosting/PaymentPost/t/unit/setup.t ............................. ok
+/home/dabhinab/dabhinab_streams/prod/test/perl/Charge/ClientLedPosting/PaymentPost/t/unit/void_repost.t ....................... ok
+/home/dabhinab/dabhinab_streams/prod/test/perl/Charge/ClientLedPosting/Util/t/int/assign_user_payment_batch.t ................. # Connected to athena18242 on ptest92.
+/home/dabhinab/dabhinab_streams/prod/test/perl/Charge/ClientLedPosting/Util/t/int/assign_user_payment_batch.t ................. ok
+/home/dabhinab/dabhinab_streams/prod/test/perl/Charge/ClientLedPosting/Util/t/int/enabled.t ...................................     # Connected to athena14274 on ptest29.
+    # Connected to athena13908 on ptest45.
+/home/dabhinab/dabhinab_streams/prod/test/perl/Charge/ClientLedPosting/Util/t/int/enabled.t ................................... ok
+/home/dabhinab/dabhinab_streams/prod/test/perl/Charge/ClientLedPosting/Util/t/int/get_claim_or_patient_permissions.t .......... # Connected to athena28797 on ptest47.
+/home/dabhinab/dabhinab_streams/prod/test/perl/Charge/ClientLedPosting/Util/t/int/get_claim_or_patient_permissions.t .......... ok
+/home/dabhinab/dabhinab_streams/prod/test/perl/Charge/ClientLedPosting/Util/t/int/get_payments.t .............................. # Connected to athena27415 on ptest23.
+/home/dabhinab/dabhinab_streams/prod/test/perl/Charge/ClientLedPosting/Util/t/int/get_payments.t .............................. ok
+/home/dabhinab/dabhinab_streams/prod/test/perl/Charge/ClientLedPosting/Util/t/int/void_payment_sql.t .......................... # Connected to athena30133 on ptest76.
+/home/dabhinab/dabhinab_streams/prod/test/perl/Charge/ClientLedPosting/Util/t/int/void_payment_sql.t .......................... ok
+/home/dabhinab/dabhinab_streams/prod/test/perl/Charge/ClientLedPosting/Util/t/unit/get_claim_or_patient_permissions.t ......... ok
+/home/dabhinab/dabhinab_streams/prod/test/perl/Charge/PaymentPost/t/int/generate_html.t ....................................... 1/2 # Connected to athena21269 on ptest12.
+/home/dabhinab/dabhinab_streams/prod/test/perl/Charge/PaymentPost/t/int/generate_html.t ....................................... ok
+/home/dabhinab/dabhinab_streams/prod/test/perl/Charge/PaymentPost/t/int/post.t ................................................ 1/4 # Connected to athena31800 on ptest68.
+Argument "" isn't numeric in numeric eq (==) at /home/dabhinab/dabhinab_streams/prod/perllib/Athena/MonthEndClose/AccessCloseDates.pm line 60.
+Argument "" isn't numeric in numeric eq (==) at /home/dabhinab/dabhinab_streams/prod/perllib/Athena/MonthEndClose/AccessCloseDates.pm line 60.
+Argument "" isn't numeric in numeric eq (==) at /home/dabhinab/dabhinab_streams/prod/perllib/Athena/MonthEndClose/AccessCloseDates.pm line 60.
+Argument "" isn't numeric in numeric eq (==) at /home/dabhinab/dabhinab_streams/prod/perllib/Athena/MonthEndClose/AccessCloseDates.pm line 60.
+Argument "" isn't numeric in numeric eq (==) at /home/dabhinab/dabhinab_streams/prod/perllib/Athena/MonthEndClose/AccessCloseDates.pm line 60.
+Argument "" isn't numeric in numeric eq (==) at /home/dabhinab/dabhinab_streams/prod/perllib/Athena/MonthEndClose/AccessCloseDates.pm line 60.
+Argument "" isn't numeric in numeric eq (==) at /home/dabhinab/dabhinab_streams/prod/perllib/Athena/MonthEndClose/AccessCloseDates.pm line 60.
+Argument "" isn't numeric in numeric eq (==) at /home/dabhinab/dabhinab_streams/prod/perllib/Athena/MonthEndClose/AccessCloseDates.pm line 60.
+Argument "" isn't numeric in numeric eq (==) at /home/dabhinab/dabhinab_streams/prod/perllib/Athena/MonthEndClose/AccessCloseDates.pm line 60.
+Argument "" isn't numeric in numeric eq (==) at /home/dabhinab/dabhinab_streams/prod/perllib/Athena/MonthEndClose/AccessCloseDates.pm line 60.
+Argument "" isn't numeric in numeric eq (==) at /home/dabhinab/dabhinab_streams/prod/perllib/Athena/MonthEndClose/AccessCloseDates.pm line 60.
+Argument "" isn't numeric in numeric eq (==) at /home/dabhinab/dabhinab_streams/prod/perllib/Athena/MonthEndClose/AccessCloseDates.pm line 60.
+Argument "" isn't numeric in numeric eq (==) at /home/dabhinab/dabhinab_streams/prod/perllib/Athena/MonthEndClose/AccessCloseDates.pm line 60.
+Argument "p" isn't numeric in numeric eq (==) at /home/dabhinab/dabhinab_streams/prod/perllib/Athena/Claim/Scrub/Common/P2/ClaimScrub/Plugins.pm line 609.
+Argument "" isn't numeric in numeric eq (==) at /home/dabhinab/dabhinab_streams/prod/perllib/Athena/MonthEndClose/AccessCloseDates.pm line 60.
+Argument "" isn't numeric in numeric eq (==) at /home/dabhinab/dabhinab_streams/prod/perllib/Athena/MonthEndClose/AccessCloseDates.pm line 60.
+Argument "" isn't numeric in numeric eq (==) at /home/dabhinab/dabhinab_streams/prod/perllib/Athena/MonthEndClose/AccessCloseDates.pm line 60.
+Argument "" isn't numeric in numeric eq (==) at /home/dabhinab/dabhinab_streams/prod/perllib/Athena/MonthEndClose/AccessCloseDates.pm line 60.
+Argument "" isn't numeric in numeric eq (==) at /home/dabhinab/dabhinab_streams/prod/perllib/Athena/MonthEndClose/AccessCloseDates.pm line 60.
+Argument "p" isn't numeric in numeric eq (==) at /home/dabhinab/dabhinab_streams/prod/perllib/Athena/Claim/Scrub/Common/P2/ClaimScrub/Plugins.pm line 609.
+Argument "" isn't numeric in numeric eq (==) at /home/dabhinab/dabhinab_streams/prod/perllib/Athena/MonthEndClose/AccessCloseDates.pm line 60.
+Argument "" isn't numeric in numeric eq (==) at /home/dabhinab/dabhinab_streams/prod/perllib/Athena/MonthEndClose/AccessCloseDates.pm line 60.
+Argument "" isn't numeric in numeric eq (==) at /home/dabhinab/dabhinab_streams/prod/perllib/Athena/MonthEndClose/AccessCloseDates.pm line 60.
+Argument "" isn't numeric in numeric eq (==) at /home/dabhinab/dabhinab_streams/prod/perllib/Athena/MonthEndClose/AccessCloseDates.pm line 60.
+Argument "" isn't numeric in numeric eq (==) at /home/dabhinab/dabhinab_streams/prod/perllib/Athena/MonthEndClose/AccessCloseDates.pm line 60.
+Argument "" isn't numeric in numeric eq (==) at /home/dabhinab/dabhinab_streams/prod/perllib/Athena/MonthEndClose/AccessCloseDates.pm line 60.
+Argument "" isn't numeric in numeric eq (==) at /home/dabhinab/dabhinab_streams/prod/perllib/Athena/MonthEndClose/AccessCloseDates.pm line 60.
+Argument "p" isn't numeric in numeric eq (==) at /home/dabhinab/dabhinab_streams/prod/perllib/Athena/Claim/Scrub/Common/P2/ClaimScrub/Plugins.pm line 609.
+Argument "" isn't numeric in numeric eq (==) at /home/dabhinab/dabhinab_streams/prod/perllib/Athena/MonthEndClose/AccessCloseDates.pm line 60.
+Argument "" isn't numeric in numeric eq (==) at /home/dabhinab/dabhinab_streams/prod/perllib/Athena/MonthEndClose/AccessCloseDates.pm line 60.
+Argument "" isn't numeric in numeric eq (==) at /home/dabhinab/dabhinab_streams/prod/perllib/Athena/MonthEndClose/AccessCloseDates.pm line 60.
+Argument "" isn't numeric in numeric eq (==) at /home/dabhinab/dabhinab_streams/prod/perllib/Athena/MonthEndClose/AccessCloseDates.pm line 60.
+Argument "" isn't numeric in numeric eq (==) at /home/dabhinab/dabhinab_streams/prod/perllib/Athena/MonthEndClose/AccessCloseDates.pm line 60.
+Argument "" isn't numeric in numeric eq (==) at /home/dabhinab/dabhinab_streams/prod/perllib/Athena/MonthEndClose/AccessCloseDates.pm line 60.
+Argument "" isn't numeric in numeric eq (==) at /home/dabhinab/dabhinab_streams/prod/perllib/Athena/MonthEndClose/AccessCloseDates.pm line 60.
+Argument "p" isn't numeric in numeric eq (==) at /home/dabhinab/dabhinab_streams/prod/perllib/Athena/Claim/Scrub/Common/P2/ClaimScrub/Plugins.pm line 609.
+Argument "" isn't numeric in numeric eq (==) at /home/dabhinab/dabhinab_streams/prod/perllib/Athena/MonthEndClose/AccessCloseDates.pm line 60.
+Argument "" isn't numeric in numeric eq (==) at /home/dabhinab/dabhinab_streams/prod/perllib/Athena/MonthEndClose/AccessCloseDates.pm line 60.
+Argument "" isn't numeric in numeric eq (==) at /home/dabhinab/dabhinab_streams/prod/perllib/Athena/MonthEndClose/AccessCloseDates.pm line 60.
+Argument "" isn't numeric in numeric eq (==) at /home/dabhinab/dabhinab_streams/prod/perllib/Athena/MonthEndClose/AccessCloseDates.pm line 60.
+Argument "" isn't numeric in numeric eq (==) at /home/dabhinab/dabhinab_streams/prod/perllib/Athena/MonthEndClose/AccessCloseDates.pm line 60.
+Argument "" isn't numeric in numeric eq (==) at /home/dabhinab/dabhinab_streams/prod/perllib/Athena/MonthEndClose/AccessCloseDates.pm line 60.
+/home/dabhinab/dabhinab_streams/prod/test/perl/Charge/PaymentPost/t/int/post.t ................................................ ok
+/home/dabhinab/dabhinab_streams/prod/test/perl/Charge/PaymentPost/t/int/setup.t ............................................... # Connected to athena14350 on ptest45.
+/home/dabhinab/dabhinab_streams/prod/test/perl/Charge/PaymentPost/t/int/setup.t ............................................... ok
+/home/dabhinab/dabhinab_streams/prod/test/perl/Charge/PaymentPost/t/unit/claim_filter_html.t .................................. ok
+/home/dabhinab/dabhinab_streams/prod/test/perl/Charge/PaymentPost/t/unit/generate_html.t ...................................... ok
+/home/dabhinab/dabhinab_streams/prod/test/perl/Charge/PaymentPost/t/unit/html.t ............................................... ok
+/home/dabhinab/dabhinab_streams/prod/test/perl/Charge/PaymentPost/t/unit/next.t ............................................... ok
+/home/dabhinab/dabhinab_streams/prod/test/perl/Charge/PaymentPost/t/unit/post.t ............................................... ok
+/home/dabhinab/dabhinab_streams/prod/test/perl/Charge/PaymentPost/t/unit/setup.t .............................................. ok
+/home/dabhinab/dabhinab_streams/prod/test/perl/Charge/PaymentPost/t/unit/split_remit_for_branded_financials.t ................. ok
+All tests successful.
+Files=33, Tests=97, 534 wallclock secs ( 0.39 usr  0.08 sys + 310.47 cusr 45.57 csys = 356.51 CPU)
+Result: PASS
+dabhinab@preprod518642:~/dabhinab_streams$

@@ -1,0 +1,613 @@
+dabhinab@preprod51002:~$ clear
+dabhinab@preprod51002:~$ cd dabhinab_streams/
+dabhinab@preprod51002:~/dabhinab_streams$ sql++
+sql++ version 18p1.  \h for help, for more search 'sql++' in the wiki.  \q or ^D to exit.
+athena1@ptest1 > \u 14272
+
+athena14272@ptest84 > \t;\0; select * from CLAIM where ID = 22871463;
+\0: 0 columns and 58 rows removed.
++---------------------------+-------------------+
+|ID                         |22871463           |
++---------------------------+-------------------+
+|CREATED                    |2024-03-29 03:55:17|
+|CREATEDBY                  |INTF-211547711     |
+|PATIENTID                  |   9286506         |
+|PROVIDERID                 |     15226         |
+|PRIMARYPATIENTINSURANCEID  |  21993376         |
+|SECONDARYPATIENTINSURANCEID|         0         |
+|DEPARTMENTID               |      1359         |
+|PATIENTDEPARTMENTID        |      1359         |
+|CURRENTILLNESSDATE         |2024-03-21 00:00:00|
+|LASTMODIFIED               |2024-04-30 13:43:32|
+|LASTMODIFIEDBY             |ATHENA             |
+|SERVICEDATE                |2024-03-21 00:00:00|
+|ORIGINALCLAIMID            |  22871463         |
+|LASTACTION                 |NOTE               |
+|LASTACTIONDATE             |2024-04-30 13:43:32|
+|SUPERVISINGPROVIDERID      |     15226         |
+|STATUS1                    |CLOSED             |
+|STATUS2                    |CLOSED             |
+|STATUSP                    |CLOSED             |
+|OUTSTANDING1               |         0         |
+|OUTSTANDING2               |         0         |
+|OUTSTANDINGP               |         0         |
+|LASTBILLEDDATE1            |2024-03-31 05:03:09|
+|ACCEPTASSIGNMENTYN1        |Y                  |
+|ACCEPTASSIGNMENTYN2        |Y                  |
+|PRINTZERODOLLARCHARGESYN1  |N                  |
+|STATUS1LASTMODIFIED        |2024-04-26 08:35:30|
+|PARENTCLAIMID              |  22871463         |
+|RELATEDTOEMPLOYMENTYN      |N                  |
+|RELATEDTOAUTOACCIDENTYN    |N                  |
+|RELATEDTOOTHERACCIDENTYN   |N                  |
+|RELEASEOFINFORMATIONYN1    |Y                  |
+|PHYSICIANSIGNATUREDATE     |2024-03-31 05:03:09|
+|SIGNATURESOURCECODE        |B                  |
+|ASSIGNMENTOFBENEFITSFLAG   |Y                  |
+|ANOTHERPARTYRESPONSIBLEYN  |N                  |
+|HEALTHCARECLAIMTYPEID1     |         1         |
+|STATUS1CLAIMNOTEID         | 349366721         |
+|CLAIMALARMELIGIBLEYN       |Y                  |
+|NODENIALMANAGEMENTYN       |N                  |
+|LASTSCRUBDATE1             |2024-03-31 04:47:16|
+|PAYTOTAXID1                | 680632970         |
+|PAYTONPI1                  |1326750589         |
+|PRIMARYBILLINGPROVIDERID   |     15226         |
+|COVERAGESCANYN             |Y                  |
+|RETROMEDICAIDENROLLMENTYN  |N                  |
+|VISITBILLID                |   4273698         |
++---------------------------+-------------------+
+1 row selected in 0 seconds.
+
+athena14272@ptest84 > \t;\0; select * from ERARECORD where CLAIMID = 22871463;
+\0: 0 columns and 90 rows removed.
+\0: long fields trimmed.
++--------------------------+-----------------------------------+------------------------------------+------------------------------------+
+|ID                        |50952279                           |50831646                            |50271642                            |
++--------------------------+-----------------------------------+------------------------------------+------------------------------------+
+|ERABATCHID                |  6475311                          |   6464730                          |   6415075                          |
+|CHARGEID                  |131866672                          | 131866672                          | 131866672                          |
+|CLAIMPAYMENT              |                                   |       159.79                       |       159.79                       |
+|ALLOWABLE                 |      159.79                       |       159.79                       |       159.79                       |
+|CONTRACTUAL               |      775.21                       |                                    |                                    |
+|OTHERADJUSTMENTREASON     |OTHER                              |                                    |                                    |
+|OTHERTRANSFERREASON       |OTHER                              |                                    |                                    |
+|ORIGINALPAYMENT           |                                   |       159.79                       |       159.79                       |
+|PAYMENT                   |      159.79                       |       159.79                       |       159.79                       |
+|FROMDATE                  |2024-03-21 00:00:00                |2024-03-21 00:00:00                 |2024-03-21 00:00:00                 |
+|TODATE                    |2024-03-21 00:00:00                |2024-03-21 00:00:00                 |2024-03-21 00:00:00                 |
+|PROCEDURECODE             |    99284                          |     99284                          |     99284                          |
+|DAYS                      |        1                          |         1                          |         1                          |
+|AMOUNT                    |      935                          |       935                          |       935                          |
+|PATIENTLASTNAME           |BILLINGSLEY                        |BILLINGSLEY                         |BILLINGSLEY                         |
+|PATIENTFIRSTNAME          |SHERYL                             |SHERYL                              |SHERYL                              |
+|CLAIMID                   | 22871463                          |  22871463                          |  22871463                          |
+|APPLIED                   |2024-04-30 13:43:32                |2024-04-26 08:35:30                 |2024-04-21 22:04:24                 |
+|APPLIEDBY                 |ATHENA                             |ATHENA                              |ATHENA                              |
+|CONTROLNUMBER             |22871463V14272                     |22871463V14272                      |22871463V14272                      |
+|PATIENTINSURANCEIDNUMBER  |R59333415                          |R59333415                           |R59333415                           |
+|CORRECTEDINSURANCEIDNUMBER|                                   |R59333415                           |R59333415                           |
+|PATIENTMIDDLEINITIAL      |F                                  |F                                   |F                                   |
+|TRANSFERTYPE              |        1                          |         1                          |         1                          |
+|IMAGEFILEPAGENUMBER       |        5                          |                                    |                                    |
+|AEGISINSURANCEPACKAGEID   |     6626                          |      6626                          |      6626                          |
+|KICKREASONCATEGORYID      |      158                          |       886                          |       886                          |
+|CHECKCCNUMBER             |                                   |0008115945                          |0008115945                          |
+|MATCHED                   |2024-04-30 12:22:19                |2024-04-26 07:17:11                 |2024-04-06 00:00:00                 |
+|MATCHEDBY                 |ATHENA                             |ATHENA                              |ATHENA                              |
+|PATIENTINSURANCEID        | 21993376                          |  21993376                          |  21993376                          |
+|INTEREST                  |        0                          |                                    |                                    |
+|INCENTIVEPAYMENT          |        0                          |                                    |                                    |
+|PARTIALPOSTSIGNEDOFF      |2024-04-30 13:43:32                |                                    |2024-04-21 22:04:24                 |
+|PARTIALPOSTSIGNEDOFFBY    |ATHENA                             |                                    |ATHENA                              |
+|CLAIMSOURCEDATA           |CLAIMINFO|22871463V14272|BILLI...  |CLP*22871463V14272*1*935*159.7...   |CLP*22871463V14272*1*935*159.7...   |
+|SOURCEDATA                |DETAIL|03/21/2024|03/21/2024|9...  |SVC*HC:99284*935*159.79**1~\nDT...  |SVC*HC:99284*935*159.79**1~\nDT...  |
+|PAYORCONTROLNUMBER        |                                   |3050928329                          |3050928329                          |
+|CHECKAMOUNT               |     1304.16                       |      1474.98                       |      1474.98                       |
+|CHECKDATE                 |2024-04-11 00:00:00                |                                    |                                    |
+|CLAIMSTATUSCODE           |                                   |         1                          |         1                          |
+|PARENTERARECORDID         | 50952279                          |  50831646                          |  50271642                          |
+|ANSICLAIMFILINGINDICATORID|                                   |         4                          |         4                          |
+|MATCHINGSCORE             |       98                          |       100                          |       100                          |
+|PROVIDERCONTROLNUMBER     |                                   |131866672P14272                     |131866672P14272                     |
+|BILLINGBATCHID            |                                   |   1232925                          |   1232925                          |
+|CREATED                   |2024-04-30 10:45:57                |2024-04-26 07:17:11                 |2024-04-06 11:51:20                 |
+|CREATEDBY                 |ATHENA                             |ATHENA                              |ATHENA                              |
+|LASTMODIFIED              |2024-04-30 13:43:32                |2024-04-26 08:35:30                 |2024-04-21 22:04:24                 |
+|LASTMODIFIEDBY            |ATHENA                             |ATHENA                              |ATHENA                              |
++--------------------------+-----------------------------------+------------------------------------+------------------------------------+
+3 rows selected in 0 seconds.
+
+athena14272@ptest84 >
+athena14272@ptest84 > \T;\0; select * from ERABATCH where ID = 6475311;
+\0: 0 columns and 52 rows removed.
+\0: long fields trimmed.
++---------------------------+-----------------------------------+
+|ID                         |6475311                            |
++---------------------------+-----------------------------------+
+|CREATED                    |2024-04-30 10:45:57                |
+|CREATEDBY                  |ATHENA                             |
+|RPOERAFILEID               |237043244                          |
+|STATUS                     |POSTED                             |
+|TOTALCHARGES               |    10056                          |
+|TOTALPAYMENTS              |        0                          |
+|POSTED                     |2024-04-30 13:43:33                |
+|POSTEDBY                   |ATHENA                             |
+|LASTMODIFIED               |2024-04-30 13:43:33                |
+|LASTMODIFIEDBY             |ATHENA                             |
+|IMAGEFILENAME              |11305721A14272.pdf                 |
+|SOURCEHEADERDATA           |PAYMENTBATCH|0.00|11305721A142...  |
+|PAYDATE                    |2024-04-11 00:00:00                |
+|TARGETPAYMENTBATCHID       | 11305721                          |
+|KICKREASONCATEGORYID       |      158                          |
+|AEGISKICKREASONCATEGORYID  |      158                          |
+|AEGISINSREPORTINGCATEGORYID|      140                          |
+|UNIQUESTRING               |aiIidqHCSApTL4I0XiGjQQ             |
+|EMCRECEIVERID              |      964                          |
+|PAYMENTBATCHROUTEID        |        1                          |
++---------------------------+-----------------------------------+
+1 row selected in 0 seconds.
+
+athena14272@ptest84 >
+athena14272@ptest84 > \T ;  \0 ;  select * from ERABATCH where ID = 6464730;
+\0: 0 columns and 37 rows removed.
+\0: long fields trimmed.
++---------------------------+------------------------------------+
+|ID                         |6464730                             |
++---------------------------+------------------------------------+
+|CREATED                    |2024-04-26 07:17:10                 |
+|CREATEDBY                  |ATHENA                              |
+|RPOERAFILEID               | 234653668                          |
+|STATUS                     |POSTED                              |
+|TOTALCHARGES               |     12391                          |
+|TOTALPAYMENTS              |      1474.98                       |
+|PROVIDERNUMBER             |1326750589                          |
+|NOTES                      |Remittance advice was original...   |
+|POSTED                     |2024-04-27 01:23:41                 |
+|POSTEDBY                   |cahsmurugan39                       |
+|LASTMODIFIED               |2024-04-27 01:23:41                 |
+|LASTMODIFIEDBY             |cahsmurugan39                       |
+|CHECKNUMBER                |0008115945                          |
+|PAYMENTMETHOD              |CHECK                               |
+|PAYORNAME                  |BLUE CROSS BLUE SHIELD OF ALAB...   |
+|SOURCEHEADERDATA           |ST*835*0001~\nBPR*I*1474.98*C*C...  |
+|SOURCETRAILERDATA          |SE*179*0001                         |
+|PAYDATE                    |2024-04-11 00:00:00                 |
+|TARGETPAYMENTBATCHID       |  11316322                          |
+|KICKREASONCATEGORYID       |       886                          |
+|AEGISKICKREASONCATEGORYID  |       886                          |
+|AEGISINSREPORTINGCATEGORYID|       140                          |
+|FEDERALIDNUMBER            |1630103830                          |
+|PAYORIDNUMBER              |     00510                          |
+|UNIQUESTRING               |daS1RXhoAFqhT5HfMfI/Gw              |
+|BYTEOFFSET                 |       168                          |
+|BYTELENGTH                 |      4411                          |
+|PAYEETAXIDNUMBER           | 680632970                          |
+|PAYEEADDRESS               |PO BOX 23485                        |
+|PAYEECITY                  |BELFAST                             |
+|PAYEESTATE                 |ME                                  |
+|PAYEEZIP                   | 049154485                          |
+|EMCRECEIVERID              |        86                          |
+|PAYMENTBATCHROUTEID        |        78                          |
+|ANSIVERSIONID              |         3                          |
++---------------------------+------------------------------------+
+1 row selected in 0 seconds.
+
+athena14272@ptest84 >
+athena14272@ptest84 > \T ;  \0 ;  select * from ERABATCH where ID = 6415075;
+\0: 0 columns and 38 rows removed.
+\0: long fields trimmed.
++---------------------------+------------------------------------+
+|ID                         |6415075                             |
++---------------------------+------------------------------------+
+|CREATED                    |2024-04-06 11:51:20                 |
+|CREATEDBY                  |ATHENA                              |
+|RPOERAFILEID               | 234653668                          |
+|STATUS                     |POSTED                              |
+|TOTALCHARGES               |     12391                          |
+|TOTALPAYMENTS              |         0                          |
+|PROVIDERNUMBER             |1326750589                          |
+|POSTED                     |2024-04-21 22:04:31                 |
+|POSTEDBY                   |ATHENA                              |
+|LASTMODIFIED               |2024-04-21 22:04:31                 |
+|LASTMODIFIEDBY             |ATHENA                              |
+|CHECKNUMBER                |0008115945                          |
+|PAYMENTMETHOD              |CHECK                               |
+|PAYORNAME                  |BLUE CROSS BLUE SHIELD OF ALAB...   |
+|SOURCEHEADERDATA           |ST*835*0001~\nBPR*I*1474.98*C*C...  |
+|SOURCETRAILERDATA          |SE*179*0001                         |
+|PAYDATE                    |2024-04-11 00:00:00                 |
+|TARGETPAYMENTBATCHID       |  11299533                          |
+|KICKREASONCATEGORYID       |       886                          |
+|AEGISKICKREASONCATEGORYID  |       886                          |
+|AEGISINSREPORTINGCATEGORYID|       140                          |
+|FEDERALIDNUMBER            |1630103830                          |
+|PAYORIDNUMBER              |     00510                          |
+|UNIQUESTRING               |daS1RXhoAFqhT5HfMfI/Gw              |
+|BYTEOFFSET                 |       168                          |
+|BYTELENGTH                 |      4411                          |
+|PAYEETAXIDNUMBER           | 680632970                          |
+|PAYEEADDRESS               |PO BOX 23485                        |
+|PAYEECITY                  |BELFAST                             |
+|PAYEESTATE                 |ME                                  |
+|PAYEEZIP                   | 049154485                          |
+|EMCRECEIVERID              |        86                          |
+|PAYMENTBATCHROUTEID        |        78                          |
+|ANSIVERSIONID              |         3                          |
++---------------------------+------------------------------------+
+1 row selected in 0 seconds.
+
+athena14272@ptest84 >
+athena14272@ptest84 > \t ;  \0 ;  select count(*) from ERARECORD where CLAIMID = 22871463;
++--------+-+
+|COUNT(*)|3|
++--------+-+
++--------+-+
+1 row selected in 0 seconds.
+
+athena14272@ptest84 >
+athena14272@ptest84 > \t;\0; select * from TRANSACTION where CHARGEID = 131866672 and CLAIMID = 22871463;
+\0: 0 columns and 69 rows removed.
++---------------------+-------------------+
+|ID                   |131866672          |
++---------------------+-------------------+
+|CREATED              |2024-03-29 03:55:17|
+|CREATEDBY            |INTF-211547711     |
+|CLAIMID              | 22871463          |
+|CHARGEID             |131866672          |
+|PARENTCHARGEID       |131866672          |
+|PATIENTID            |  9286506          |
+|TYPE                 |CHARGE             |
+|POSTDATE             |2024-03-29 00:00:00|
+|AMOUNT               |      935          |
+|FROMDATE             |2024-03-21 00:00:00|
+|TODATE               |2024-03-21 00:00:00|
+|PROCEDURECODE        |    99284          |
+|DAYS                 |        1          |
+|DEPARTMENTID         |     1359          |
+|PROVIDERID           |    15226          |
+|KICKREASONID         |   177062          |
+|LASTMODIFIED         |2025-11-01 05:20:22|
+|UNITAMOUNT           |      935          |
+|TRANSFERTYPE         |        1          |
+|FIRSTBILLEDDATE      |2024-03-31 05:03:00|
+|LASTBILLEDDATE       |2024-03-31 05:03:01|
+|PAYMENTS             |     -159.79       |
+|ADJUSTMENTS          |     -775.21       |
+|TRANSFERS            |        0          |
+|OUTSTANDING          |        0          |
+|CLOSEDPOSTDATE       |2024-04-26 00:00:00|
+|TRANSFERINTENT       |        1          |
+|FEESCHEDULEID        |     1301          |
+|ALLOWABLELASTMODIFIED|2025-11-01 05:20:19|
+|PRINTPROCEDURECODE   |    99284          |
+|CREDITS              |        0          |
+|TOTALRVU             |        3.59       |
+|WORKRVU              |        2.74       |
+|PRACTICEEXPENSERVU   |.56                |
+|MALPRACTICERVU       |.29                |
+|POSTEDBY             |INTF-211547711     |
+|PATIENTINSURANCEID   | 21993376          |
++---------------------+-------------------+
+1 row selected in 0 seconds.
+
+athena14272@ptest84 >
+athena14272@ptest84 >
+athena14272@ptest84 >
+athena14272@ptest84 > \t;\0; select * from CLAIM where ID = 22427366;
+\0: 0 columns and 51 rows removed.
++---------------------------+-------------------+
+|ID                         |22427366           |
++---------------------------+-------------------+
+|CREATED                    |2024-02-19 03:43:37|
+|CREATEDBY                  |INTF-202220147     |
+|PATIENTID                  |   8635426         |
+|PROVIDERID                 |     16548         |
+|PRIMARYPATIENTINSURANCEID  |  20276091         |
+|SECONDARYPATIENTINSURANCEID|  21434490         |
+|DEPARTMENTID               |      1365         |
+|PATIENTDEPARTMENTID        |      1365         |
+|CURRENTILLNESSDATE         |2024-02-04 00:00:00|
+|LASTMODIFIED               |2024-04-27 07:49:46|
+|LASTMODIFIEDBY             |ahsvemannan        |
+|SERVICEDATE                |2024-02-04 00:00:00|
+|ORIGINALCLAIMID            |  22427366         |
+|LASTACTION                 |CLOSE              |
+|LASTACTIONDATE             |2024-04-27 07:49:46|
+|SUPERVISINGPROVIDERID      |     16548         |
+|STATUS1                    |CLOSED             |
+|STATUS2                    |CLOSED             |
+|STATUSP                    |CLOSED             |
+|OUTSTANDING1               |         0         |
+|OUTSTANDING2               |         0         |
+|OUTSTANDINGP               |         0         |
+|LASTBILLEDDATE1            |2024-03-28 06:57:18|
+|LASTBILLEDDATE2            |2024-04-06 07:45:08|
+|ACCEPTASSIGNMENTYN1        |Y                  |
+|ACCEPTASSIGNMENTYN2        |Y                  |
+|PRINTZERODOLLARCHARGESYN1  |N                  |
+|STATUS1LASTMODIFIED        |2024-04-05 14:13:52|
+|STATUS2LASTMODIFIED        |2024-04-27 07:49:46|
+|PARENTCLAIMID              |  22427366         |
+|RELATEDTOEMPLOYMENTYN      |N                  |
+|RELATEDTOAUTOACCIDENTYN    |N                  |
+|RELATEDTOOTHERACCIDENTYN   |N                  |
+|RELEASEOFINFORMATIONYN1    |Y                  |
+|PHYSICIANSIGNATUREDATE     |2024-03-28 06:57:18|
+|SIGNATURESOURCECODE        |B                  |
+|ASSIGNMENTOFBENEFITSFLAG   |Y                  |
+|ANOTHERPARTYRESPONSIBLEYN  |N                  |
+|HEALTHCARECLAIMTYPEID1     |         1         |
+|HEALTHCARECLAIMTYPEID2     |         1         |
+|STATUS1CLAIMNOTEID         | 346036323         |
+|STATUS2CLAIMNOTEID         | 349579745         |
+|CLAIMALARMELIGIBLEYN       |Y                  |
+|NODENIALMANAGEMENTYN       |N                  |
+|LASTSCRUBDATE1             |2024-03-28 06:54:03|
+|LASTSCRUBDATE2             |2024-04-06 07:44:28|
+|PAYTOTAXID1                | 921782492         |
+|PAYTOTAXID2                | 921782492         |
+|PAYTONPI1                  |1306543319         |
+|PAYTONPI2                  |1306543319         |
+|PRIMARYBILLINGPROVIDERID   |     16548         |
+|COVERAGESCANYN             |Y                  |
+|RETROMEDICAIDENROLLMENTYN  |N                  |
+|VISITBILLID                |   3900175         |
++---------------------------+-------------------+
+1 row selected in 0 seconds.
+
+athena14272@ptest84 >
+athena14272@ptest84 > \t ;  \0 ;  select count(*) from ERARECORD where CLAIMID = 22427366;
++--------+-+
+|COUNT(*)|6|
++--------+-+
++--------+-+
+1 row selected in 0 seconds.
+
+athena14272@ptest84 > \t ;  \0 ;  select * from ERARECORD where CLAIMID = 22427366;
+\0: 0 columns and 91 rows removed.
+\0: long fields trimmed.
++---------------------------+-----------------------------------+-----------------------------------+-----------------------------------+-----------------------------------+-----------------------------------+-----------------------------------+
+|ID                         |50573521                           |50573522                           |50222594                           |50222595                           |50125943                           |50125945                           |
++---------------------------+-----------------------------------+-----------------------------------+-----------------------------------+-----------------------------------+-----------------------------------+-----------------------------------+
+|ERABATCHID                 |   6443596                         |   6443596                         |  6411953                          |  6411953                          |  6404596                          |  6404596                          |
+|CHARGEID                   | 129381276                         | 129381277                         |129381276                          |129381277                          |129381276                          |129381277                          |
+|CLAIMPAYMENT               |        11.05                      |                                   |      117.31                       |                                   |      117.31                       |                                   |
+|ALLOWABLE                  |                                   |        11.05                      |      156.41                       |                                   |      156.41                       |                                   |
+|ORIGINALPAYMENT            |         0                         |        11.05                      |      117.31                       |        0                          |      117.31                       |        0                          |
+|PAYMENT                    |         0                         |        11.05                      |      117.31                       |        0                          |      117.31                       |        0                          |
+|FROMDATE                   |2024-02-04 00:00:00                |2024-02-04 00:00:00                |2024-02-04 00:00:00                |2024-02-04 00:00:00                |2024-02-04 00:00:00                |2024-02-04 00:00:00                |
+|TODATE                     |2024-02-04 00:00:00                |2024-02-04 00:00:00                |2024-02-04 00:00:00                |2024-02-04 00:00:00                |2024-02-04 00:00:00                |2024-02-04 00:00:00                |
+|PROCEDURECODE              |99284,25                           |     93010                         |99284,25                           |    93010                          |99284,25                           |    93010                          |
+|DAYS                       |         1                         |         1                         |        1                          |        1                          |        1                          |        1                          |
+|AMOUNT                     |       935                         |        73                         |      935                          |       73                          |      935                          |       73                          |
+|PATIENTLASTNAME            |AGUILAR                            |AGUILAR                            |AGUILAR GRANDERSON                 |AGUILAR GRANDERSON                 |AGUILAR GRANDERSON                 |AGUILAR GRANDERSON                 |
+|PATIENTFIRSTNAME           |SANDRA                             |SANDRA                             |SANDRA                             |SANDRA                             |SANDRA                             |SANDRA                             |
+|CLAIMID                    |  22427366                         |  22427366                         | 22427366                          | 22427366                          | 22427366                          | 22427366                          |
+|FAILUREREASON              |Claim error: Rolling back, as ...  |There was an error in posting ...  |                                   |                                   |                                   |                                   |
+|APPLIED                    |2024-04-27 07:44:49                |2024-04-27 07:44:49                |2024-04-05 14:13:52                |2024-04-05 14:13:51                |2024-04-04 00:15:25                |2024-04-04 00:15:25                |
+|APPLIEDBY                  |ATHENA                             |ATHENA                             |ATHENA                             |ATHENA                             |ATHENA                             |ATHENA                             |
+|CONTROLNUMBER              |22427366V14272                     |22427366V14272                     |22427366V14272                     |22427366V14272                     |22427366V14272                     |22427366V14272                     |
+|PATIENTINSURANCEIDNUMBER   | 134597798                         | 134597798                         |MZO917381605                       |MZO917381605                       |MZO917381605                       |MZO917381605                       |
+|SUBSCRIBERINSURANCEIDNUMBER|                                   |                                   |MZO917381605                       |MZO917381605                       |MZO917381605                       |MZO917381605                       |
+|PATIENTMIDDLEINITIAL       |                                   |                                   |V                                  |V                                  |V                                  |V                                  |
+|TRANSFERTYPE               |         2                         |         2                         |        1                          |        1                          |        1                          |        1                          |
+|AEGISINSURANCEPACKAGEID    |    261575                         |    261575                         |      556                          |      556                          |      556                          |      556                          |
+|KICKREASONCATEGORYID       |       609                         |       609                         |      609                          |      609                          |      609                          |      609                          |
+|CHECKCCNUMBER              |T24108E44617730                    |T24108E44617730                    |C24093E44083590                    |C24093E44083590                    |C24093E44083590                    |C24093E44083590                    |
+|MATCHED                    |2024-04-17 00:00:00                |2024-04-17 00:00:00                |2024-04-05 10:09:43                |2024-04-05 10:09:43                |2024-04-03 00:00:00                |2024-04-03 00:00:00                |
+|MATCHEDBY                  |ATHENA                             |ATHENA                             |ATHENA                             |ATHENA                             |ATHENA                             |ATHENA                             |
+|PATIENTINSURANCEID         |  21434490                         |  21434490                         | 20276091                          | 20276091                          | 20276091                          | 20276091                          |
+|PARTIALPOSTSIGNEDOFF       |                                   |2024-04-27 07:49:59                |                                   |                                   |2024-04-04 00:15:25                |2024-04-04 00:15:25                |
+|PARTIALPOSTSIGNEDOFFBY     |                                   |ahsvemannan                        |                                   |                                   |ATHENA                             |ATHENA                             |
+|CLAIMSOURCEDATA            |CLP*22427366V14272*2*1008*11.0...  |CLP*22427366V14272*2*1008*11.0...  |CLP*22427366V14272*1*1008*117....  |CLP*22427366V14272*1*1008*117....  |CLP*22427366V14272*1*1008*117....  |CLP*22427366V14272*1*1008*117....  |
+|SOURCEDATA                 |SVC*HC:99284:25*935*0**0**1~DT...  |SVC*HC:93010*73*11.05**1~DTM*4...  |SVC*HC:99284:25*935*117.31**1~...  |SVC*HC:93010*73*0**1~DTM*472*2...  |SVC*HC:99284:25*935*117.31**1~...  |SVC*HC:93010*73*0**1~DTM*472*2...  |
+|PAYORCONTROLNUMBER         |2410000CXL00                       |2410000CXL00                       |0202408850T59990X00                |0202408850T59990X00                |0202408850T59990X00                |0202408850T59990X00                |
+|CHECKAMOUNT                |        11.05                      |        11.05                      |     3429.99                       |     3429.99                       |     3429.99                       |     3429.99                       |
+|PARTIALPOSTRESOLVEBYREASON |                                   |MANUAL                             |                                   |                                   |                                   |                                   |
+|CLAIMSTATUSCODE            |         2                         |         2                         |        1                          |        1                          |        1                          |        1                          |
+|PARENTERARECORDID          |  50573521                         |  50573521                         | 50222594                          | 50222594                          | 50125943                          | 50125943                          |
+|SUBMITTEDDAYS              |         1                         |                                   |                                   |                                   |                                   |                                   |
+|ANSICLAIMFILINGINDICATORID |        20                         |        20                         |        4                          |        4                          |        4                          |        4                          |
+|CLAIMPATIENTRESPONSIBLE    |                                   |                                   |       39.1                        |                                   |       39.1                        |                                   |
+|PAYORPROVIDERNUMBER        |1447250543                         |1447250543                         |                                   |                                   |                                   |                                   |
+|MATCHINGSCORE              |        93                         |        91                         |      100                          |      100                          |      100                          |      100                          |
+|PROVIDERCONTROLNUMBER      |129381276P14272                    |129381277P14272                    |129381276P14272                    |129381277P14272                    |129381276P14272                    |129381277P14272                    |
+|BILLINGBATCHID             |   1236574                         |   1236574                         |  1231666                          |  1231666                          |  1231666                          |  1231666                          |
+|CONTRACTTYPE               |TF000002                           |TF000002                           |PREFERRED PROVIDER ORGANIZATIO...  |PREFERRED PROVIDER ORGANIZATIO...  |PREFERRED PROVIDER ORGANIZATIO...  |PREFERRED PROVIDER ORGANIZATIO...  |
+|CREATED                    |2024-04-17 16:00:20                |2024-04-17 16:00:20                |2024-04-05 10:09:43                |2024-04-05 10:09:43                |2024-04-03 10:48:01                |2024-04-03 10:48:01                |
+|CREATEDBY                  |ATHENA                             |ATHENA                             |ATHENA                             |ATHENA                             |ATHENA                             |ATHENA                             |
+|LASTMODIFIED               |2024-04-27 07:44:49                |2024-04-27 07:49:59                |2024-04-05 14:13:52                |2024-04-05 14:13:51                |2024-04-04 00:15:25                |2024-04-04 00:15:25                |
+|LASTMODIFIEDBY             |ATHENA                             |ahsvemannan                        |ATHENA                             |ATHENA                             |ATHENA                             |ATHENA                             |
++---------------------------+-----------------------------------+-----------------------------------+-----------------------------------+-----------------------------------+-----------------------------------+-----------------------------------+
+6 rows selected in 0 seconds.
+
+athena14272@ptest84 > \t;\0; select * from ERABATCH where ID = 6443596;
+\0: 0 columns and 35 rows removed.
+\0: long fields trimmed.
++---------------------------+-----------------------------------+
+|ID                         |6443596                            |
++---------------------------+-----------------------------------+
+|CREATED                    |2024-04-17 15:59:43                |
+|CREATEDBY                  |ATHENA                             |
+|RPOERAFILEID               |   235819132                       |
+|STATUS                     |POSTED                             |
+|TOTALCHARGES               |        2878                       |
+|TOTALPAYMENTS              |          11.05                    |
+|RECEIVERNUMBER             |   030240928                       |
+|PROVIDERNUMBER             |  1306543319                       |
+|POSTED                     |2024-04-27 07:50:01                |
+|POSTEDBY                   |ahsvemannan                        |
+|LASTMODIFIED               |2024-04-27 07:50:01                |
+|LASTMODIFIEDBY             |ahsvemannan                        |
+|CHECKNUMBER                |T24108E44617730                    |
+|PAYMENTMETHOD              |ACH                                |
+|PAYORNAME                  |BLUE CROSS COMMUNITY HEALTH PL...  |
+|SOURCEHEADERDATA           |ST*835*1049~BPR*I*11.05*C*ACH*...  |
+|SOURCETRAILERDATA          |SE*61*1049                         |
+|PAYDATE                    |2024-04-18 00:00:00                |
+|TARGETPAYMENTBATCHID       |    11307324                       |
+|BANKACCOUNTNUMBER          |153912170187                       |
+|BANKROUTINGNUMBER          |   123000848                       |
+|KICKREASONCATEGORYID       |         609                       |
+|AEGISKICKREASONCATEGORYID  |         609                       |
+|AEGISINSREPORTINGCATEGORYID|         147                       |
+|FEDERALIDNUMBER            |  1731350270                       |
+|PAYORIDNUMBER              |MCDIL                              |
+|UNIQUESTRING               |dAUAP15d9EFoI8+OtzHmdA             |
+|BYTEOFFSET                 |      109580                       |
+|BYTELENGTH                 |        1510                       |
+|PAYEETAXIDNUMBER           |   921782492                       |
+|PAYEEADDRESS               |PO BOX 35052                       |
+|PAYEECITY                  |BELFAST                            |
+|PAYEESTATE                 |ME                                 |
+|PAYEEZIP                   |   049150628                       |
+|EMCRECEIVERID              |        1047                       |
+|PAYMENTBATCHROUTEID        |          23                       |
+|ANSIVERSIONID              |           3                       |
++---------------------------+-----------------------------------+
+1 row selected in 0 seconds.
+
+athena14272@ptest84 > \t ;  \0 ;  select * from ERABATCH where ID = 6411953;
+\0: 0 columns and 34 rows removed.
+\0: long fields trimmed.
++---------------------------+-----------------------------------+
+|ID                         |6411953                            |
++---------------------------+-----------------------------------+
+|CREATED                    |2024-04-05 10:09:43                |
+|CREATEDBY                  |ATHENA                             |
+|RPOERAFILEID               |   234290089                       |
+|STATUS                     |POSTED                             |
+|TOTALCHARGES               |       26897                       |
+|TOTALPAYMENTS              |        3429.99                    |
+|RECEIVERNUMBER             |IL8355010                          |
+|PROVIDERNUMBER             |  1306543319                       |
+|NOTES                      |Remittance advice was original...  |
+|POSTED                     |2024-04-05 14:14:06                |
+|POSTEDBY                   |ATHENA                             |
+|LASTMODIFIED               |2024-04-05 14:14:06                |
+|LASTMODIFIEDBY             |ATHENA                             |
+|CHECKNUMBER                |C24093E44083590                    |
+|PAYMENTMETHOD              |ACH                                |
+|PAYORNAME                  |BLUECROSS BLUESHIELD OF ILLINO...  |
+|SOURCEHEADERDATA           |ST*835*1155~BPR*I*3429.99*C*AC...  |
+|SOURCETRAILERDATA          |SE*487*1155                        |
+|PAYDATE                    |2024-04-04 00:00:00                |
+|TARGETPAYMENTBATCHID       |    11242261                       |
+|BANKACCOUNTNUMBER          |153912170187                       |
+|BANKROUTINGNUMBER          |   123000848                       |
+|KICKREASONCATEGORYID       |         609                       |
+|AEGISKICKREASONCATEGORYID  |         609                       |
+|AEGISINSREPORTINGCATEGORYID|         147                       |
+|FEDERALIDNUMBER            |  1361236610                       |
+|PAYORIDNUMBER              |G00621                             |
+|UNIQUESTRING               |qCJuyYxvpDV5h8wsos1w2Q             |
+|BYTEOFFSET                 |     1345796                       |
+|BYTELENGTH                 |       11919                       |
+|PAYEETAXIDNUMBER           |   921782492                       |
+|PAYEEADDRESS               |PO BOX 35052                       |
+|PAYEECITY                  |BELFAST                            |
+|PAYEESTATE                 |ME                                 |
+|PAYEEZIP                   |   049150628                       |
+|EMCRECEIVERID              |        1047                       |
+|PAYMENTBATCHROUTEID        |          23                       |
+|ANSIVERSIONID              |           3                       |
++---------------------------+-----------------------------------+
+1 row selected in 0 seconds.
+
+athena14272@ptest84 >
+athena14272@ptest84 > \t ;  \0 ;  select * from ERABATCH where ID = 6404596;
+\0: 0 columns and 35 rows removed.
+\0: long fields trimmed.
++---------------------------+-----------------------------------+
+|ID                         |6404596                            |
++---------------------------+-----------------------------------+
+|CREATED                    |2024-04-03 10:44:43                |
+|CREATEDBY                  |ATHENA                             |
+|RPOERAFILEID               |   234290089                       |
+|STATUS                     |POSTED                             |
+|TOTALCHARGES               |       26897                       |
+|TOTALPAYMENTS              |           0                       |
+|RECEIVERNUMBER             |IL8355010                          |
+|PROVIDERNUMBER             |  1306543319                       |
+|POSTED                     |2024-04-04 00:15:31                |
+|POSTEDBY                   |ATHENA                             |
+|LASTMODIFIED               |2024-04-04 00:15:31                |
+|LASTMODIFIEDBY             |ATHENA                             |
+|CHECKNUMBER                |C24093E44083590                    |
+|PAYMENTMETHOD              |ACH                                |
+|PAYORNAME                  |BLUECROSS BLUESHIELD OF ILLINO...  |
+|SOURCEHEADERDATA           |ST*835*1155~BPR*I*3429.99*C*AC...  |
+|SOURCETRAILERDATA          |SE*487*1155                        |
+|PAYDATE                    |2024-04-04 00:00:00                |
+|TARGETPAYMENTBATCHID       |    11234007                       |
+|BANKACCOUNTNUMBER          |153912170187                       |
+|BANKROUTINGNUMBER          |   123000848                       |
+|KICKREASONCATEGORYID       |         609                       |
+|AEGISKICKREASONCATEGORYID  |         609                       |
+|AEGISINSREPORTINGCATEGORYID|         147                       |
+|FEDERALIDNUMBER            |  1361236610                       |
+|PAYORIDNUMBER              |G00621                             |
+|UNIQUESTRING               |qCJuyYxvpDV5h8wsos1w2Q             |
+|BYTEOFFSET                 |     1345796                       |
+|BYTELENGTH                 |       11919                       |
+|PAYEETAXIDNUMBER           |   921782492                       |
+|PAYEEADDRESS               |PO BOX 35052                       |
+|PAYEECITY                  |BELFAST                            |
+|PAYEESTATE                 |ME                                 |
+|PAYEEZIP                   |   049150628                       |
+|EMCRECEIVERID              |        1047                       |
+|PAYMENTBATCHROUTEID        |          23                       |
+|ANSIVERSIONID              |           3                       |
++---------------------------+-----------------------------------+
+1 row selected in 0 seconds.
+
+athena14272@ptest84 >
+athena14272@ptest84 > \t;\0; select * from TRANSACTION where CLAIMID = 22427366 and CHARGEID in (129381276, 129381277);
+\0: 0 columns and 67 rows removed.
++---------------------+-------------------+-------------------+
+|ID                   |129381276          |129381277          |
++---------------------+-------------------+-------------------+
+|CREATED              |2024-02-19 03:43:37|2024-02-19 03:43:37|
+|CREATEDBY            |INTF-202220147     |INTF-202220147     |
+|CLAIMID              | 22427366          | 22427366          |
+|CHARGEID             |129381276          |129381277          |
+|PARENTCHARGEID       |129381276          |129381277          |
+|PATIENTID            |  8635426          |  8635426          |
+|TYPE                 |CHARGE             |CHARGE             |
+|POSTDATE             |2024-02-19 00:00:00|2024-02-19 00:00:00|
+|AMOUNT               |      935          |       73          |
+|FROMDATE             |2024-02-04 00:00:00|2024-02-04 00:00:00|
+|TODATE               |2024-02-04 00:00:00|2024-02-04 00:00:00|
+|PROCEDURECODE        |    99284          |    93010          |
+|DAYS                 |        1          |        1          |
+|DEPARTMENTID         |     1365          |     1365          |
+|PROVIDERID           |    16548          |    16548          |
+|KICKREASONID         |   177111          |    37762          |
+|LASTMODIFIED         |2025-11-03 06:09:01|2025-11-03 06:09:01|
+|UNITAMOUNT           |      935          |       73          |
+|TRANSFERTYPE         |        1          |        1          |
+|FIRSTBILLEDDATE      |2024-03-28 06:57:09|2024-03-28 06:57:09|
+|LASTBILLEDDATE       |2024-03-28 06:57:09|2024-04-06 07:45:08|
+|PAYMENTS             |     -117.31       |        0          |
+|ADJUSTMENTS          |     -778.59       |      -73          |
+|TRANSFERS            |      -39.1        |        0          |
+|OUTSTANDING          |        0          |        0          |
+|CLOSEDPOSTDATE       |2024-04-04 00:00:00|2024-04-04 00:00:00|
+|TRANSFERINTENT       |        1          |        1          |
+|OTHERMODIFIER        |       25          |                   |
+|FEESCHEDULEID        |      801          |      801          |
+|ALLOWABLELASTMODIFIED|2025-11-03 06:08:55|2025-11-03 06:08:55|
+|PRINTPROCEDURECODE   |99284,25           |    93010          |
+|CREDITS              |        0          |        0          |
+|TOTALRVU             |        3.59       |.24                |
+|WORKRVU              |        2.74       |.17                |
+|PRACTICEEXPENSERVU   |.56                |.06                |
+|MALPRACTICERVU       |.29                |.01                |
+|POSTEDBY             |INTF-202220147     |INTF-202220147     |
+|PATIENTINSURANCEID   | 20276091          | 20276091          |
+|HASBEENZEROPAIDYN    |                   |Y                  |
++---------------------+-------------------+-------------------+
+2 rows selected in 0 seconds.
+
+athena14272@ptest84 >

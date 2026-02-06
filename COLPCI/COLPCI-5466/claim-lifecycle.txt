@@ -1,0 +1,39 @@
+┌──────────────────────────────────────────────────────────────┐
+│ CLAIM LIFECYCLE                                              					  |
+└──────────────────────────────────────────────────────────────┘
+
+1. Charge Created
+   ↓
+2. Claim Generated
+   ↓
+3. Claim Billed (Status: BILLED)
+   ↓ [No automatic cap wizard fires here - this is the bug!]
+   ↓
+4. **Manual Capitation** (if applicable)
+   └─> User manually adds CAPITATED adjustment
+   └─> Created with USERNAME='AUTO' (but actually manual process)
+   └─> Creates adjustment in PaymentBatch with note:
+       "Automatic batch to write off capitated charges"
+   ↓
+5. ERA Received (Later, independent event)
+   ↓
+6. ERA Matching Process
+   ↓
+7. ERA Processing Checks for Prior Capitation
+   └─> Checks if CAPITATED adjustment exists with:
+       - transactionreasonid = 'CAPITATED'
+       - paymentbatch.notes = 'Automatic batch to write off capitated charges'
+   ↓
+8. ERA Response Handling:
+   
+   A) If ERA contradicts capitation:
+      └─> ClaimNote.pm voids AUTO-created CAPITATED adjustments
+      └─> Posts new kickcodes from ERA
+      
+   B) If ERA confirms capitation (CPMG/Wellcare):
+      └─> Fires special kickcode (e.g., CPMGCO45CAP)
+      └─> Keeps existing capitation
+      
+   C) If ERA posts CAPITATED adjustment:
+      └─> Charge/Remit.pm voids existing AUTO CAPITATED adjustments
+      └─> Creates new "confirmed by payor" CAPITATED adjustment
